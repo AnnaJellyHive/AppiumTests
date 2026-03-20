@@ -52,11 +52,12 @@ jobs:
       - name: Run tests on emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 34
-          target: google_apis
+          api-level: 29
+          target: default
           arch: x86_64
           profile: pixel_6
           disable-animations: true
+          boot-timeout: 900
           emulator-options: -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim
           script: |
             adb install TimerApp/android/app/build/outputs/apk/debug/app-debug.apk
