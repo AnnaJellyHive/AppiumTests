@@ -39,7 +39,7 @@ jobs:
         working-directory: TimerApp/android
         run: |
           chmod +x gradlew
-          ./gradlew assembleDebug
+          ./gradlew assembleDebug --no-daemon --max-workers 2 --stacktrace
 
       - name: Install Appium + UiAutomator2
         run: |
