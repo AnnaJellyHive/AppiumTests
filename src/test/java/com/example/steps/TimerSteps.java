@@ -49,7 +49,9 @@ public class TimerSteps {
                 .setDeviceName("emulator-5554")
                 .setAppPackage("com.timerapp")
                 .setAppActivity(".MainActivity")
-                .setNoReset(true);
+                .setNoReset(true)
+                .setUiautomator2ServerInstallTimeout(Duration.ofSeconds(120))
+                .setAdbExecTimeout(Duration.ofSeconds(120));
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         driver.setSetting("waitForIdleTimeout", 0);
