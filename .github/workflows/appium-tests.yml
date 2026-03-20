@@ -39,7 +39,6 @@ jobs:
         working-directory: TimerApp/android
         run: |
           chmod +x gradlew
-          sed -i 's/gradle-8.9-bin.zip/gradle-8.13-bin.zip/' gradle/wrapper/gradle-wrapper.properties
           ./gradlew assembleDebug --no-daemon --max-workers 2
 
       - name: Install Appium + UiAutomator2
