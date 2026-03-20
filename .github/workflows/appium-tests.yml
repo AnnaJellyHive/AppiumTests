@@ -37,7 +37,9 @@ jobs:
 
       - name: Build debug APK
         working-directory: TimerApp/android
-        run: ./gradlew assembleDebug
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
       - name: Install Appium + UiAutomator2
         run: |
