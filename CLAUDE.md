@@ -43,6 +43,16 @@ waitForText(WebElement element, String text)    // väntar tills getText() match
 - Deklarera element i page-klasserna med `@AndroidFindBy` (och `@iOSXCUITFindBy` för iOS)
 - Page objects använder `AppiumFieldDecorator(Duration.ZERO)` — viktigt för att `WebDriverWait` ska kunna polla snabbt
 
+## CI-pipeline
+
+`.github/workflows/appium-tests.yml` checkar ut TimerApp, bundlar JS med `npx react-native bundle` (inget Metro i CI), bygger APK och kör på Android API 33-emulator med swiftshader.
+
+Timeouts i `setUp()` är avsiktligt höga på grund av långsam CI-emulator (swiftshader, ~8 min att boota):
+- `uiautomator2ServerInstallTimeout` / `uiautomator2ServerLaunchTimeout` / `adbExecTimeout` = 120s
+- `startButton`-väntan = 120s
+
+Sänk inte dessa utan att ha verifierat att CI-körningar klarar det.
+
 ## React Native-specifikt
 
 - Text-element hittas INTE med `AppiumBy.accessibilityId()` (använder `UiSelector().description()`) — använd `@AndroidFindBy(xpath = "//*[@content-desc='...']")` för Text-komponenter
