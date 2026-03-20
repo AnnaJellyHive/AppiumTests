@@ -51,6 +51,7 @@ public class TimerSteps {
                 .setAppActivity(".MainActivity")
                 .setNoReset(true)
                 .setUiautomator2ServerInstallTimeout(Duration.ofSeconds(120))
+                .setUiautomator2ServerLaunchTimeout(Duration.ofSeconds(120))
                 .setAdbExecTimeout(Duration.ofSeconds(120));
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
@@ -60,7 +61,7 @@ public class TimerSteps {
 
         // Vänta tills appen laddats och är på TaskInput-skärmen
         driver.manage().timeouts().implicitlyWait(Duration.ZERO);
-        new WebDriverWait(driver, Duration.ofSeconds(60))
+        new WebDriverWait(driver, Duration.ofSeconds(120))
                 .pollingEvery(Duration.ofMillis(500))
                 .until(d -> !d.findElements(AppiumBy.accessibilityId("startButton")).isEmpty());
 
