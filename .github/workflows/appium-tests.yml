@@ -72,6 +72,9 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -no-audio -no-boot-anim
           script: |
             adb install TimerApp/android/app/build/outputs/apk/debug/app-debug.apk
+            adb shell am start -n com.timerapp/.MainActivity
+            sleep 30
+            adb shell am force-stop com.timerapp
             mvn test
 
       - name: Publish test report
