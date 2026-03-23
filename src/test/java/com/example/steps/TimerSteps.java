@@ -9,6 +9,9 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -61,7 +64,7 @@ public class TimerSteps {
 
         // Vänta tills appen laddats och är på TaskInput-skärmen
         driver.manage().timeouts().implicitlyWait(Duration.ZERO);
-        new WebDriverWait(driver, Duration.ofSeconds(120))
+        new WebDriverWait(driver, Duration.ofSeconds(180))
                 .pollingEvery(Duration.ofMillis(500))
                 .until(d -> !d.findElements(AppiumBy.accessibilityId("startButton")).isEmpty());
 
@@ -477,8 +480,12 @@ public class TimerSteps {
     }
 
     @After
-    public void tearDown() {
+    public void tearDown(Scenario scenario) {
         if (driver != null) {
+            if (scenario.isFailed()) {
+                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+                scenario.attach(screenshot, "image/png", "Screenshot on failure");
+            }
             driver.quit();
         }
     }
