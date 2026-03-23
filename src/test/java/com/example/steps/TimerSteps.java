@@ -180,7 +180,7 @@ public class TimerSteps {
 
     @Then("ska underuppgiftsnamnet i timern ha längden {int} tecken")
     public void skaUnderuppgiftsnamnetITimernHaLängden(int expectedLength) {
-        String taskName = timerPage.getTaskElement().getText();
+        String taskName = getElementText(timerPage.getTaskElement());
         assertEquals(expectedLength, taskName.length(),
                 "Fel längd på underuppgiftsnamnet: " + taskName);
     }
@@ -214,9 +214,9 @@ public class TimerSteps {
         String expectedProgress = index + " av " + total;
         try {
             new WebDriverWait(driver, Duration.ofSeconds(20))
-                    .until(d -> expectedMode.equals(timerPage.getModeElement().getText()) &&
-                                expectedTask.equals(timerPage.getTaskElement().getText()) &&
-                                expectedProgress.equals(timerPage.getProgressElement().getText()));
+                    .until(d -> expectedMode.equals(getElementText(timerPage.getModeElement())) &&
+                                expectedTask.equals(getElementText(timerPage.getTaskElement())) &&
+                                expectedProgress.equals(getElementText(timerPage.getProgressElement())));
         } catch (TimeoutException e) {
             String mode     = safeGetText(timerPage.getModeElement());
             String task     = safeGetText(timerPage.getTaskElement());
@@ -257,7 +257,7 @@ public class TimerSteps {
                 : By.xpath("//*[@content-desc='continueDoneLabel']");
 
         List<WebElement> current = driver.findElements(modeBy);
-        boolean wasJobba = !current.isEmpty() && "JOBBA!".equals(current.get(0).getText());
+        boolean wasJobba = !current.isEmpty() && "JOBBA!".equals(getElementText(current.get(0)));
 
         new WebDriverWait(driver, Duration.ofSeconds(Math.max(durationSeconds, breakDurationSeconds) + 15))
                 .until(d -> {
@@ -266,7 +266,7 @@ public class TimerSteps {
                         if (els.isEmpty()) {
                             return !d.findElements(continueBy).isEmpty();
                         }
-                        String text = els.get(0).getText();
+                        String text = getElementText(els.get(0));
                         return wasJobba ? !text.equals("JOBBA!") : !text.equals("VILA!");
                     } catch (Exception e) {
                         return false;
@@ -537,26 +537,34 @@ public class TimerSteps {
         }
     }
 
+    private String getElementText(WebElement element) {
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            String label = element.getAttribute("label");
+            return label != null ? label : element.getText();
+        }
+        return element.getText();
+    }
+
     private void waitForText(WebElement element, String expectedText) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(5))
                     .until(d -> {
                         try {
-                            return expectedText.equals(element.getText());
+                            return expectedText.equals(getElementText(element));
                         } catch (Exception e) {
                             return false;
                         }
                     });
         } catch (TimeoutException e) {
             String actual;
-            try { actual = element.getText(); } catch (Exception ex) { actual = "<kunde inte läsa: " + ex.getMessage() + ">"; }
+            try { actual = getElementText(element); } catch (Exception ex) { actual = "<kunde inte läsa: " + ex.getMessage() + ">"; }
             throw new AssertionError(
                     "waitForText: förväntade '" + expectedText + "' men hittade '" + actual + "'", e);
         }
     }
 
     private String safeGetText(WebElement element) {
-        try { return element.getText(); } catch (Exception e) { return "<kunde inte läsa: " + e.getMessage() + ">"; }
+        try { return getElementText(element); } catch (Exception e) { return "<kunde inte läsa: " + e.getMessage() + ">"; }
     }
 
     @After
