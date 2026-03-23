@@ -91,10 +91,17 @@ jobs:
 
       - name: Boot iOS Simulator
         run: |
+          echo "Available simulators:"
+          xcrun simctl list devices available | grep iPhone
           UDID=$(xcrun simctl list devices available | grep 'iPhone 16 (' | head -1 | grep -oE '[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}')
           echo "SIMULATOR_UDID=$UDID" >> $GITHUB_ENV
-          xcrun simctl boot "$UDID"
+          echo "Booting simulator: $UDID"
+          xcrun simctl boot "$UDID" || true
           xcrun simctl bootstatus "$UDID" -b
+          open -a Simulator --args -CurrentDeviceUDID "$UDID"
+          sleep 10
+          echo "Simulator state:"
+          xcrun simctl list devices | grep "$UDID"
 
       - name: Install app on Simulator
         run: |
@@ -110,9 +117,12 @@ jobs:
             appium driver list --installed | grep xcuitest || appium driver install xcuitest
           fi
 
+      - name: Check port 8100
+        run: lsof -i :8100 || echo "Port 8100 is free"
+
       - name: Start Appium server
         run: |
-          appium --log-level warn &
+          appium --log-level info > /tmp/appium.log 2>&1 &
           for i in $(seq 1 20); do
             curl -sf http://127.0.0.1:4723/status && echo "Appium is ready" && break
             sleep 1
@@ -133,6 +143,13 @@ jobs:
           path: target/surefire-reports/*.xml
           reporter: java-junit
           fail-on-error: false
+
+      - name: Upload Appium log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: appium-log-ios
+          path: /tmp/appium.log
 
       - name: Upload HTML report
         if: always()
