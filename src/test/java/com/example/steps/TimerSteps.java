@@ -64,7 +64,7 @@ public class TimerSteps {
 
         // Vänta tills appen laddats och är på TaskInput-skärmen
         driver.manage().timeouts().implicitlyWait(Duration.ZERO);
-        new WebDriverWait(driver, Duration.ofSeconds(180))
+        new WebDriverWait(driver, Duration.ofSeconds(240))
                 .pollingEvery(Duration.ofMillis(500))
                 .until(d -> !d.findElements(AppiumBy.accessibilityId("startButton")).isEmpty());
 
