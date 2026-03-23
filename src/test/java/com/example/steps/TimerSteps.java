@@ -68,7 +68,14 @@ public class TimerSteps {
         new WebDriverWait(driver, Duration.ofSeconds(240))
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(WebDriverException.class)
-                .until(d -> !d.findElements(AppiumBy.accessibilityId("startButton")).isEmpty());
+                .until(d -> {
+                    // Stäng ANR-dialog ("System UI isn't responding") om den dyker upp
+                    d.findElements(AppiumBy.xpath("//*[@text='Wait']"))
+                            .stream().findFirst().ifPresent(btn -> {
+                                try { btn.click(); } catch (Exception ignored) {}
+                            });
+                    return !d.findElements(AppiumBy.accessibilityId("startButton")).isEmpty();
+                });
 
         // Navigera tillbaka till TaskInput om vi hamnat på fel skärm
         for (int i = 0; i < 5; i++) {
