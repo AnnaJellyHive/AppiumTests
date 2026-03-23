@@ -18,6 +18,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -66,6 +67,7 @@ public class TimerSteps {
         driver.manage().timeouts().implicitlyWait(Duration.ZERO);
         new WebDriverWait(driver, Duration.ofSeconds(240))
                 .pollingEvery(Duration.ofMillis(500))
+                .ignoring(WebDriverException.class)
                 .until(d -> !d.findElements(AppiumBy.accessibilityId("startButton")).isEmpty());
 
         // Navigera tillbaka till TaskInput om vi hamnat på fel skärm
