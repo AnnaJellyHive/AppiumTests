@@ -59,6 +59,12 @@ jobs:
           path: ~/.appium
           key: appium-xcuitest-${{ hashFiles('.github/workflows/appium-tests-ios.yml') }}
 
+      - name: Cache WDA derived data
+        uses: actions/cache@v4
+        with:
+          path: ~/Library/Developer/Xcode/DerivedData/WebDriverAgent-*
+          key: wda-deriveddata-${{ hashFiles('.github/workflows/appium-tests-ios.yml') }}
+
       - name: Install npm dependencies
         working-directory: TimerApp
         run: npm ci
@@ -100,10 +106,17 @@ jobs:
           npm install -g appium
           if [ "${{ steps.appium-cache.outputs.cache-hit }}" != "true" ]; then
             appium driver install xcuitest
+          else
+            appium driver list --installed | grep xcuitest || appium driver install xcuitest
           fi
 
       - name: Start Appium server
-        run: appium --log-level warn &
+        run: |
+          appium --log-level warn &
+          for i in $(seq 1 20); do
+            curl -sf http://127.0.0.1:4723/status && echo "Appium is ready" && break
+            sleep 1
+          done
 
       - name: Run tests on Simulator
         run: |

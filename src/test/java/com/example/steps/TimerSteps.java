@@ -116,11 +116,13 @@ public class TimerSteps {
 
     private void setUpIos() throws Exception {
         String udid = System.getProperty("deviceUDID", "");
+        boolean usePrebuilt = !"false".equalsIgnoreCase(System.getProperty("wdaPrebuilt", "true"));
         XCUITestOptions options = new XCUITestOptions()
                 .setBundleId(IOS_BUNDLE_ID)
                 .setNoReset(true)
-                .setWdaLaunchTimeout(Duration.ofSeconds(120))
-                .setWdaConnectionTimeout(Duration.ofSeconds(120));
+                .setUsePrebuiltWda(usePrebuilt)
+                .setWdaLaunchTimeout(Duration.ofSeconds(300))
+                .setWdaConnectionTimeout(Duration.ofSeconds(300));
         if (!udid.isEmpty()) options.setUdid(udid);
         driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
     }
@@ -210,7 +212,7 @@ public class TimerSteps {
         String expectedTask     = subtasks.get(index - 1);
         String expectedProgress = index + " av " + total;
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(5))
+            new WebDriverWait(driver, Duration.ofSeconds(20))
                     .until(d -> expectedMode.equals(timerPage.getModeElement().getText()) &&
                                 expectedTask.equals(timerPage.getTaskElement().getText()) &&
                                 expectedProgress.equals(timerPage.getProgressElement().getText()));

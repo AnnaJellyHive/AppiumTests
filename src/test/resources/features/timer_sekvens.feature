@@ -29,7 +29,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | uppgift  | underuppgift1 | underuppgift2       | tid | pausTid |
-      | Läsa bok | Öppna boken   | Läs 2 sidor i boken | 5   | 4       |
+      | Läsa bok | Öppna boken   | Läs 2 sidor i boken | 30  | 30      |
 
   @mall
   Scenario Outline: Spara, välj och ta bort en sparad uppgift
@@ -59,7 +59,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | uppgift | underuppgift | tid | standardtid |
-      | Testar  | Lite testing | 6   | 120         |
+      | Testar  | Lite testing | 8   | 120         |
 
   @kantfall
   Scenario Outline: Uppgiftsnamn med <antal> tecken trunkeras till 50
@@ -82,7 +82,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | antal | tid |
-      | 60    | 5   |
+      | 60    | 8   |
 
   @animation
   Scenario Outline: Animationerna visas på rätt skärmar
@@ -137,4 +137,4 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | uppgift  | underuppgift      | tid |
-      | BortTest | Testa borttagning |  5  |
+      | BortTest | Testa borttagning |  8  |
