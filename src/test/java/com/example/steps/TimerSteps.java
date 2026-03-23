@@ -140,6 +140,9 @@ public class TimerSteps {
     public void läggerTillUnderuppgift(String subtask) {
         subtasks.add(subtask);
         taskInputPage.addSubtask(subtask);
+        int expectedCount = subtasks.size();
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(d -> taskInputPage.getSubtaskChips().size() >= expectedCount);
     }
 
     @And("användaren sätter tid till {string}")
