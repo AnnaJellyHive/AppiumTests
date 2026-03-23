@@ -214,6 +214,7 @@ public class TimerSteps {
         String expectedProgress = index + " av " + total;
         try {
             new WebDriverWait(driver, Duration.ofSeconds(20))
+                    .ignoring(WebDriverException.class)
                     .until(d -> expectedMode.equals(getElementText(timerPage.getModeElement())) &&
                                 expectedTask.equals(getElementText(timerPage.getTaskElement())) &&
                                 expectedProgress.equals(getElementText(timerPage.getProgressElement())));
@@ -242,9 +243,9 @@ public class TimerSteps {
     @Then("ska timern visa paus med nästa underuppgift {int}")
     public void skaTimernVisaPaus(int nextIndex) {
         String expectedText = "Nästa: " + subtasks.get(nextIndex - 1);
-        waitForText(timerPage.getModeElement(),     "VILA!");
-        waitForText(timerPage.getTaskElement(),     expectedText);
-        waitForText(timerPage.getProgressElement(), "Paus");
+        waitForTextIgnoringWDE(timerPage.getModeElement(),     "VILA!");
+        waitForTextIgnoringWDE(timerPage.getTaskElement(),     expectedText);
+        waitForTextIgnoringWDE(timerPage.getProgressElement(), "Paus");
     }
 
     @When("timern räknar ner klart")
@@ -546,8 +547,13 @@ public class TimerSteps {
     }
 
     private void waitForText(WebElement element, String expectedText) {
+        waitForTextIgnoringWDE(element, expectedText);
+    }
+
+    private void waitForTextIgnoringWDE(WebElement element, String expectedText) {
         try {
             new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .ignoring(WebDriverException.class)
                     .until(d -> {
                         try {
                             return expectedText.equals(getElementText(element));
