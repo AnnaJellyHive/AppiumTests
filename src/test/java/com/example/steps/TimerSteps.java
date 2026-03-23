@@ -116,11 +116,9 @@ public class TimerSteps {
 
     private void setUpIos() throws Exception {
         String udid = System.getProperty("deviceUDID", "");
-        boolean usePrebuilt = !"false".equalsIgnoreCase(System.getProperty("wdaPrebuilt", "true"));
         XCUITestOptions options = new XCUITestOptions()
                 .setBundleId(IOS_BUNDLE_ID)
                 .setNoReset(true)
-                .setUsePrebuiltWda(usePrebuilt)
                 .setWdaLaunchTimeout(Duration.ofSeconds(300))
                 .setWdaConnectionTimeout(Duration.ofSeconds(300));
         if (!udid.isEmpty()) options.setUdid(udid);
