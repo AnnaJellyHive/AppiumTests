@@ -18,6 +18,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
@@ -468,24 +469,39 @@ public class TimerSteps {
     }
 
     private WebElement waitForElementToBeVisible(WebElement element) {
-        return new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOf(element));
+        try {
+            return new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.visibilityOf(element));
+        } catch (TimeoutException e) {
+            throw new AssertionError("waitForElementToBeVisible: elementet syntes inte inom 5s [" + element + "]", e);
+        }
     }
 
     private WebElement waitForElementToBeVisible(By locator) {
-        return new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+        try {
+            return new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.visibilityOfElementLocated(locator));
+        } catch (TimeoutException e) {
+            throw new AssertionError("waitForElementToBeVisible: hittade inte element [" + locator + "] inom 5s", e);
+        }
     }
 
     private void waitForText(WebElement element, String expectedText) {
-        new WebDriverWait(driver, Duration.ofSeconds(5))
-                .until(d -> {
-                    try {
-                        return expectedText.equals(element.getText());
-                    } catch (Exception e) {
-                        return false;
-                    }
-                });
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(d -> {
+                        try {
+                            return expectedText.equals(element.getText());
+                        } catch (Exception e) {
+                            return false;
+                        }
+                    });
+        } catch (TimeoutException e) {
+            String actual;
+            try { actual = element.getText(); } catch (Exception ex) { actual = "<kunde inte läsa: " + ex.getMessage() + ">"; }
+            throw new AssertionError(
+                    "waitForText: förväntade '" + expectedText + "' men hittade '" + actual + "'", e);
+        }
     }
 
     @After
