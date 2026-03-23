@@ -53,11 +53,20 @@ jobs:
           key: maven-${{ hashFiles('pom.xml') }}
           restore-keys: maven-
 
+      - name: Cache APK
+        id: apk-cache
+        uses: actions/cache@v4
+        with:
+          path: TimerApp/android/app/build/outputs/apk/debug/app-debug.apk
+          key: apk-${{ hashFiles('TimerApp/package-lock.json', 'TimerApp/android/**/*.gradle*', 'TimerApp/android/gradle/wrapper/gradle-wrapper.properties', 'TimerApp/index.js', 'TimerApp/src/**') }}
+
       - name: Install npm dependencies
+        if: steps.apk-cache.outputs.cache-hit != 'true'
         working-directory: TimerApp
         run: npm ci
 
       - name: Bundle JS into APK
+        if: steps.apk-cache.outputs.cache-hit != 'true'
         working-directory: TimerApp
         run: |
           mkdir -p android/app/src/main/assets
@@ -69,15 +78,25 @@ jobs:
             --assets-dest android/app/src/main/res
 
       - name: Build debug APK
+        if: steps.apk-cache.outputs.cache-hit != 'true'
         working-directory: TimerApp/android
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon --max-workers 2
 
+      - name: Cache Appium driver
+        id: appium-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.appium
+          key: appium-uiautomator2-${{ hashFiles('.github/workflows/appium-tests.yml') }}
+
       - name: Install Appium + UiAutomator2
         run: |
           npm install -g appium
-          appium driver install uiautomator2
+          if [ "${{ steps.appium-cache.outputs.cache-hit }}" != "true" ]; then
+            appium driver install uiautomator2
+          fi
 
       - name: Start Appium server
         run: appium --log-level warn &
