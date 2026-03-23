@@ -1,0 +1,127 @@
+name: Appium Tests iOS
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  checks: write
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout AppiumTests
+        uses: actions/checkout@v4
+
+      - name: Checkout TimerApp
+        uses: actions/checkout@v4
+        with:
+          repository: AnnaJellyHive/TimerApp
+          path: TimerApp
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: TimerApp/package-lock.json
+
+      - name: Cache Maven
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-${{ hashFiles('pom.xml') }}
+          restore-keys: maven-
+
+      - name: Cache CocoaPods
+        id: pods-cache
+        uses: actions/cache@v4
+        with:
+          path: TimerApp/ios/Pods
+          key: pods-${{ hashFiles('TimerApp/ios/Podfile.lock') }}
+
+      - name: Cache Appium driver
+        id: appium-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.appium
+          key: appium-xcuitest-${{ hashFiles('.github/workflows/appium-tests-ios.yml') }}
+
+      - name: Install npm dependencies
+        working-directory: TimerApp
+        run: npm ci
+
+      - name: Install CocoaPods dependencies
+        if: steps.pods-cache.outputs.cache-hit != 'true'
+        working-directory: TimerApp
+        run: bundle exec pod install --project-directory=ios
+
+      - name: Build iOS app for Simulator
+        working-directory: TimerApp
+        run: |
+          xcodebuild \
+            -workspace ios/TimerApp.xcworkspace \
+            -scheme TimerApp \
+            -configuration Release \
+            -sdk iphonesimulator \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
+            -derivedDataPath ios/build \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Boot iOS Simulator
+        run: |
+          UDID=$(xcrun simctl list devices available | grep 'iPhone 16 (' | head -1 | grep -oE '[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}')
+          echo "SIMULATOR_UDID=$UDID" >> $GITHUB_ENV
+          xcrun simctl boot "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+
+      - name: Install app on Simulator
+        run: |
+          APP=$(find TimerApp/ios/build/Build/Products -name "TimerApp.app" -not -name "*.appex" | head -1)
+          xcrun simctl install "$SIMULATOR_UDID" "$APP"
+
+      - name: Install Appium + XCUITest
+        run: |
+          npm install -g appium
+          if [ "${{ steps.appium-cache.outputs.cache-hit }}" != "true" ]; then
+            appium driver install xcuitest
+          fi
+
+      - name: Start Appium server
+        run: appium --log-level warn &
+
+      - name: Run tests on Simulator
+        run: |
+          mvn test \
+            -Dplatform=ios \
+            -DdeviceUDID=$SIMULATOR_UDID \
+            -Dcucumber.filter.tags="@sekvens"
+
+      - name: Publish test report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Cucumber Tests iOS
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+          fail-on-error: false
+
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-html-report-ios
+          path: target/cucumber-reports/report.html

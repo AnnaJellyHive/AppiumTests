@@ -5,8 +5,13 @@ import com.example.pages.HistoryPage;
 import com.example.pages.TaskInputPage;
 import com.example.pages.TimerPage;
 import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.HidesKeyboard;
+import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import io.appium.java_client.ios.IOSDriver;
+import io.appium.java_client.ios.options.XCUITestOptions;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -37,7 +42,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TimerSteps {
 
-    private AndroidDriver driver;
+    private static final String PLATFORM = System.getProperty("platform", "android");
+    private static final String ANDROID_APP_ID = "com.timerapp";
+    private static final String IOS_BUNDLE_ID  = "org.reactjs.native.example.TimerApp";
+
+    private AppiumDriver driver;
     private TaskInputPage taskInputPage;
     private TimerPage timerPage;
     private ContinuePage continuePage;
@@ -50,19 +59,15 @@ public class TimerSteps {
 
     @Before
     public void setUp() throws Exception {
-        UiAutomator2Options options = new UiAutomator2Options()
-                .setDeviceName("emulator-5554")
-                .setAppPackage("com.timerapp")
-                .setAppActivity(".MainActivity")
-                .setNoReset(true)
-                .setUiautomator2ServerInstallTimeout(Duration.ofSeconds(120))
-                .setUiautomator2ServerLaunchTimeout(Duration.ofSeconds(120))
-                .setAdbExecTimeout(Duration.ofSeconds(120));
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            setUpIos();
+        } else {
+            setUpAndroid();
+        }
 
-        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-        driver.setSetting("waitForIdleTimeout", 0);
-        driver.terminateApp("com.timerapp");
-        driver.activateApp("com.timerapp");
+        String appId = "ios".equalsIgnoreCase(PLATFORM) ? IOS_BUNDLE_ID : ANDROID_APP_ID;
+        ((InteractsWithApps) driver).terminateApp(appId);
+        ((InteractsWithApps) driver).activateApp(appId);
 
         // Vänta tills appen laddats och är på TaskInput-skärmen
         driver.manage().timeouts().implicitlyWait(Duration.ZERO);
@@ -70,11 +75,13 @@ public class TimerSteps {
                 .pollingEvery(Duration.ofMillis(500))
                 .ignoring(WebDriverException.class)
                 .until(d -> {
-                    // Stäng ANR-dialog ("System UI isn't responding") om den dyker upp
-                    d.findElements(AppiumBy.xpath("//*[@text='Wait']"))
-                            .stream().findFirst().ifPresent(btn -> {
-                                try { btn.click(); } catch (Exception ignored) {}
-                            });
+                    // Stäng ANR-dialog ("System UI isn't responding") — bara Android
+                    if (!"ios".equalsIgnoreCase(PLATFORM)) {
+                        d.findElements(AppiumBy.xpath("//*[@text='Wait']"))
+                                .stream().findFirst().ifPresent(btn -> {
+                                    try { btn.click(); } catch (Exception ignored) {}
+                                });
+                    }
                     return !d.findElements(AppiumBy.accessibilityId("startButton")).isEmpty();
                 });
 
@@ -92,6 +99,30 @@ public class TimerSteps {
         timerPage     = new TimerPage(driver);
         continuePage  = new ContinuePage(driver);
         historyPage   = new HistoryPage(driver);
+    }
+
+    private void setUpAndroid() throws Exception {
+        UiAutomator2Options options = new UiAutomator2Options()
+                .setDeviceName("emulator-5554")
+                .setAppPackage(ANDROID_APP_ID)
+                .setAppActivity(".MainActivity")
+                .setNoReset(true)
+                .setUiautomator2ServerInstallTimeout(Duration.ofSeconds(120))
+                .setUiautomator2ServerLaunchTimeout(Duration.ofSeconds(120))
+                .setAdbExecTimeout(Duration.ofSeconds(120));
+        driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+        driver.setSetting("waitForIdleTimeout", 0);
+    }
+
+    private void setUpIos() throws Exception {
+        String udid = System.getProperty("deviceUDID", "");
+        XCUITestOptions options = new XCUITestOptions()
+                .setBundleId(IOS_BUNDLE_ID)
+                .setNoReset(true)
+                .setWdaLaunchTimeout(Duration.ofSeconds(120))
+                .setWdaConnectionTimeout(Duration.ofSeconds(120));
+        if (!udid.isEmpty()) options.setUdid(udid);
+        driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
     }
 
     @Given("appen är startad")
@@ -165,7 +196,7 @@ public class TimerSteps {
 
     @When("användaren startar sekvensen")
     public void starterSekvensen() {
-        try { driver.hideKeyboard(); } catch (Exception ignored) {}
+        try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
         taskInputPage.clickStart();
     }
 
@@ -178,9 +209,21 @@ public class TimerSteps {
     public void skaTimernVisaJobba(String expectedMode, int index, int total) {
         String expectedTask     = subtasks.get(index - 1);
         String expectedProgress = index + " av " + total;
-        waitForText(timerPage.getModeElement(),     expectedMode);
-        waitForText(timerPage.getTaskElement(),     expectedTask);
-        waitForText(timerPage.getProgressElement(), expectedProgress);
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(d -> expectedMode.equals(timerPage.getModeElement().getText()) &&
+                                expectedTask.equals(timerPage.getTaskElement().getText()) &&
+                                expectedProgress.equals(timerPage.getProgressElement().getText()));
+        } catch (TimeoutException e) {
+            String mode     = safeGetText(timerPage.getModeElement());
+            String task     = safeGetText(timerPage.getTaskElement());
+            String progress = safeGetText(timerPage.getProgressElement());
+            throw new AssertionError(String.format(
+                    "Timer visade inte rätt värden inom 5s.%n" +
+                    "Förväntade: mode='%s', task='%s', progress='%s'%n" +
+                    "Hittade:    mode='%s', task='%s', progress='%s'",
+                    expectedMode, expectedTask, expectedProgress, mode, task, progress), e);
+        }
     }
 
     @Then("ska jobba-animationen visas och paus-animationen vara dold")
@@ -203,17 +246,22 @@ public class TimerSteps {
 
     @When("timern räknar ner klart")
     public void timernRäknarNerKlart() {
-        boolean wasJobba = !driver.findElements(By.xpath(
-                "//android.widget.TextView[@content-desc='timerModeLabel' and @text='JOBBA!']")).isEmpty();
+        By modeBy = "ios".equalsIgnoreCase(PLATFORM)
+                ? AppiumBy.accessibilityId("timerModeLabel")
+                : By.xpath("//android.widget.TextView[@content-desc='timerModeLabel']");
+        By continueBy = "ios".equalsIgnoreCase(PLATFORM)
+                ? AppiumBy.accessibilityId("continueDoneLabel")
+                : By.xpath("//*[@content-desc='continueDoneLabel']");
+
+        List<WebElement> current = driver.findElements(modeBy);
+        boolean wasJobba = !current.isEmpty() && "JOBBA!".equals(current.get(0).getText());
 
         new WebDriverWait(driver, Duration.ofSeconds(Math.max(durationSeconds, breakDurationSeconds) + 15))
                 .until(d -> {
                     try {
-                        List<WebElement> els = d.findElements(
-                                By.xpath("//android.widget.TextView[@content-desc='timerModeLabel']"));
+                        List<WebElement> els = d.findElements(modeBy);
                         if (els.isEmpty()) {
-                            return !d.findElements(By.xpath(
-                                    "//*[@content-desc='continueDoneLabel']")).isEmpty();
+                            return !d.findElements(continueBy).isEmpty();
                         }
                         String text = els.get(0).getText();
                         return wasJobba ? !text.equals("JOBBA!") : !text.equals("VILA!");
@@ -502,6 +550,10 @@ public class TimerSteps {
             throw new AssertionError(
                     "waitForText: förväntade '" + expectedText + "' men hittade '" + actual + "'", e);
         }
+    }
+
+    private String safeGetText(WebElement element) {
+        try { return element.getText(); } catch (Exception e) { return "<kunde inte läsa: " + e.getMessage() + ">"; }
     }
 
     @After
