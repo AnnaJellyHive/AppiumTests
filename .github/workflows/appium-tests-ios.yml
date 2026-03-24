@@ -133,7 +133,12 @@ jobs:
           mvn test \
             -Dplatform=ios \
             -DdeviceUDID=$SIMULATOR_UDID \
-            -Dcucumber.filter.tags="@sekvens"
+            -Dcucumber.filter.tags="@sekvens" \
+            -Dmaven.test.failure.ignore=true
+
+      - name: Generate Masterthought report
+        if: always()
+        run: mvn verify -DskipTests
 
       - name: Publish test report
         if: always()
@@ -142,7 +147,7 @@ jobs:
           name: Cucumber Tests iOS
           path: target/surefire-reports/*.xml
           reporter: java-junit
-          fail-on-error: false
+          fail-on-error: true
 
       - name: Upload Appium log
         if: always()
@@ -156,4 +161,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: cucumber-html-report-ios
-          path: target/cucumber-reports/report.html
+          path: target/cucumber-reports/cucumber-html-reports/
