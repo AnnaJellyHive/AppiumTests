@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -64,8 +65,11 @@ public class TaskInputPage {
     private void setFieldText(WebElement field, String text) {
         if (isIos) {
             ((IOSDriver) driver).setClipboardText(text);
-            field.clear();
-            field.sendKeys(Keys.chord(Keys.COMMAND, "v"));
+            field.click();
+            new Actions(driver)
+                .keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND)
+                .keyDown(Keys.COMMAND).sendKeys("v").keyUp(Keys.COMMAND)
+                .perform();
         } else {
             field.clear();
             field.sendKeys(text);
