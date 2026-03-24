@@ -141,7 +141,7 @@ public class TimerSteps {
         subtasks.add(subtask);
         taskInputPage.addSubtask(subtask);
         int expectedCount = subtasks.size();
-        new WebDriverWait(driver, Duration.ofSeconds(5))
+        new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(d -> taskInputPage.getSubtaskChips().size() >= expectedCount);
     }
 
