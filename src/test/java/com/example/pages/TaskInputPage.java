@@ -1,17 +1,17 @@
 package com.example.pages;
 
+import io.appium.java_client.HasClipboard;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Map;
 
 public class TaskInputPage {
 
@@ -61,13 +61,12 @@ public class TaskInputPage {
     }
 
     // On iOS, sendKeys triggers autocorrect even with autoCorrect={false} in the app.
-    // mobile: replaceValue sets the value directly via WDA without keyboard simulation.
+    // Clipboard paste bypasses the keyboard entirely, avoiding autocorrect.
     private void setFieldText(WebElement field, String text) {
         if (isIos) {
-            field.click();
-            WebElement active = driver.switchTo().activeElement();
-            driver.executeScript("mobile: replaceValue",
-                    Map.of("elementId", ((RemoteWebElement) active).getId(), "value", text));
+            ((HasClipboard) driver).setClipboardText(text);
+            field.clear();
+            field.sendKeys(Keys.chord(Keys.COMMAND, "v"));
         } else {
             field.clear();
             field.sendKeys(text);
