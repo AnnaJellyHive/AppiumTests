@@ -4,14 +4,14 @@ import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class TaskInputPage {
 
@@ -64,12 +64,10 @@ public class TaskInputPage {
     // Clipboard paste bypasses the keyboard entirely, avoiding autocorrect.
     private void setFieldText(WebElement field, String text) {
         if (isIos) {
-            ((IOSDriver) driver).setClipboardText(text);
-            field.click();
-            new Actions(driver)
-                .keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.COMMAND)
-                .keyDown(Keys.COMMAND).sendKeys("v").keyUp(Keys.COMMAND)
-                .perform();
+            Map<String, Object> args = new HashMap<>();
+            args.put("element", field);
+            args.put("value", text);
+            driver.executeScript("mobile: setValue", args);
         } else {
             field.clear();
             field.sendKeys(text);
