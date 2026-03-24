@@ -1,6 +1,5 @@
 package com.example.pages;
 
-import io.appium.java_client.HasClipboard;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -64,7 +63,7 @@ public class TaskInputPage {
     // Clipboard paste bypasses the keyboard entirely, avoiding autocorrect.
     private void setFieldText(WebElement field, String text) {
         if (isIos) {
-            ((HasClipboard) driver).setClipboardText(text);
+            ((IOSDriver) driver).setClipboardText(text);
             field.clear();
             field.sendKeys(Keys.chord(Keys.COMMAND, "v"));
         } else {
