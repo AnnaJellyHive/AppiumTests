@@ -11,15 +11,15 @@ import java.time.Duration;
 
 public class TimerPage {
 
-    @AndroidFindBy(xpath = "//*[@content-desc='timerModeLabel']")
+    @AndroidFindBy(accessibility = "timerModeLabel")
     @iOSXCUITFindBy(accessibility = "timerModeLabel")
     private WebElement timerModeLabel;
 
-    @AndroidFindBy(xpath = "//*[@content-desc='timerTaskName']")
+    @AndroidFindBy(accessibility = "timerTaskName")
     @iOSXCUITFindBy(accessibility = "timerTaskName")
     private WebElement timerTaskName;
 
-    @AndroidFindBy(xpath = "//*[@content-desc='timerProgress']")
+    @AndroidFindBy(accessibility = "timerProgress")
     @iOSXCUITFindBy(accessibility = "timerProgress")
     private WebElement timerProgress;
 

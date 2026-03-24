@@ -253,12 +253,8 @@ public class TimerSteps {
 
     @When("timern räknar ner klart")
     public void timernRäknarNerKlart() {
-        By modeBy = "ios".equalsIgnoreCase(PLATFORM)
-                ? AppiumBy.accessibilityId("timerModeLabel")
-                : By.xpath("//android.widget.TextView[@content-desc='timerModeLabel']");
-        By continueBy = "ios".equalsIgnoreCase(PLATFORM)
-                ? AppiumBy.accessibilityId("continueDoneLabel")
-                : By.xpath("//*[@content-desc='continueDoneLabel']");
+        By modeBy = AppiumBy.accessibilityId("timerModeLabel");
+        By continueBy = AppiumBy.accessibilityId("continueDoneLabel");
 
         List<WebElement> current = driver.findElements(modeBy);
         boolean wasJobba = !current.isEmpty() && "JOBBA!".equals(getElementText(current.get(0)));
