@@ -45,7 +45,7 @@ public class TimerSteps {
 
     private static final String PLATFORM = System.getProperty("platform", "android");
     private static final String ANDROID_APP_ID = "com.timerapp";
-    private static final String IOS_BUNDLE_ID  = "org.reactjs.native.example.TimerApp";
+    private static final String IOS_BUNDLE_ID  = "com.annamarkstrom.zonat";
 
     private AppiumDriver driver;
     private TaskInputPage taskInputPage;
