@@ -1,14 +1,17 @@
 package com.example.pages;
 
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
+import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 
 public class TaskInputPage {
 
@@ -48,29 +51,44 @@ public class TaskInputPage {
     @iOSXCUITFindBy(xpath = "//*[contains(@name, 'subtaskChip_')]")
     private List<WebElement> subtaskChips;
 
+    private final RemoteWebDriver driver;
+    private final boolean isIos;
+
     public TaskInputPage(RemoteWebDriver driver) {
+        this.driver = driver;
+        this.isIos = driver instanceof IOSDriver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
     }
 
+    // On iOS, sendKeys triggers autocorrect even with autoCorrect={false} in the app.
+    // mobile: replaceValue sets the value directly via WDA without keyboard simulation.
+    private void setFieldText(WebElement field, String text) {
+        if (isIos) {
+            field.click();
+            WebElement active = driver.switchTo().activeElement();
+            driver.executeScript("mobile: replaceValue",
+                    Map.of("elementId", ((RemoteWebElement) active).getId(), "value", text));
+        } else {
+            field.clear();
+            field.sendKeys(text);
+        }
+    }
+
     public void enterTaskName(String task) {
-        taskInput.clear();
-        taskInput.sendKeys(task);
+        setFieldText(taskInput, task);
     }
 
     public void addSubtask(String subtask) {
-        subtaskInput.clear();
-        subtaskInput.sendKeys(subtask);
+        setFieldText(subtaskInput, subtask);
         addSubtaskButton.click();
     }
 
     public void setDuration(String seconds) {
-        durationInput.clear();
-        durationInput.sendKeys(seconds);
+        setFieldText(durationInput, seconds);
     }
 
     public void setBreakDuration(String seconds) {
-        breakDurationInput.clear();
-        breakDurationInput.sendKeys(seconds);
+        setFieldText(breakDurationInput, seconds);
     }
 
     public String getTaskInputText()      { return taskInput.getText(); }
@@ -78,8 +96,7 @@ public class TaskInputPage {
     public String getBreakDurationText()  { return breakDurationInput.getText(); }
 
     public void fillSubtaskInput(String text) {
-        subtaskInput.clear();
-        subtaskInput.sendKeys(text);
+        setFieldText(subtaskInput, text);
     }
 
     public void clickAddSubtask() {
