@@ -23,6 +23,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -200,7 +201,10 @@ public class TimerSteps {
     @When("användaren startar sekvensen")
     public void starterSekvensen() {
         try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
-        taskInputPage.clickStart();
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .ignoring(StaleElementReferenceException.class)
+                .ignoring(WebDriverException.class)
+                .until(d -> { taskInputPage.clickStart(); return true; });
     }
 
     @When("användaren klickar på {string}")
@@ -539,10 +543,6 @@ public class TimerSteps {
     }
 
     private String getElementText(WebElement element) {
-        if ("ios".equalsIgnoreCase(PLATFORM)) {
-            String label = element.getAttribute("label");
-            return label != null ? label : element.getText();
-        }
         return element.getText();
     }
 
