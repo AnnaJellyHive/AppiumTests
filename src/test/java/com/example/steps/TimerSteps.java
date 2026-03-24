@@ -203,7 +203,6 @@ public class TimerSteps {
         try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .ignoring(StaleElementReferenceException.class)
-                .ignoring(WebDriverException.class)
                 .until(d -> { taskInputPage.clickStart(); return true; });
     }
 
