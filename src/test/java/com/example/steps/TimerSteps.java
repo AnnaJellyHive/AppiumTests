@@ -373,10 +373,7 @@ public class TimerSteps {
 
     @And("användaren rensar formuläret")
     public void rensarFormularet() {
-        driver.findElement(AppiumBy.androidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().description(\"clearButton\"))"
-        )).click();
+        waitForElementToBeVisible(AppiumBy.accessibilityId("clearButton")).click();
     }
 
     @And("användaren väljer den sparade uppgiften {string}")
