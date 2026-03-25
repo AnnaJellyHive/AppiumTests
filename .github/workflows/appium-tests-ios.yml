@@ -87,7 +87,7 @@ jobs:
           node node_modules/react-native/scripts/generate-codegen-artifacts.js \
             -p . \
             -t ios \
-            -o ios/build/generated
+            -o ios
 
       - name: Build iOS app for Simulator
         working-directory: TimerApp
