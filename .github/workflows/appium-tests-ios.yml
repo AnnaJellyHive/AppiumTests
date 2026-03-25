@@ -52,7 +52,9 @@ jobs:
         id: pods-cache
         uses: actions/cache@v4
         with:
-          path: TimerApp/ios/Pods
+          path: |
+            TimerApp/ios/Pods
+            TimerApp/ios/TimerApp.xcworkspace
           key: pods-${{ hashFiles('TimerApp/ios/Podfile.lock') }}
 
       - name: Cache Appium driver
