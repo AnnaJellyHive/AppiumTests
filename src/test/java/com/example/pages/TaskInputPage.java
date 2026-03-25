@@ -1,6 +1,5 @@
 package com.example.pages;
 
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -9,9 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class TaskInputPage {
 
@@ -51,27 +48,13 @@ public class TaskInputPage {
     @iOSXCUITFindBy(xpath = "//*[contains(@name, 'subtaskChip_')]")
     private List<WebElement> subtaskChips;
 
-    private final RemoteWebDriver driver;
-    private final boolean isIos;
-
     public TaskInputPage(RemoteWebDriver driver) {
-        this.driver = driver;
-        this.isIos = driver instanceof IOSDriver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
     }
 
-    // On iOS, sendKeys triggers autocorrect even with autoCorrect={false} in the app.
-    // Clipboard paste bypasses the keyboard entirely, avoiding autocorrect.
     private void setFieldText(WebElement field, String text) {
-        if (isIos) {
-            Map<String, Object> args = new HashMap<>();
-            args.put("element", field);
-            args.put("value", text);
-            driver.executeScript("mobile: replaceValue", args);
-        } else {
-            field.clear();
-            field.sendKeys(text);
-        }
+        field.clear();
+        field.sendKeys(text);
     }
 
     public void enterTaskName(String task) {
