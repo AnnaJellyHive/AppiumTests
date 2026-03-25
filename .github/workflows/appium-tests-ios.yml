@@ -91,6 +91,7 @@ jobs:
             -sdk iphonesimulator \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
             -derivedDataPath ios/build \
+            -parallelizeTargets NO \
             CODE_SIGNING_ALLOWED=NO \
             build
 
