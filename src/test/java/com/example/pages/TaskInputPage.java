@@ -48,8 +48,28 @@ public class TaskInputPage {
     @iOSXCUITFindBy(xpath = "//*[contains(@name, 'subtaskChip_')]")
     private List<WebElement> subtaskChips;
 
+    @AndroidFindBy(accessibility = "saveTemplateButton")
+    @iOSXCUITFindBy(accessibility = "saveTemplateButton")
+    private WebElement saveTemplateButton;
+
+    @AndroidFindBy(accessibility = "chooseTemplateButton")
+    @iOSXCUITFindBy(accessibility = "chooseTemplateButton")
+    private WebElement chooseTemplateButton;
+
+    @AndroidFindBy(accessibility = "templateDialogClose")
+    @iOSXCUITFindBy(accessibility = "templateDialogClose")
+    private WebElement templateDialogClose;
+
+    @AndroidFindBy(accessibility = "clearButton")
+    @iOSXCUITFindBy(accessibility = "clearButton")
+    private WebElement clearButton;
+
+    @AndroidFindBy(accessibility = "templateItemName")
+    @iOSXCUITFindBy(accessibility = "templateItemName")
+    private List<WebElement> templateItems;
+
     public TaskInputPage(RemoteWebDriver driver) {
-        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ZERO), this);
     }
 
     private void setFieldText(WebElement field, String text) {
@@ -87,6 +107,11 @@ public class TaskInputPage {
     }
 
     public List<WebElement> getSubtaskChips()        { return subtaskChips; }
+    public WebElement getSaveTemplateButton()        { return saveTemplateButton; }
+    public WebElement getChooseTemplateButton()      { return chooseTemplateButton; }
+    public WebElement getTemplateDialogClose()       { return templateDialogClose; }
+    public WebElement getClearButton()               { return clearButton; }
+    public List<WebElement> getTemplateItems()       { return templateItems; }
     public boolean isTaskInputErrorVisible()         { return taskInputError.isDisplayed(); }
     public boolean isSubtaskInputErrorVisible()      { return subtaskInputError.isDisplayed(); }
 

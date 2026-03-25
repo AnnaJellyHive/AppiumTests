@@ -325,8 +325,7 @@ public class TimerSteps {
 
     @And("ska underuppgifterna vara borta")
     public void skaUnderuppgifternaVaraBorta() {
-        List<WebElement> chips = driver.findElements(
-                AppiumBy.androidUIAutomator("new UiSelector().descriptionContains(\"subtaskChip_\")"));
+        List<WebElement> chips = taskInputPage.getSubtaskChips();
         assertTrue(chips.isEmpty(), "Underuppgifter finns kvar efter rensning");
     }
 
@@ -356,40 +355,45 @@ public class TimerSteps {
 
     @And("användaren stänger dialogen")
     public void stängerDialogen() {
-        waitForElementToBeVisible(AppiumBy.accessibilityId("templateDialogClose")).click();
+        waitForElementToBeVisible(taskInputPage.getTemplateDialogClose()).click();
     }
 
     @And("användaren sparar uppgiften")
     public void sparerUppgiften() {
-        waitForElementToBeVisible(AppiumBy.accessibilityId("saveTemplateButton")).click();
-        // Stäng alert (t.ex. "Uppgift sparad!" eller duplicat-varning)
+        waitForElementToBeVisible(taskInputPage.getSaveTemplateButton()).click();
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(3))
-                    .until(d -> !d.findElements(
-                            AppiumBy.androidUIAutomator("new UiSelector().text(\"OK\")")).isEmpty());
-            driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"OK\")")).click();
+            if ("ios".equalsIgnoreCase(PLATFORM)) {
+                new WebDriverWait(driver, Duration.ofSeconds(5))
+                        .until(d -> { try { d.switchTo().alert(); return true; } catch (Exception e) { return false; } });
+                driver.switchTo().alert().accept();
+            } else {
+                new WebDriverWait(driver, Duration.ofSeconds(5))
+                        .until(d -> !d.findElements(AppiumBy.androidUIAutomator("new UiSelector().text(\"OK\")")).isEmpty());
+                driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"OK\")")).click();
+                // Vänta tills dialogen försvunnit
+                new WebDriverWait(driver, Duration.ofSeconds(5))
+                        .until(d -> d.findElements(AppiumBy.androidUIAutomator("new UiSelector().text(\"OK\")")).isEmpty());
+            }
         } catch (Exception ignored) {}
     }
 
     @And("användaren rensar formuläret")
     public void rensarFormularet() {
-        try {
-            driver.findElement(AppiumBy.androidUIAutomator(
-                    "new UiScrollable(new UiSelector().scrollable(true))" +
-                    ".scrollIntoView(new UiSelector().description(\"clearButton\"))"));
-        } catch (Exception ignored) {}
-        waitForElementToBeVisible(AppiumBy.accessibilityId("clearButton")).click();
+        waitForElementToBeVisible(taskInputPage.getClearButton()).click();
     }
 
     @And("användaren väljer den sparade uppgiften {string}")
     public void väljerSparadUppgift(String name) {
-        waitForElementToBeVisible(AppiumBy.accessibilityId("chooseTemplateButton")).click();
-        By templateBy = By.xpath(
-                "//android.widget.TextView[@content-desc='templateItemName' and @text='" + name + "']");
-        waitForElementToBeVisible(templateBy).click();
-        // Vänta tills dialogen stängts och formuläret fyllts i
+        waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
-                d.findElements(By.xpath("//*[@content-desc='templateItemName']")).isEmpty());
+                taskInputPage.getTemplateItems().stream()
+                        .anyMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
+        taskInputPage.getTemplateItems().stream()
+                .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
+                .findFirst().ifPresent(WebElement::click);
+        // Vänta tills dialogen stängts
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+                taskInputPage.getTemplateItems().isEmpty());
     }
 
     @Then("ska formuläret vara ifyllt med uppgiften {string}")
@@ -400,13 +404,12 @@ public class TimerSteps {
 
     @And("användaren tar bort den sparade uppgiften {string}")
     public void tarBortSparadUppgift(String name) throws InterruptedException {
-        waitForElementToBeVisible(AppiumBy.accessibilityId("chooseTemplateButton")).click();
-        // Vänta tills rätt rad syns, bestäm sedan dess index (delete-knapparna har samma ordning)
-        By targetItemBy = By.xpath(
-                "//android.widget.TextView[@content-desc='templateItemName' and @text='" + name + "']");
-        waitForElementToBeVisible(targetItemBy);
-        List<WebElement> itemNames = driver.findElements(
-                By.xpath("//android.widget.TextView[@content-desc='templateItemName']"));
+        waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
+        // Vänta tills rätt rad syns
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+                taskInputPage.getTemplateItems().stream()
+                        .anyMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
+        List<WebElement> itemNames = taskInputPage.getTemplateItems();
         int rowIndex = -1;
         for (int i = 0; i < itemNames.size(); i++) {
             try { if (name.equals(itemNames.get(i).getText())) { rowIndex = i; break; } } catch (Exception ignored) {}
@@ -428,29 +431,31 @@ public class TimerSteps {
 
     @Then("ska den sparade uppgiften {string} inte längre finnas i listan")
     public void skaUppgiftenInteLängreFinnasIListan(String name) {
-        By itemBy = By.xpath(
-                "//android.widget.TextView[@content-desc='templateItemName' and @text='" + name + "']");
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d -> d.findElements(itemBy).isEmpty());
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+                taskInputPage.getTemplateItems().stream()
+                        .noneMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
     }
 
     @Then("ska bara en sparad uppgift med namnet {string} finnas")
     public void skaBaraEnSparadUppgiftMedNamnet(String name) {
-        waitForElementToBeVisible(AppiumBy.accessibilityId("chooseTemplateButton")).click();
-        By templateBy = By.xpath(
-                "//android.widget.TextView[@content-desc='templateItemName' and @text='" + name + "']");
-        waitForElementToBeVisible(templateBy);
-        List<WebElement> matches = driver.findElements(templateBy);
+        waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+                !taskInputPage.getTemplateItems().isEmpty());
+        List<WebElement> matches = taskInputPage.getTemplateItems().stream()
+                .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
+                .collect(java.util.stream.Collectors.toList());
         assertEquals(1, matches.size(),
                 "Förväntade exakt 1 sparad uppgift med namnet '" + name + "' men hittade " + matches.size());
-        waitForElementToBeVisible(AppiumBy.accessibilityId("templateDialogClose")).click();
+        waitForElementToBeVisible(taskInputPage.getTemplateDialogClose()).click();
     }
 
     @And("användaren tar bort den senaste historikposten")
     public void tarBortSenasteHistorikpost() throws InterruptedException {
         // Vänta tills uppgiften dyker upp i historiken
-        By targetItemBy = By.xpath(
-                "//android.widget.TextView[@content-desc='taskItemTitle' and contains(@text,'" + lastTaskName + "')]");
-        waitForElementToBeVisible(targetItemBy);
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
+                historyPage.getTitleElements().stream().anyMatch(e -> {
+                    try { return e.getText().contains(lastTaskName); } catch (Exception ex) { return false; }
+                }));
 
         List<WebElement> items = historyPage.getTitleElements();
         historyCountBefore = (int) items.stream().filter(e -> {

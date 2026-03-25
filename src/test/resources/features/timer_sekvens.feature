@@ -29,7 +29,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | uppgift  | underuppgift1 | underuppgift2       | tid | pausTid |
-      | Läsa bok | Öppna boken   | Läs 2 sidor i boken | 30  | 30      |
+      | Läsa bok | Öppna boken   | Läs 2 sidor i boken | 15  | 15      |
 
   @mall
   Scenario Outline: Spara, välj och ta bort en sparad uppgift
