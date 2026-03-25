@@ -500,10 +500,12 @@ public class TimerSteps {
     }
 
     private void tapDeleteAndConfirm(String deleteBtnAccessibilityId, int rowIndex, int targetY) throws InterruptedException {
-        // Flera rader kan ha samma accessibilityId — välj rätt via listindex
+        // Välj knappen närmast den svepte radens Y — efter ett svep syns bara en delete-knapp
         List<WebElement> btns = driver.findElements(AppiumBy.accessibilityId(deleteBtnAccessibilityId));
-        assertTrue(rowIndex < btns.size(), "Hittade ingen " + deleteBtnAccessibilityId + " vid index " + rowIndex);
-        WebElement deleteBtn = btns.get(rowIndex);
+        assertTrue(!btns.isEmpty(), "Hittade ingen " + deleteBtnAccessibilityId + " efter svep");
+        WebElement deleteBtn = btns.stream()
+                .min(java.util.Comparator.comparingInt(e -> Math.abs(e.getRect().y - targetY)))
+                .get();
         // X från delete-knappens rect (alltid vid högerkanten), Y från den svepte raden
         int btnX = deleteBtn.getRect().x + deleteBtn.getRect().width / 2;
         int btnY = targetY;
