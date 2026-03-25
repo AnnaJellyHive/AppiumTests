@@ -35,9 +35,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -502,12 +500,19 @@ public class TimerSteps {
         // X från delete-knappens rect (alltid vid högerkanten), Y från den svepte raden
         int btnX = deleteBtn.getRect().x + deleteBtn.getRect().width / 2;
         int btnY = targetY;
-        By jaBy = By.id("android:id/button1"); // positiv-knappen i native AlertDialog
+        // positiv-knappen i native AlertDialog — plattformsberoende
+        By jaBy = "ios".equalsIgnoreCase(PLATFORM)
+                ? AppiumBy.accessibilityId("Ja")
+                : By.id("android:id/button1");
         for (int attempt = 0; attempt < 3; attempt++) {
-            Map<String, Object> args = new HashMap<>();
-            args.put("x", btnX);
-            args.put("y", btnY);
-            driver.executeScript("mobile: clickGesture", args);
+            // PointerInput-tap fungerar på både Android och iOS (mobile: clickGesture är Android-only)
+            PointerInput tapFinger = new PointerInput(PointerInput.Kind.TOUCH, "tapFinger");
+            Sequence tap = new Sequence(tapFinger, 0);
+            tap.addAction(tapFinger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), btnX, btnY));
+            tap.addAction(tapFinger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+            tap.addAction(tapFinger.createPointerMove(Duration.ofMillis(50), PointerInput.Origin.viewport(), btnX, btnY));
+            tap.addAction(tapFinger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+            driver.perform(Arrays.asList(tap));
             try {
                 new WebDriverWait(driver, Duration.ofSeconds(3))
                         .until(ExpectedConditions.visibilityOfElementLocated(jaBy)).click();

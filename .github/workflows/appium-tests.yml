@@ -122,7 +122,7 @@ jobs:
             adb logcat -c
             adb logcat -v time *:W com.timerapp:V ReactNativeJS:V AndroidRuntime:V > logcat.txt &
             LOGCAT_PID=$!
-            mvn test -Dcucumber.filter.tags="@sekvens"
+            mvn test -Dcucumber.filter.tags="@sekvens or @mall"
             kill $LOGCAT_PID || true
 
       - name: Publish test report
