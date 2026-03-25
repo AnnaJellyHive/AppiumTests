@@ -44,7 +44,7 @@ Alla hjälpmetoder kastar `AssertionError` (inte `TimeoutException`) vid timeout
 
 - Använd i första hand `accessibilityId` eller `id`
 - Använd `xpath` bara när `accessibilityId`/`id` inte fungerar
-- Deklarera element i page-klasserna med `@AndroidFindBy` (och `@iOSXCUITFindBy` för iOS)
+- Deklarera element i page-klasserna med `@AndroidFindBy` (och `@iOSXCUITFindBy` för iOS) — använd aldrig `driver.findElements(AppiumBy.accessibilityId(...))` direkt i steg-klassen när ett page object-fält kan användas istället
 - Page objects använder `AppiumFieldDecorator(Duration.ZERO)` — viktigt för att `WebDriverWait` ska kunna polla snabbt
 
 ## CI-pipeline
