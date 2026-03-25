@@ -36,11 +36,11 @@ public class TaskInputPage {
     @iOSXCUITFindBy(accessibility = "startButton")
     private WebElement startButton;
 
-    @AndroidFindBy(accessibility = "taskInputError")
+    @AndroidFindBy(xpath = "//*[@content-desc='taskInputError']")
     @iOSXCUITFindBy(accessibility = "taskInputError")
     private WebElement taskInputError;
 
-    @AndroidFindBy(accessibility = "subtaskInputError")
+    @AndroidFindBy(xpath = "//*[@content-desc='subtaskInputError']")
     @iOSXCUITFindBy(accessibility = "subtaskInputError")
     private WebElement subtaskInputError;
 
@@ -64,7 +64,7 @@ public class TaskInputPage {
     @iOSXCUITFindBy(accessibility = "clearButton")
     private WebElement clearButton;
 
-    @AndroidFindBy(accessibility = "templateItemName")
+    @AndroidFindBy(xpath = "//*[@content-desc='templateItemName']")
     @iOSXCUITFindBy(accessibility = "templateItemName")
     private List<WebElement> templateItems;
 
