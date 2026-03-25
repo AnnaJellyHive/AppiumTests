@@ -63,6 +63,8 @@ Sänk inte dessa utan att ha verifierat att CI-körningar klarar det.
 
 APK:n cachas baserat på TimerApp-källkod + gradle-filer — om bara testkod ändras hoppas hela bygget över. Appium-drivern (`~/.appium`) cachas baserat på workflow-filens hash.
 
+iOS-workflow:t (`appium-tests-ios.yml`) bygger med `xcodebuild -parallelizeTargets NO` — **ta inte bort den flaggan**. Utan den misslyckas bygget med att `safeareacontext-generated.mm` och `rnscreens-generated.mm` inte hittas, eftersom Xcodes parallella byggsystem startar kompileringen innan ReactCodegens script hunnit generera filerna.
+
 Kör CI manuellt (utan att pusha) via GitHub UI: Actions → Appium Tests → Run workflow, eller:
 ```bash
 gh workflow run appium-tests.yml --repo AnnaJellyHive/AppiumTests
