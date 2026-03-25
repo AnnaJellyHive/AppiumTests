@@ -67,7 +67,7 @@ public class TaskInputPage {
             Map<String, Object> args = new HashMap<>();
             args.put("element", field);
             args.put("value", text);
-            driver.executeScript("mobile: setValue", args);
+            driver.executeScript("mobile: replaceValue", args);
         } else {
             field.clear();
             field.sendKeys(text);
