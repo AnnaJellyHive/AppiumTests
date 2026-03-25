@@ -69,7 +69,7 @@ public class TaskInputPage {
     private List<WebElement> templateItems;
 
     public TaskInputPage(RemoteWebDriver driver) {
-        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ZERO), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(10)), this);
     }
 
     private void setFieldText(WebElement field, String text) {
