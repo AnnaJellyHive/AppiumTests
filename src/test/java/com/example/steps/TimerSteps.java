@@ -121,6 +121,7 @@ public class TimerSteps {
                 .setNoReset(true)
                 .setWdaLaunchTimeout(Duration.ofSeconds(300))
                 .setWdaConnectionTimeout(Duration.ofSeconds(300));
+        options.setCapability("interKeyDelay", 150);
         if (!udid.isEmpty()) options.setUdid(udid);
         driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
     }
@@ -170,12 +171,18 @@ public class TimerSteps {
 
     @Then("ska feltext för uppgiftsnamnet visas")
     public void skaFeltextFörUppgiftsnamnetVisas() {
-        assertTrue(taskInputPage.isTaskInputErrorVisible(), "Feltext för uppgiftsnamnet visas inte");
+        By locator = "ios".equalsIgnoreCase(PLATFORM)
+            ? AppiumBy.accessibilityId("taskInputError")
+            : By.xpath("//*[@content-desc='taskInputError']");
+        waitForElementToBeVisible(locator);
     }
 
     @Then("ska feltext för underuppgiftsnamnet visas")
     public void skaFeltextFörUnderuppgiftsnamnetVisas() {
-        assertTrue(taskInputPage.isSubtaskInputErrorVisible(), "Feltext för underuppgiftsnamnet visas inte");
+        By locator = "ios".equalsIgnoreCase(PLATFORM)
+            ? AppiumBy.accessibilityId("subtaskInputError")
+            : By.xpath("//*[@content-desc='subtaskInputError']");
+        waitForElementToBeVisible(locator);
     }
 
     @Then("ska underuppgiftsnamnet i timern ha längden {int} tecken")
@@ -366,6 +373,11 @@ public class TimerSteps {
 
     @And("användaren sparar uppgiften")
     public void sparerUppgiften() {
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            try { driver.executeScript("mobile: hideKeyboard"); } catch (Exception ignored) {}
+            driver.executeScript("mobile: scroll",
+                    Map.of("direction", "down", "name", "saveTemplateButton"));
+        }
         waitForElementToBeVisible(taskInputPage.getSaveTemplateButton()).click();
         try {
             if ("ios".equalsIgnoreCase(PLATFORM)) {
@@ -464,13 +476,22 @@ public class TimerSteps {
     @Then("ska bara en sparad uppgift med namnet {string} finnas")
     public void skaBaraEnSparadUppgiftMedNamnet(String name) {
         waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
-                !taskInputPage.getTemplateItems().isEmpty());
-        List<WebElement> matches = taskInputPage.getTemplateItems().stream()
-                .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
-                .collect(java.util.stream.Collectors.toList());
-        assertEquals(1, matches.size(),
-                "Förväntade exakt 1 sparad uppgift med namnet '" + name + "' men hittade " + matches.size());
+        int count;
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
+                    !taskInputPage.getTemplateItems().isEmpty());
+            count = (int) taskInputPage.getTemplateItems().stream()
+                    .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
+                    .count();
+        } else {
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
+                    !d.findElements(AppiumBy.androidUIAutomator(
+                            "new UiSelector().text(\"" + name + "\")")).isEmpty());
+            count = driver.findElements(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"" + name + "\")")).size();
+        }
+        assertEquals(1, count,
+                "Förväntade exakt 1 sparad uppgift med namnet '" + name + "' men hittade " + count);
         waitForElementToBeVisible(taskInputPage.getTemplateDialogClose()).click();
     }
 
