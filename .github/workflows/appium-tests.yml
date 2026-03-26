@@ -9,7 +9,7 @@ on:
 
 permissions:
   checks: write
-  contents: read
+  contents: write
 
 jobs:
   test:
@@ -134,12 +134,20 @@ jobs:
           reporter: java-junit
           fail-on-error: false
 
-      - name: Upload HTML report
+      - name: Deploy Android report to GitHub Pages
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: cucumber-html-report
-          path: target/cucumber-reports/report.html
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/cucumber-reports/
+          destination_dir: android
+          keep_files: true
+
+      - name: Skriv rapport-URL till summary
+        if: always()
+        run: |
+          echo "### Testrapport" >> $GITHUB_STEP_SUMMARY
+          echo "[Öppna HTML-rapport](https://annajellyhive.github.io/AppiumTests/android/report.html)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload logcat
         if: always()
