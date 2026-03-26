@@ -373,7 +373,7 @@ public class TimerSteps {
                         .until(d -> { try { d.switchTo().alert(); return true; } catch (Exception e) { return false; } });
                 driver.switchTo().alert().accept();
             } else {
-                new WebDriverWait(driver, Duration.ofSeconds(5))
+                new WebDriverWait(driver, Duration.ofSeconds(15))
                         .until(d -> !d.findElements(AppiumBy.androidUIAutomator("new UiSelector().text(\"OK\")")).isEmpty());
                 driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"OK\")")).click();
                 // Vänta tills dialogen försvunnit

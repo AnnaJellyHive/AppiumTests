@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -80,7 +79,7 @@ public class TaskInputPage {
 
     public TaskInputPage(RemoteWebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(30)), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ZERO), this);
     }
 
     private void setFieldText(By locator, String text) {
@@ -90,8 +89,7 @@ public class TaskInputPage {
                 WebElement field = d.findElement(locator);
                 field.clear();
                 if ("ios".equalsIgnoreCase(platform)) {
-                    driver.executeScript("mobile: setValue",
-                            Map.of("element", ((RemoteWebElement) field).getId(), "value", text));
+                    driver.executeScript("mobile: type", Map.of("text", text));
                     try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
                 } else {
                     field.sendKeys(text);
