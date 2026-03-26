@@ -1,7 +1,6 @@
 package com.example.pages;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.HidesKeyboard;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
@@ -14,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Map;
 
 public class TaskInputPage {
 
@@ -75,7 +73,6 @@ public class TaskInputPage {
     private List<WebElement> templateItems;
 
     private final RemoteWebDriver driver;
-    private final String platform = System.getProperty("platform", "android");
 
     public TaskInputPage(RemoteWebDriver driver) {
         this.driver = driver;
@@ -88,12 +85,7 @@ public class TaskInputPage {
             .until(d -> {
                 WebElement field = d.findElement(locator);
                 field.clear();
-                if ("ios".equalsIgnoreCase(platform)) {
-                    driver.executeScript("mobile: type", Map.of("text", text));
-                    try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
-                } else {
-                    field.sendKeys(text);
-                }
+                field.sendKeys(text);
                 return true;
             });
     }
