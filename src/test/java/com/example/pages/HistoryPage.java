@@ -28,6 +28,8 @@ public class HistoryPage {
         taskHistoryList.isDisplayed();
     }
 
+    public WebElement getTaskHistoryList() { return taskHistoryList; }
+
     public List<WebElement> getTitleElements() {
         return driver.findElements(AppiumBy.accessibilityId("taskItemTitle"));
     }

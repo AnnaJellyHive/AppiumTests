@@ -1,14 +1,21 @@
 package com.example.pages;
 
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.HidesKeyboard;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Map;
 
 public class TaskInputPage {
 
@@ -68,30 +75,46 @@ public class TaskInputPage {
     @iOSXCUITFindBy(accessibility = "templateItemName")
     private List<WebElement> templateItems;
 
+    private final RemoteWebDriver driver;
+    private final String platform = System.getProperty("platform", "android");
+
     public TaskInputPage(RemoteWebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(30)), this);
     }
 
-    private void setFieldText(WebElement field, String text) {
-        field.clear();
-        field.sendKeys(text);
+    private void setFieldText(By locator, String text) {
+        new WebDriverWait(driver, Duration.ofSeconds(15))
+            .ignoring(StaleElementReferenceException.class)
+            .until(d -> {
+                WebElement field = d.findElement(locator);
+                field.clear();
+                if ("ios".equalsIgnoreCase(platform)) {
+                    driver.executeScript("mobile: setValue",
+                            Map.of("element", ((RemoteWebElement) field).getId(), "value", text));
+                    try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
+                } else {
+                    field.sendKeys(text);
+                }
+                return true;
+            });
     }
 
     public void enterTaskName(String task) {
-        setFieldText(taskInput, task);
+        setFieldText(AppiumBy.accessibilityId("taskInput"), task);
     }
 
     public void addSubtask(String subtask) {
-        setFieldText(subtaskInput, subtask);
+        setFieldText(AppiumBy.accessibilityId("subtaskInput"), subtask);
         addSubtaskButton.click();
     }
 
     public void setDuration(String seconds) {
-        setFieldText(durationInput, seconds);
+        setFieldText(AppiumBy.accessibilityId("durationInput"), seconds);
     }
 
     public void setBreakDuration(String seconds) {
-        setFieldText(breakDurationInput, seconds);
+        setFieldText(AppiumBy.accessibilityId("breakDurationInput"), seconds);
     }
 
     public String getTaskInputText()      { return taskInput.getText(); }
@@ -99,7 +122,7 @@ public class TaskInputPage {
     public String getBreakDurationText()  { return breakDurationInput.getText(); }
 
     public void fillSubtaskInput(String text) {
-        setFieldText(subtaskInput, text);
+        setFieldText(AppiumBy.accessibilityId("subtaskInput"), text);
     }
 
     public void clickAddSubtask() {

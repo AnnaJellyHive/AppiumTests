@@ -36,6 +36,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -296,10 +297,15 @@ public class TimerSteps {
     @Then("ska historiken visa minst {int} körningar med uppgiften {string}")
     public void skaHistorikenVisaMinst(int minCount, String taskName) {
         // Vänta tills minst minCount poster med taskName syns i historiken
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> {
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
             try {
-                d.findElement(AppiumBy.androidUIAutomator(
-                        "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(10)"));
+                if ("ios".equalsIgnoreCase(PLATFORM)) {
+                    driver.executeScript("mobile: scroll",
+                            Map.of("direction", "down", "element", historyPage.getTaskHistoryList()));
+                } else {
+                    d.findElement(AppiumBy.androidUIAutomator(
+                            "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(10)"));
+                }
             } catch (Exception ignored) {}
             long matchCount = historyPage.getTitleElements().stream().filter(e -> {
                 try { return e.getText().contains(taskName); } catch (Exception ex) { return false; }
@@ -385,12 +391,21 @@ public class TimerSteps {
     @And("användaren väljer den sparade uppgiften {string}")
     public void väljerSparadUppgift(String name) {
         waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
-        new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
-                taskInputPage.getTemplateItems().stream()
-                        .anyMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
-        taskInputPage.getTemplateItems().stream()
-                .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
-                .findFirst().ifPresent(WebElement::click);
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
+                    taskInputPage.getTemplateItems().stream()
+                            .anyMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
+            taskInputPage.getTemplateItems().stream()
+                    .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
+                    .findFirst().ifPresent(WebElement::click);
+        } else {
+            // Android: getText() returnerar "" för content-desc-element — sök på synlig text
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
+                    !d.findElements(AppiumBy.androidUIAutomator(
+                            "new UiSelector().text(\"" + name + "\")")).isEmpty());
+            driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiSelector().text(\"" + name + "\")")).click();
+        }
         // Vänta tills dialogen stängts
         new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
                 taskInputPage.getTemplateItems().isEmpty());
@@ -405,17 +420,27 @@ public class TimerSteps {
     @And("användaren tar bort den sparade uppgiften {string}")
     public void tarBortSparadUppgift(String name) throws InterruptedException {
         waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
-        // Vänta tills rätt rad syns
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
-                taskInputPage.getTemplateItems().stream()
-                        .anyMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
-        List<WebElement> itemNames = taskInputPage.getTemplateItems();
-        int rowIndex = -1;
-        for (int i = 0; i < itemNames.size(); i++) {
-            try { if (name.equals(itemNames.get(i).getText())) { rowIndex = i; break; } } catch (Exception ignored) {}
+        WebElement item;
+        int rowIndex;
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+                    taskInputPage.getTemplateItems().stream()
+                            .anyMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
+            List<WebElement> itemNames = taskInputPage.getTemplateItems();
+            rowIndex = -1;
+            for (int i = 0; i < itemNames.size(); i++) {
+                try { if (name.equals(itemNames.get(i).getText())) { rowIndex = i; break; } } catch (Exception ignored) {}
+            }
+            assertTrue(rowIndex >= 0, "Hittade inte mallen '" + name + "' i listan");
+            item = itemNames.get(rowIndex);
+        } else {
+            // Android: getText() returnerar "" för content-desc-element — sök på synlig text
+            new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
+                    !d.findElements(AppiumBy.androidUIAutomator(
+                            "new UiSelector().text(\"" + name + "\")")).isEmpty());
+            item = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + name + "\")"));
+            rowIndex = 0;
         }
-        assertTrue(rowIndex >= 0, "Hittade inte mallen '" + name + "' i listan");
-        WebElement item = itemNames.get(rowIndex);
         int y = item.getRect().y + item.getRect().height / 2;
         // Svepa hela skärmbredden för att säkert trigga PanResponder
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
