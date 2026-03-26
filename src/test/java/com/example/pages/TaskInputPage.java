@@ -86,7 +86,8 @@ public class TaskInputPage {
                 WebElement field = d.findElement(locator);
                 field.clear();
                 field.sendKeys(text);
-                return true;
+                String actual = field.getText();
+                return text.equals(actual) || actual.startsWith(text);
             });
     }
 

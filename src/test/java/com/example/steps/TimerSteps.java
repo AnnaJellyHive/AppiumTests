@@ -121,7 +121,6 @@ public class TimerSteps {
                 .setNoReset(true)
                 .setWdaLaunchTimeout(Duration.ofSeconds(300))
                 .setWdaConnectionTimeout(Duration.ofSeconds(300));
-        options.setCapability("interKeyDelay", 150);
         if (!udid.isEmpty()) options.setUdid(udid);
         driver = new IOSDriver(new URL("http://127.0.0.1:4723"), options);
     }
