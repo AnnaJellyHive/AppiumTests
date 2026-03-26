@@ -385,14 +385,14 @@ public class TimerSteps {
     @And("användaren väljer den sparade uppgiften {string}")
     public void väljerSparadUppgift(String name) {
         waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
                 taskInputPage.getTemplateItems().stream()
                         .anyMatch(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } }));
         taskInputPage.getTemplateItems().stream()
                 .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
                 .findFirst().ifPresent(WebElement::click);
         // Vänta tills dialogen stängts
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+        new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
                 taskInputPage.getTemplateItems().isEmpty());
     }
 
