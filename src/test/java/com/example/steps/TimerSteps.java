@@ -172,7 +172,7 @@ public class TimerSteps {
     public void skaFeltextFörUppgiftsnamnetVisas() {
         By locator = "ios".equalsIgnoreCase(PLATFORM)
             ? AppiumBy.accessibilityId("taskInputError")
-            : By.xpath("//*[@content-desc='taskInputError']");
+            : By.xpath("//*[contains(@text, 'Max 50 tecken')]");
         waitForElementToBeVisible(locator);
     }
 
@@ -180,7 +180,7 @@ public class TimerSteps {
     public void skaFeltextFörUnderuppgiftsnamnetVisas() {
         By locator = "ios".equalsIgnoreCase(PLATFORM)
             ? AppiumBy.accessibilityId("subtaskInputError")
-            : By.xpath("//*[@content-desc='subtaskInputError']");
+            : By.xpath("//*[contains(@text, 'Max 50 tecken')]");
         waitForElementToBeVisible(locator);
     }
 
@@ -209,6 +209,15 @@ public class TimerSteps {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .ignoring(StaleElementReferenceException.class)
                 .until(d -> { taskInputPage.clickStart(); return true; });
+        // Vänta tills timer-skärmen är synlig innan steget returnerar.
+        // Timern startar via useFocusEffect — på CI kan navigationsanimationen ta länge,
+        // och timer-fasen hinner gå ut om vi börjar kolla för tidigt.
+        By timerModeLocator = "ios".equalsIgnoreCase(PLATFORM)
+                ? AppiumBy.accessibilityId("timerModeLabel")
+                : By.xpath("//*[@content-desc='timerModeLabel']");
+        new WebDriverWait(driver, Duration.ofSeconds(30))
+                .ignoring(WebDriverException.class)
+                .until(d -> !d.findElements(timerModeLocator).isEmpty());
     }
 
     @When("användaren klickar på {string}")
@@ -251,7 +260,7 @@ public class TimerSteps {
     @Then("ska timern visa paus med nästa underuppgift {int}")
     public void skaTimernVisaPaus(int nextIndex) {
         String expectedText = "Nästa: " + subtasks.get(nextIndex - 1);
-        waitForTextIgnoringWDE(timerPage.getModeElement(),     "VILA!");
+        waitForTextIgnoringWDE(timerPage.getModeElement(),     "PAUSA!");
         waitForTextIgnoringWDE(timerPage.getTaskElement(),     expectedText);
         waitForTextIgnoringWDE(timerPage.getProgressElement(), "Paus");
     }
@@ -262,7 +271,7 @@ public class TimerSteps {
         By continueBy = AppiumBy.accessibilityId("continueDoneLabel");
 
         List<WebElement> current = driver.findElements(modeBy);
-        boolean wasJobba = !current.isEmpty() && "JOBBA!".equals(getElementText(current.get(0)));
+        boolean wasFokus = !current.isEmpty() && "FOKUS!".equals(getElementText(current.get(0)));
 
         new WebDriverWait(driver, Duration.ofSeconds(Math.max(durationSeconds, breakDurationSeconds) + 15))
                 .until(d -> {
@@ -272,7 +281,7 @@ public class TimerSteps {
                             return !d.findElements(continueBy).isEmpty();
                         }
                         String text = getElementText(els.get(0));
-                        return wasJobba ? !text.equals("JOBBA!") : !text.equals("VILA!");
+                        return wasFokus ? !text.equals("FOKUS!") : !text.equals("PAUSA!");
                     } catch (Exception e) {
                         return false;
                     }
@@ -349,11 +358,12 @@ public class TimerSteps {
 
     @And("ska underuppgiften {string} finnas i formuläret")
     public void skaUnderuppgiftenFinnasIFormularet(String subtask) {
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
-            taskInputPage.getSubtaskChips().stream().anyMatch(c -> {
-                try { return c.getText().contains(subtask); } catch (Exception e) { return false; }
-            })
-        );
+        // getSubtaskChips() returnerar chip-vyn vars getText() ger accessibilityLabel ("subtaskChip_0"),
+        // inte text-innehållet. Sök direkt på texten i det inre text-elementet istället.
+        By locator = "ios".equalsIgnoreCase(PLATFORM)
+            ? By.xpath("//*[contains(@name, 'subtaskChip_')]//XCUIElementTypeStaticText[contains(@label, '" + subtask + "')]")
+            : By.xpath("//*[contains(@text, '" + subtask + "')]");
+        waitForElementToBeVisible(locator);
     }
 
     @And("ska tiderna vara satta till {string}")

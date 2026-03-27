@@ -9,19 +9,19 @@ Feature: Timer-app underuppgiftssekvens
     And användaren sätter tid till "<tid>"
     And användaren sätter paus-tid till "<pausTid>"
     And användaren startar sekvensen
-    Then ska timern visa "JOBBA!" för underuppgift 1 av 2
+    Then ska timern visa "FOKUS!" för underuppgift 1 av 2
     When timern räknar ner klart
     Then ska timern visa paus med nästa underuppgift 2
     When timern räknar ner klart
-    Then ska timern visa "JOBBA!" för underuppgift 2 av 2
+    Then ska timern visa "FOKUS!" för underuppgift 2 av 2
     When timern räknar ner klart
     Then ska fortsätt-skärmen visa rätt tid
     When användaren klickar på "continueYesButton"
-    Then ska timern visa "JOBBA!" för underuppgift 1 av 2
+    Then ska timern visa "FOKUS!" för underuppgift 1 av 2
     When timern räknar ner klart
     Then ska timern visa paus med nästa underuppgift 2
     When timern räknar ner klart
-    Then ska timern visa "JOBBA!" för underuppgift 2 av 2
+    Then ska timern visa "FOKUS!" för underuppgift 2 av 2
     When timern räknar ner klart
     Then ska fortsätt-skärmen visa rätt tid
     When användaren klickar på "continueNoButton"
@@ -48,7 +48,7 @@ Feature: Timer-app underuppgiftssekvens
     And ska underuppgiften "<underuppgift>" finnas i formuläret
     And ska tiderna vara satta till "<tid>"
     When användaren startar sekvensen
-    Then ska timern visa "JOBBA!" för underuppgift 1 av 1
+    Then ska timern visa "FOKUS!" för underuppgift 1 av 1
     When timern räknar ner klart
     Then ska fortsätt-skärmen visa rätt tid
     When användaren klickar på "continueNoButton"
@@ -72,7 +72,7 @@ Feature: Timer-app underuppgiftssekvens
     And användaren sätter tid till "<tid>"
     And användaren sätter paus-tid till "<tid>"
     And användaren startar sekvensen
-    Then ska timern visa "JOBBA!" för underuppgift 1 av 1
+    Then ska timern visa "FOKUS!" för underuppgift 1 av 1
     When ska underuppgiftsnamnet i timern ha längden 50 tecken
     And timern räknar ner klart
     Then ska uppgiftsnamnet på fortsätt-skärmen ha längden 50 tecken
@@ -128,7 +128,7 @@ Feature: Timer-app underuppgiftssekvens
     And användaren sätter tid till "<tid>"
     And användaren sätter paus-tid till "<tid>"
     And användaren startar sekvensen
-    Then ska timern visa "JOBBA!" för underuppgift 1 av 1
+    Then ska timern visa "FOKUS!" för underuppgift 1 av 1
     When timern räknar ner klart
     Then ska fortsätt-skärmen visa rätt tid
     When användaren klickar på "continueNoButton"
