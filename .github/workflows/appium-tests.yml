@@ -115,7 +115,7 @@ jobs:
           script: |
             adb shell settings put global hide_error_dialogs 1
             adb install TimerApp/android/app/build/outputs/apk/debug/app-debug.apk
-            adb shell am start -n com.timerapp/.MainActivity
+            adb shell am start -n com.timerapp/.SplashActivity
             sleep 60
             adb shell pidof com.timerapp || echo "WARN: appen körde inte efter warm-up"
             adb shell am force-stop com.timerapp
