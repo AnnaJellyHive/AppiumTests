@@ -563,7 +563,7 @@ public class TimerSteps {
         int btnY = targetY;
         // positiv-knappen i native AlertDialog — plattformsberoende
         By jaBy = "ios".equalsIgnoreCase(PLATFORM)
-                ? AppiumBy.accessibilityId("Ja")
+                ? By.xpath("//XCUIElementTypeButton[@name='Ja']")
                 : By.id("android:id/button1");
         for (int attempt = 0; attempt < 3; attempt++) {
             // PointerInput-tap fungerar på både Android och iOS (mobile: clickGesture är Android-only)
