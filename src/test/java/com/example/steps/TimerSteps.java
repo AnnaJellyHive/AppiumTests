@@ -105,7 +105,7 @@ public class TimerSteps {
         UiAutomator2Options options = new UiAutomator2Options()
                 .setDeviceName("emulator-5554")
                 .setAppPackage(ANDROID_APP_ID)
-                .setAppActivity(".MainActivity")
+                .setAppActivity(".SplashActivity")
                 .setNoReset(true)
                 .setUiautomator2ServerInstallTimeout(Duration.ofSeconds(120))
                 .setUiautomator2ServerLaunchTimeout(Duration.ofSeconds(120))
@@ -361,7 +361,7 @@ public class TimerSteps {
         // getSubtaskChips() returnerar chip-vyn vars getText() ger accessibilityLabel ("subtaskChip_0"),
         // inte text-innehållet. Sök direkt på texten i det inre text-elementet istället.
         By locator = "ios".equalsIgnoreCase(PLATFORM)
-            ? By.xpath("//*[contains(@name, 'subtaskChip_')]//XCUIElementTypeStaticText[contains(@label, '" + subtask + "')]")
+            ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + subtask + "')]")
             : By.xpath("//*[contains(@text, '" + subtask + "')]");
         waitForElementToBeVisible(locator);
     }
