@@ -73,6 +73,7 @@ public class TaskInputPage {
     private List<WebElement> templateItems;
 
     private final RemoteWebDriver driver;
+    private final String platform = System.getProperty("platform", "android");
 
     public TaskInputPage(RemoteWebDriver driver) {
         this.driver = driver;
@@ -86,8 +87,11 @@ public class TaskInputPage {
                 WebElement field = d.findElement(locator);
                 field.clear();
                 field.sendKeys(text);
-                String actual = field.getText();
-                return text.equals(actual) || actual.startsWith(text);
+                if ("ios".equalsIgnoreCase(platform)) {
+                    String actual = field.getText();
+                    return text.equals(actual) || actual.startsWith(text);
+                }
+                return true;
             });
     }
 

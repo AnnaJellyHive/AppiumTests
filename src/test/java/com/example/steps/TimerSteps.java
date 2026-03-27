@@ -349,14 +349,11 @@ public class TimerSteps {
 
     @And("ska underuppgiften {string} finnas i formuläret")
     public void skaUnderuppgiftenFinnasIFormularet(String subtask) {
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d -> {
-            List<WebElement> texts = d.findElements(By.xpath(
-                    "//android.view.ViewGroup[contains(@content-desc,'subtaskChip_')]" +
-                    "/following-sibling::android.widget.TextView"));
-            return texts.stream().anyMatch(c -> {
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(d ->
+            taskInputPage.getSubtaskChips().stream().anyMatch(c -> {
                 try { return c.getText().contains(subtask); } catch (Exception e) { return false; }
-            });
-        });
+            })
+        );
     }
 
     @And("ska tiderna vara satta till {string}")
