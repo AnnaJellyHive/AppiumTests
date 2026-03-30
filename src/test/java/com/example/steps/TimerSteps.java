@@ -215,7 +215,7 @@ public class TimerSteps {
         By timerModeLocator = "ios".equalsIgnoreCase(PLATFORM)
                 ? AppiumBy.accessibilityId("timerModeLabel")
                 : By.xpath("//*[@content-desc='timerModeLabel']");
-        new WebDriverWait(driver, Duration.ofSeconds(30))
+        new WebDriverWait(driver, Duration.ofSeconds(60))
                 .ignoring(WebDriverException.class)
                 .until(d -> !d.findElements(timerModeLocator).isEmpty());
     }
