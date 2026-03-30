@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>30 Mar 2026, 10:10</td>
+      <td>30 Mar 2026, 13:17</td>
     </tr>
   </tbody>
 </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@sekvens</td>
-          <td      class="passed"    >24</td>
           <td >0</td>
           <td >0</td>
+          <td     class="skipped"   >24</td>
           <td >0</td>
           <td >0</td>
           <td class="total">24</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="121333352000">2:1.333</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="16486000">0.016</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -183,12 +183,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">2:1.333</span>
+  <span class="lead-duration duration">0.016</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Underuppgifter genomf&ouml;rs i r&auml;tt ordning, forts&auml;tt och avsluta</span>
 
@@ -199,13 +199,13 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-2">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -215,17 +215,52 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-2" class="inner-level collapse collapsable-details ">
+    <div id="before-2" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief failed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3:59.219</span>
+  <span class="lead-duration duration">3:12.789</span>
 
           </div>
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-3">
+          <a>Error message</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Unable to start WebDriverAgent session. Original error: Could not proxy command to the remote server. Original error: connect ECONNREFUSED 127.0.0.1:8100 
+Host info: host: 'iad20-fj925-a246091f-f243-488f-98d3-31e5c199ae5b-22DA40E54C39.local', ip: 'fe80:0:0:0:18d9:dfb9:c956:e92d%en0'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.4', java.version: '17.0.18'
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [null, newSession {capabilities=[{appium:noReset=true, appium:udid=394B9336-9982-429E-A94A-FE77402C9E3C, appium:wdaLaunchTimeout=300000, appium:bundleId=com.annamarkstrom.zonat, platformName=IOS, appium:automationName=XCuiTest, appium:wdaConnectionTimeout=300000}], desiredCapabilities=Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}}]
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:182)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:89)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:101)
+	at io.appium.java_client.ios.IOSDriver.&lt;init&gt;(IOSDriver.java:104)
+	at com.example.steps.TimerSteps.setUpIos(TimerSteps.java:125)
+	at com.example.steps.TimerSteps.setUp(TimerSteps.java:63)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -238,9 +273,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-4">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -250,11 +285,11 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-4" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
-<div class="brief step-name-Given passed">
+<div class="brief step-name-Given skipped">
   <span class="keyword indention">Given</span>
   <span class="name">appen &auml;r startad</span>
 
@@ -281,11 +316,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;L&auml;sa bok&quot;</span></span>
 
-  <span class="lead-duration duration">3.409</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -308,11 +343,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;&Ouml;ppna boken&quot;</span></span>
 
-  <span class="lead-duration duration">6.275</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -335,11 +370,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;L&auml;s 2 sidor i boken&quot;</span></span>
 
-  <span class="lead-duration duration">2.214</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -362,11 +397,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;15&quot;</span></span>
 
-  <span class="lead-duration duration">2.092</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -389,11 +424,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;15&quot;</span></span>
 
-  <span class="lead-duration duration">2.360</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -416,11 +451,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren startar sekvensen</span>
 
-  <span class="lead-duration duration">5.762</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -443,11 +478,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.566</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -470,11 +505,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">13.685</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -497,11 +532,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa paus med n&auml;sta underuppgift <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.908</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -524,11 +559,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">14.290</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -551,11 +586,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">2</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.499</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -578,11 +613,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">15.056</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -605,11 +640,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
 
-  <span class="lead-duration duration">0.214</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -632,11 +667,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueYesButton&quot;</span></span>
 
-  <span class="lead-duration duration">1.128</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -659,11 +694,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">1.046</span>
+  <span class="lead-duration duration">0.002</span>
 
 </div>
 
@@ -686,11 +721,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">14.164</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -713,11 +748,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa paus med n&auml;sta underuppgift <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.746</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -740,11 +775,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">14.041</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -767,11 +802,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">2</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">1.015</span>
+  <span class="lead-duration duration">0.011</span>
 
 </div>
 
@@ -794,11 +829,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">15.039</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -821,11 +856,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
 
-  <span class="lead-duration duration">0.133</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -848,11 +883,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
 
-  <span class="lead-duration duration">0.914</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -875,11 +910,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska historiken visa minst <span class="argument">2</span> k&ouml;rningar med uppgiften <span class="argument">&quot;L&auml;sa bok&quot;</span></span>
 
-  <span class="lead-duration duration">5.764</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -906,7 +941,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -918,13 +953,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.133</span>
+  <span class="lead-duration duration">0.009</span>
 
           </div>
 
