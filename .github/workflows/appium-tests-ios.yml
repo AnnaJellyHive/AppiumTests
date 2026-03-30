@@ -149,7 +149,7 @@ jobs:
 
       - name: Run tests on Simulator
         run: |
-          mvn test \
+          mvn verify -Dmaven.test.failure.ignore=true \
             -Dplatform=ios \
             -DdeviceUDID=$SIMULATOR_UDID \
             -Dcucumber.filter.tags="@sekvens or @mall"
@@ -183,4 +183,4 @@ jobs:
         if: always()
         run: |
           echo "### Testrapport" >> $GITHUB_STEP_SUMMARY
-          echo "[Öppna HTML-rapport](https://annajellyhive.github.io/AppiumTests/ios/report.html)" >> $GITHUB_STEP_SUMMARY
+          echo "[Öppna HTML-rapport](https://annajellyhive.github.io/AppiumTests/ios/cucumber-html-reports/overview-features.html)" >> $GITHUB_STEP_SUMMARY

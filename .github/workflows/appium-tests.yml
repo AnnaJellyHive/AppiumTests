@@ -122,7 +122,7 @@ jobs:
             adb logcat -c
             adb logcat -v time *:W com.timerapp:V ReactNativeJS:V AndroidRuntime:V > logcat.txt &
             LOGCAT_PID=$!
-            mvn test -Dcucumber.filter.tags="@sekvens or @mall or @animation or @historik or @kantfall or @duplikat"
+            mvn verify -Dmaven.test.failure.ignore=true -Dcucumber.filter.tags="@sekvens or @mall or @animation or @historik or @kantfall or @duplikat"
             kill $LOGCAT_PID || true
 
       - name: Publish test report
@@ -147,7 +147,7 @@ jobs:
         if: always()
         run: |
           echo "### Testrapport" >> $GITHUB_STEP_SUMMARY
-          echo "[Öppna HTML-rapport](https://annajellyhive.github.io/AppiumTests/android/report.html)" >> $GITHUB_STEP_SUMMARY
+          echo "[Öppna HTML-rapport](https://annajellyhive.github.io/AppiumTests/android/cucumber-html-reports/overview-features.html)" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload logcat
         if: always()
