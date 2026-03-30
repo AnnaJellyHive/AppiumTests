@@ -460,13 +460,13 @@ public class TimerSteps {
             rowIndex = 0;
         }
         int y = item.getRect().y + item.getRect().height / 2;
-        int screenWidth = driver.manage().window().getSize().width;
-        // Svepa hela skärmbredden för att säkert trigga PanResponder
+        int startX = item.getRect().x + item.getRect().width - 10;
+        int endX   = item.getRect().x + 10;
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence swipe = new Sequence(finger, 0);
-        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), screenWidth - 20, y));
+        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, y));
         swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), 80, y));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
         Thread.sleep(800); // vänta på svep-animationen
@@ -525,13 +525,13 @@ public class TimerSteps {
 
         WebElement targetItem = items.get(rowIndex);
         int y = targetItem.getRect().y + targetItem.getRect().height / 2;
-
-        int screenWidth = driver.manage().window().getSize().width;
+        int startX = targetItem.getRect().x + targetItem.getRect().width - 10;
+        int endX   = targetItem.getRect().x + 10;
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence swipe = new Sequence(finger, 0);
-        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), screenWidth - 20, y));
+        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, y));
         swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-        swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), 80, y));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
         Thread.sleep(800); // vänta på svep-animationen
