@@ -230,7 +230,7 @@ public class TimerSteps {
         String expectedTask     = subtasks.get(index - 1);
         String expectedProgress = index + " av " + total;
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(35))
+            new WebDriverWait(driver, Duration.ofSeconds(20))
                     .ignoring(WebDriverException.class)
                     .until(d -> expectedMode.equals(getElementText(timerPage.getModeElement())) &&
                                 expectedTask.equals(getElementText(timerPage.getTaskElement())) &&
