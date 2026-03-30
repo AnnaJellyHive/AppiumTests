@@ -215,7 +215,7 @@ public class TimerSteps {
         By timerModeLocator = "ios".equalsIgnoreCase(PLATFORM)
                 ? AppiumBy.accessibilityId("timerModeLabel")
                 : By.xpath("//*[@content-desc='timerModeLabel']");
-        new WebDriverWait(driver, Duration.ofSeconds(60))
+        new WebDriverWait(driver, Duration.ofSeconds(30))
                 .ignoring(WebDriverException.class)
                 .until(d -> !d.findElements(timerModeLocator).isEmpty());
     }
@@ -469,7 +469,7 @@ public class TimerSteps {
         swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
-        Thread.sleep(1500); // vänta på svep-animationen
+        Thread.sleep(2500); // vänta på svep-animationen
         tapDeleteAndConfirm("templateDeleteYes", rowIndex, y);
     }
 
@@ -534,7 +534,7 @@ public class TimerSteps {
         swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
-        Thread.sleep(1500); // vänta på svep-animationen
+        Thread.sleep(2500); // vänta på svep-animationen
         tapDeleteAndConfirm("historyDeleteYes", rowIndex, y);
     }
 
