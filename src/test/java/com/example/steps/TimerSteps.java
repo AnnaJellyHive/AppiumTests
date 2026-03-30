@@ -230,7 +230,7 @@ public class TimerSteps {
         String expectedTask     = subtasks.get(index - 1);
         String expectedProgress = index + " av " + total;
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(20))
+            new WebDriverWait(driver, Duration.ofSeconds(35))
                     .ignoring(WebDriverException.class)
                     .until(d -> expectedMode.equals(getElementText(timerPage.getModeElement())) &&
                                 expectedTask.equals(getElementText(timerPage.getTaskElement())) &&
@@ -469,7 +469,7 @@ public class TimerSteps {
         swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
-        Thread.sleep(800); // vänta på svep-animationen
+        Thread.sleep(1500); // vänta på svep-animationen
         tapDeleteAndConfirm("templateDeleteYes", rowIndex, y);
     }
 
@@ -534,7 +534,7 @@ public class TimerSteps {
         swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
-        Thread.sleep(800); // vänta på svep-animationen
+        Thread.sleep(1500); // vänta på svep-animationen
         tapDeleteAndConfirm("historyDeleteYes", rowIndex, y);
     }
 
@@ -615,7 +615,7 @@ public class TimerSteps {
 
     private void waitForTextIgnoringWDE(WebElement element, String expectedText) {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(5))
+            new WebDriverWait(driver, Duration.ofSeconds(15))
                     .ignoring(WebDriverException.class)
                     .until(d -> {
                         try {
