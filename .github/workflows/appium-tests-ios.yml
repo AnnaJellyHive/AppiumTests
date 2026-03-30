@@ -152,7 +152,7 @@ jobs:
           mvn test \
             -Dplatform=ios \
             -DdeviceUDID=$SIMULATOR_UDID \
-            -Dcucumber.filter.tags="@sekvens or @mall or @duplikat"
+            -Dcucumber.filter.tags="@sekvens or @mall or @duplikat or @animation"
 
       - name: Generera HTML-rapport
         if: always()
