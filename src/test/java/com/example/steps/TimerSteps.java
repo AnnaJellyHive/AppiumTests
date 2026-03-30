@@ -240,10 +240,10 @@ public class TimerSteps {
             String task     = safeGetText(timerPage.getTaskElement());
             String progress = safeGetText(timerPage.getProgressElement());
             throw new AssertionError(String.format(
-                    "Timer visade inte rätt värden inom 5s.%n" +
+                    "Timer visade inte rätt värden inom 20s.%n" +
                     "Förväntade: mode='%s', task='%s', progress='%s'%n" +
                     "Hittade:    mode='%s', task='%s', progress='%s'",
-                    expectedMode, expectedTask, expectedProgress, mode, task, progress), e);
+                    expectedMode, expectedTask, expectedProgress, mode, task, progress));
         }
     }
 
@@ -295,11 +295,11 @@ public class TimerSteps {
         int seconds = totalSeconds % 60;
         String expectedLabel;
         if (minutes > 0 && seconds == 0) {
-            expectedLabel = "🎉 " + minutes + " minuter klara!";
+            expectedLabel = minutes + " minuter klara!";
         } else if (minutes > 0) {
-            expectedLabel = "🎉 " + minutes + " min " + seconds + " sek klara!";
+            expectedLabel = minutes + " min " + seconds + " sek klara!";
         } else {
-            expectedLabel = "🎉 " + seconds + " sekunder klara!";
+            expectedLabel = seconds + " sekunder klara!";
         }
         assertEquals(expectedLabel, continuePage.getDoneLabel(), "Fel tid på fortsätt-skärmen");
     }

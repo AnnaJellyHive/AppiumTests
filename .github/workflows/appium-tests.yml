@@ -122,8 +122,12 @@ jobs:
             adb logcat -c
             adb logcat -v time *:W com.timerapp:V ReactNativeJS:V AndroidRuntime:V > logcat.txt &
             LOGCAT_PID=$!
-            mvn verify -Dmaven.test.failure.ignore=true -Dcucumber.filter.tags="@sekvens or @mall or @animation or @historik or @kantfall or @duplikat"
+            mvn test -Dcucumber.filter.tags="@sekvens or @mall or @animation or @historik or @kantfall or @duplikat"
             kill $LOGCAT_PID || true
+
+      - name: Generera HTML-rapport
+        if: always()
+        run: mvn verify -DskipTests -Dmaven.test.failure.ignore=true
 
       - name: Publish test report
         if: always()

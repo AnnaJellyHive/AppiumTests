@@ -149,10 +149,14 @@ jobs:
 
       - name: Run tests on Simulator
         run: |
-          mvn verify -Dmaven.test.failure.ignore=true \
+          mvn test \
             -Dplatform=ios \
             -DdeviceUDID=$SIMULATOR_UDID \
             -Dcucumber.filter.tags="@sekvens or @mall"
+
+      - name: Generera HTML-rapport
+        if: always()
+        run: mvn verify -DskipTests -Dmaven.test.failure.ignore=true -Dplatform=ios
 
       - name: Publish test report
         if: always()
