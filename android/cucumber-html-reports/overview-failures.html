@@ -77,7 +77,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>30 Mar 2026, 06:20</td>
+      <td>30 Mar 2026, 07:37</td>
     </tr>
   </tbody>
 </table>
@@ -127,7 +127,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1:23.959</span>
+  <span class="lead-duration duration">21.457</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -165,7 +165,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">5:56.897</span>
+  <span class="lead-duration duration">6:1.562</span>
 
           </div>
 
@@ -229,7 +229,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;L&auml;sa bok&quot;</span></span>
 
-  <span class="lead-duration duration">1.939</span>
+  <span class="lead-duration duration">4.187</span>
 
 </div>
 
@@ -252,146 +252,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;&Ouml;ppna boken&quot;</span></span>
 
-  <span class="lead-duration duration">14.745</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;L&auml;s 2 sidor i boken&quot;</span></span>
-
-  <span class="lead-duration duration">8.071</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;15&quot;</span></span>
-
-  <span class="lead-duration duration">4.898</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;15&quot;</span></span>
-
-  <span class="lead-duration duration">3.589</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren startar sekvensen</span>
-
-  <span class="lead-duration duration">18.392</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then failed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
-
-  <span class="lead-duration duration">32.321</span>
+  <span class="lead-duration duration">17.268</span>
 
 </div>
 
@@ -403,31 +268,27 @@ $(document).ready(function() {
   <div class="inner-level">
     <div class="message indention">
       <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>java.lang.AssertionError:</a>
+          <a>org.openqa.selenium.NoSuchElementException:</a>
       </div>
       <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: Timer visade inte r&auml;tt v&auml;rden inom 5s.
-F&ouml;rv&auml;ntade: mode='FOKUS!', task='&Ouml;ppna boken', progress='1 av 2'
-Hittade:    mode='PAUSA!', task='N&auml;sta: L&auml;s 2 sidor i boken', progress='&lt;kunde inte l&auml;sa: androidx.test.uiautomator.StaleObjectException
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [c0b14437-be14-42b3-baea-b2c5d8e0c65a, getElementText {id=00000000-0000-000b-ffff-ffff0000003c}]
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Element: [[AndroidDriver:  on ANDROID (c0b14437-be14-42b3-baea-b2c5d8e0c65a)] -&gt; accessibility id: timerProgress]
-Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a&gt;'
-	at com.example.steps.TimerSteps.skaTimernVisaJobba(TimerSteps.java:242)
-	at ✽.ska timern visa &quot;FOKUS!&quot; f&ouml;r underuppgift 1 av 2(classpath:features/timer_sekvens.feature:12)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$927/0x00007f0a905146d8@5cc3e49b (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+        <pre>org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.accessibilityId: addSubtaskButton})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$dxvOAQOl.click(Unknown Source)
+	at com.example.pages.TaskInputPage.addSubtask(TaskInputPage.java:104)
+	at com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(TimerSteps.java:142)
+	at ✽.anv&auml;ndaren l&auml;gger till underuppgift &quot;&Ouml;ppna boken&quot;(classpath:features/timer_sekvens.feature:7)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6e00837f (tried for 0 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.skaTimernVisaJobba(TimerSteps.java:235)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$dxvOAQOl.click(Unknown Source)
+	at com.example.pages.TaskInputPage.addSubtask(TaskInputPage.java:104)
+	at com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(TimerSteps.java:142)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -537,10 +398,165 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: addSubtaskButton})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:81)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:81)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 116 more
 </pre>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;L&auml;s 2 sidor i boken&quot;</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;15&quot;</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;15&quot;</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren startar sekvensen</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
 
 
 
@@ -1010,7 +1026,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">23.773</span>
+  <span class="lead-duration duration">25.922</span>
 
           </div>
 
@@ -1023,13 +1039,13 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-77062689.png" download target="_blank">
+      <a href="embeddings/embedding_358736336.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_-77062689.png">
+        <img src="embeddings/embedding_358736336.png">
       </div>
     </div>
   </div>
@@ -1056,7 +1072,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
 </div>
 
 
-  <span class="lead-duration duration">2:1.060</span>
+  <span class="lead-duration duration">2:38.868</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-7">
@@ -1094,7 +1110,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">4:29.650</span>
+  <span class="lead-duration duration">5:4.200</span>
 
           </div>
 
@@ -1158,7 +1174,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">2.139</span>
+  <span class="lead-duration duration">2.639</span>
 
 </div>
 
@@ -1185,7 +1201,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;Lite testing&quot;</span></span>
 
-  <span class="lead-duration duration">19.826</span>
+  <span class="lead-duration duration">16.567</span>
 
 </div>
 
@@ -1212,7 +1228,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;8&quot;</span></span>
 
-  <span class="lead-duration duration">3.656</span>
+  <span class="lead-duration duration">3.986</span>
 
 </div>
 
@@ -1239,7 +1255,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;8&quot;</span></span>
 
-  <span class="lead-duration duration">3.544</span>
+  <span class="lead-duration duration">5.195</span>
 
 </div>
 
@@ -1266,7 +1282,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">19.451</span>
+  <span class="lead-duration duration">27.685</span>
 
 </div>
 
@@ -1293,7 +1309,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren rensar formul&auml;ret</span>
 
-  <span class="lead-duration duration">4.631</span>
+  <span class="lead-duration duration">6.561</span>
 
 </div>
 
@@ -1320,7 +1336,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">Then</span>
   <span class="name">ska uppgiftsnamnet vara tomt</span>
 
-  <span class="lead-duration duration">4.689</span>
+  <span class="lead-duration duration">5.716</span>
 
 </div>
 
@@ -1347,7 +1363,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">ska underuppgifterna vara borta</span>
 
-  <span class="lead-duration duration">2.012</span>
+  <span class="lead-duration duration">2.196</span>
 
 </div>
 
@@ -1374,7 +1390,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">ska tiderna vara &aring;terst&auml;llda till <span class="argument">&quot;120&quot;</span></span>
 
-  <span class="lead-duration duration">3.072</span>
+  <span class="lead-duration duration">3.200</span>
 
 </div>
 
@@ -1401,7 +1417,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer den sparade uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">21.703</span>
+  <span class="lead-duration duration">21.469</span>
 
 </div>
 
@@ -1428,7 +1444,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">Then</span>
   <span class="name">ska formul&auml;ret vara ifyllt med uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">1.189</span>
+  <span class="lead-duration duration">6.584</span>
 
 </div>
 
@@ -1455,7 +1471,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">ska underuppgiften <span class="argument">&quot;Lite testing&quot;</span> finnas i formul&auml;ret</span>
 
-  <span class="lead-duration duration">2.885</span>
+  <span class="lead-duration duration">5.416</span>
 
 </div>
 
@@ -1482,7 +1498,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">And</span>
   <span class="name">ska tiderna vara satta till <span class="argument">&quot;8&quot;</span></span>
 
-  <span class="lead-duration duration">1.919</span>
+  <span class="lead-duration duration">4.065</span>
 
 </div>
 
@@ -1509,7 +1525,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren startar sekvensen</span>
 
-  <span class="lead-duration duration">20.472</span>
+  <span class="lead-duration duration">23.148</span>
 
 </div>
 
@@ -1536,7 +1552,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">1</span></span>
 
-  <span class="lead-duration duration">4.459</span>
+  <span class="lead-duration duration">6.272</span>
 
 </div>
 
@@ -1563,7 +1579,7 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">4.755</span>
+  <span class="lead-duration duration">1.965</span>
 
 </div>
 
@@ -1586,11 +1602,92 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
       <div class="step">
 
 
-<div class="brief step-name-Then failed">
+<div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
   <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
 
-  <span class="lead-duration duration">0.651</span>
+  <span class="lead-duration duration">0.685</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
+
+  <span class="lead-duration duration">1.272</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And passed">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;newTaskButton&quot;</span></span>
+
+  <span class="lead-duration duration">8.464</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And failed">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;Testar&quot;</span></span>
+
+  <span class="lead-duration duration">5.774</span>
 
 </div>
 
@@ -1602,617 +1699,18 @@ Session ID: c0b14437-be14-42b3-baea-b2c5d8e0c65a
   <div class="inner-level">
     <div class="message indention">
       <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-10">
-          <a>org.opentest4j.AssertionFailedError:</a>
+          <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-10" class="collapse collapsable-details  in ">
-        <pre>org.opentest4j.AssertionFailedError: Fel tid p&aring; forts&auml;tt-sk&auml;rmen ==&gt; expected: &lt;🎉 8 sekunder klara!&gt; but was: &lt;8 sekunder klara!&gt;
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
-	at com.example.steps.TimerSteps.skaForts&auml;ttSk&auml;rmenVisaR&auml;ttTid(TimerSteps.java:304)
-	at ✽.ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid(classpath:features/timer_sekvens.feature:53)
-</pre>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When skipped">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;newTaskButton&quot;</span></span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;Testar&quot;</span></span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska den sparade uppgiften <span class="argument">&quot;Testar&quot;</span> inte l&auml;ngre finnas i listan</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-  </div>
-</div>
-
-
-
-
-  <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-11">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="after-11" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">26.603</span>
-
-          </div>
-
-
-
-
-
-
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-12" class="collapsable-control">
-      <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-843229854.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-12" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_-843229854.png">
-      </div>
-    </div>
-  </div>
-  </div>
-
-        </div>
-    </div>
-  </div>
-
-  </div>
-</div>
-
-
-<div class="element">
-    <div class="indention">
-      <b>Feature:</b>
-      <a href="report-feature_142179013.html">Timer-app underuppgiftssekvens</a>
-    </div>
-
-
-<div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_3384641366.html">@kantfall</a>
-</div>
-
-
-  <span class="lead-duration duration">1:1.168</span>
-
-
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-13">
-
-<div class="brief failed">
-  <span class="keyword indention">Scenario Outline</span>
-  <span class="name">Uppgiftsnamn med 60 tecken trunkeras till 50</span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-13" class="collapse collapsable-details  in ">
-
-
-  <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-14">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="before-14" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-              <span class="location name">com.example.steps.TimerSteps.setUp()</span>
-
-  <span class="lead-duration duration">4:31.252</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
-
-
-
-<div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-15">
-
-<div class="brief failed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </div>
-
-  <div id="steps-15" class="inner-level collapse collapsable-details  in ">
-      <div class="step">
-
-
-<div class="brief step-name-Given passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">appen &auml;r startad</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren fyller i ett uppgiftsnamn p&aring; <span class="argument">60</span> tecken</span>
-
-  <span class="lead-duration duration">2.120</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska feltext f&ouml;r uppgiftsnamnet visas</span>
-
-  <span class="lead-duration duration">10.334</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren l&auml;gger till underuppgiften p&aring; <span class="argument">60</span> tecken</span>
-
-  <span class="lead-duration duration">2.166</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska feltext f&ouml;r underuppgiftsnamnet visas</span>
-
-  <span class="lead-duration duration">5.935</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren bekr&auml;ftar underuppgiften</span>
-
-  <span class="lead-duration duration">1.228</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;8&quot;</span></span>
-
-  <span class="lead-duration duration">6.096</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;8&quot;</span></span>
-
-  <span class="lead-duration duration">3.638</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren startar sekvensen</span>
-
-  <span class="lead-duration duration">16.089</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">1</span></span>
-
-  <span class="lead-duration duration">8.602</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When failed">
-  <span class="keyword indention">When</span>
-  <span class="name">ska underuppgiftsnamnet i timern ha l&auml;ngden <span class="argument">50</span> tecken</span>
-
-  <span class="lead-duration duration">4.955</span>
-
-</div>
-
-
-
-
-
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-16">
-          <a>org.openqa.selenium.NoSuchElementException:</a>
-      </div>
-      <div id="msg-16" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.accessibilityId: timerTaskName})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$sYESbYnA.getText(Unknown Source)
-	at com.example.steps.TimerSteps.getElementText(TimerSteps.java:607)
-	at com.example.steps.TimerSteps.skaUnderuppgiftsnamnetITimernHaL&auml;ngden(TimerSteps.java:189)
-	at ✽.ska underuppgiftsnamnet i timern ha l&auml;ngden 50 tecken(classpath:features/timer_sekvens.feature:76)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@43de88f3 (tried for 0 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: elementet syntes inte inom 5s [Located by By.chained({AppiumBy.accessibilityId: chooseTemplateButton})]
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:593)
+	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:440)
+	at ✽.anv&auml;ndaren tar bort den sparade uppgiften &quot;Testar&quot;(classpath:features/timer_sekvens.feature:56)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({AppiumBy.accessibilityId: chooseTemplateButton}) (tried for 5 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$sYESbYnA.getText(Unknown Source)
-	at com.example.steps.TimerSteps.getElementText(TimerSteps.java:607)
-	at com.example.steps.TimerSteps.skaUnderuppgiftsnamnetITimernHaL&auml;ngden(TimerSteps.java:189)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:591)
+	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:440)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2322,7 +1820,24 @@ Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: wait
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: timerTaskName})
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.accessibilityId: chooseTemplateButton})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$SKceKkg3.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 111 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@57167ccb (tried for 0 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	... 119 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: chooseTemplateButton})
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
@@ -2341,7 +1856,7 @@ Driver info: driver.version: RemoteWebDriver
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 116 more
+	... 121 more
 </pre>
       </div>
     </div>
@@ -2361,90 +1876,9 @@ Driver info: driver.version: RemoteWebDriver
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">timern r&auml;knar ner klart</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
 <div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
-  <span class="name">ska uppgiftsnamnet p&aring; forts&auml;tt-sk&auml;rmen ha l&auml;ngden <span class="argument">50</span> tecken</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When skipped">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska historiken visa <span class="argument">1</span> k&ouml;rning med det angivna uppgiftsnamnet</span>
+  <span class="name">ska den sparade uppgiften <span class="argument">&quot;Testar&quot;</span> inte l&auml;ngre finnas i listan</span>
 
   <span class="lead-duration duration">0.000</span>
 
@@ -2471,7 +1905,7 @@ Driver info: driver.version: RemoteWebDriver
 
 <div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
-  <span class="name">ska uppgiftsnamnet i historiken ha l&auml;ngden <span class="argument">50</span> tecken</span>
+  <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
   <span class="lead-duration duration">0.000</span>
 
@@ -2500,7 +1934,7 @@ Driver info: driver.version: RemoteWebDriver
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-17">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-11">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2512,13 +1946,13 @@ Driver info: driver.version: RemoteWebDriver
 
     </div>
 
-    <div id="after-17" class="inner-level collapse collapsable-details ">
+    <div id="after-11" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">23.583</span>
+  <span class="lead-duration duration">24.493</span>
 
           </div>
 
@@ -2529,497 +1963,15 @@ Driver info: driver.version: RemoteWebDriver
 
   <div class="embeddings inner-level">
   <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-18" class="collapsable-control">
+    <div data-toggle="collapse" data-target="#embedding-12" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_590581025.png" download target="_blank">
+      <a href="embeddings/embedding_242248268.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
-    <div id="embedding-18" class="collapse collapsable-details ">
+    <div id="embedding-12" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_590581025.png">
-      </div>
-    </div>
-  </div>
-  </div>
-
-        </div>
-    </div>
-  </div>
-
-  </div>
-</div>
-
-
-<div class="element">
-    <div class="indention">
-      <b>Feature:</b>
-      <a href="report-feature_142179013.html">Timer-app underuppgiftssekvens</a>
-    </div>
-
-
-<div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_1104702630.html">@historik</a>
-</div>
-
-
-  <span class="lead-duration duration">44.573</span>
-
-
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-19">
-
-<div class="brief failed">
-  <span class="keyword indention">Scenario Outline</span>
-  <span class="name">En historisk post kan tas bort</span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-19" class="collapse collapsable-details  in ">
-
-
-  <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-20">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="before-20" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-              <span class="location name">com.example.steps.TimerSteps.setUp()</span>
-
-  <span class="lead-duration duration">3:42.675</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
-
-
-
-<div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-21">
-
-<div class="brief failed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </div>
-
-  <div id="steps-21" class="inner-level collapse collapsable-details  in ">
-      <div class="step">
-
-
-<div class="brief step-name-Given passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">appen &auml;r startad</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;BortTest&quot;</span></span>
-
-  <span class="lead-duration duration">2.034</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;Testa borttagning&quot;</span></span>
-
-  <span class="lead-duration duration">9.408</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;8&quot;</span></span>
-
-  <span class="lead-duration duration">1.631</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;8&quot;</span></span>
-
-  <span class="lead-duration duration">3.339</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren startar sekvensen</span>
-
-  <span class="lead-duration duration">13.682</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">1</span></span>
-
-  <span class="lead-duration duration">10.255</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">timern r&auml;knar ner klart</span>
-
-  <span class="lead-duration duration">3.571</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then failed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
-
-  <span class="lead-duration duration">0.650</span>
-
-</div>
-
-
-
-
-
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-22">
-          <a>org.opentest4j.AssertionFailedError:</a>
-      </div>
-      <div id="msg-22" class="collapse collapsable-details  in ">
-        <pre>org.opentest4j.AssertionFailedError: Fel tid p&aring; forts&auml;tt-sk&auml;rmen ==&gt; expected: &lt;🎉 8 sekunder klara!&gt; but was: &lt;8 sekunder klara!&gt;
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1152)
-	at com.example.steps.TimerSteps.skaForts&auml;ttSk&auml;rmenVisaR&auml;ttTid(TimerSteps.java:304)
-	at ✽.ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid(classpath:features/timer_sekvens.feature:133)
-</pre>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When skipped">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren tar bort den senaste historikposten</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska historiken inte l&auml;ngre visa uppgiften <span class="argument">&quot;BortTest&quot;</span></span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-  </div>
-</div>
-
-
-
-
-  <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-23">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="after-23" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">25.075</span>
-
-          </div>
-
-
-
-
-
-
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-24" class="collapsable-control">
-      <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-163461863.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-24" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_-163461863.png">
+        <img src="embeddings/embedding_242248268.png">
       </div>
     </div>
   </div>
