@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>AppiumTests</td>
+        <td>1</td>
+      <td>30 Mar 2026, 06:20</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.appen&Auml;rStartad()</td>
+              <td>6</td>
+              <td class="duration" data-value="119240">0.000</td>
+              <td class="duration" data-value="119240">0.000</td>
+              <td class="duration" data-value="715444">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.bekr&auml;ftarUnderuppgiften()</td>
+              <td>1</td>
+              <td class="duration" data-value="1228825585">1.228</td>
+              <td class="duration" data-value="1228825585">1.228</td>
+              <td class="duration" data-value="1228825585">1.228</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.fyllIUppgiften(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="1965902996">1.965</td>
+              <td class="duration" data-value="1965902996">2.139</td>
+              <td class="duration" data-value="9829514984">9.829</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.fyllIUppgiftsnamn(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="2120324889">2.120</td>
+              <td class="duration" data-value="2120324889">2.120</td>
+              <td class="duration" data-value="2120324889">2.120</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.klickarP&aring;(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="181138488">0.181</td>
+              <td class="duration" data-value="181138488">1.267</td>
+              <td class="duration" data-value="1267969421">1.267</td>
+              <td class="failed">14.29%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(java.lang.String)</td>
+              <td>7</td>
+              <td class="duration" data-value="11420037452">11.420</td>
+              <td class="duration" data-value="11420037452">19.826</td>
+              <td class="duration" data-value="79940262167">1:19.940</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgiftenP&aring;(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="2166872424">2.166</td>
+              <td class="duration" data-value="2166872424">2.166</td>
+              <td class="duration" data-value="2166872424">2.166</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.rensarFormularet()</td>
+              <td>1</td>
+              <td class="duration" data-value="4631335177">4.631</td>
+              <td class="duration" data-value="4631335177">4.631</td>
+              <td class="duration" data-value="4631335177">4.631</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.setUp()</td>
+              <td>6</td>
+              <td class="duration" data-value="266807473328">4:26.807</td>
+              <td class="duration" data-value="266807473328">5:56.897</td>
+              <td class="duration" data-value="1600844839972">26:40.844</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaBaraEnSparadUppgiftMedNamnet(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="13536745044">13.536</td>
+              <td class="duration" data-value="13536745044">13.536</td>
+              <td class="duration" data-value="13536745044">13.536</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaFeltextF&ouml;rUnderuppgiftsnamnetVisas()</td>
+              <td>1</td>
+              <td class="duration" data-value="5935283319">5.935</td>
+              <td class="duration" data-value="5935283319">5.935</td>
+              <td class="duration" data-value="5935283319">5.935</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaFeltextF&ouml;rUppgiftsnamnetVisas()</td>
+              <td>1</td>
+              <td class="duration" data-value="10334550169">10.334</td>
+              <td class="duration" data-value="10334550169">10.334</td>
+              <td class="duration" data-value="10334550169">10.334</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaFormularetVaraIfyllt(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1189115473">1.189</td>
+              <td class="duration" data-value="1189115473">1.189</td>
+              <td class="duration" data-value="1189115473">1.189</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaForts&auml;ttSk&auml;rmenVisaR&auml;ttTid()</td>
+              <td>4</td>
+              <td class="duration" data-value="325613806">0.325</td>
+              <td class="duration" data-value="325613806">0.651</td>
+              <td class="duration" data-value="1302455227">1.302</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaHistorikenInteL&auml;ngreVisaUppgiften(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="31439">0.000</td>
+              <td class="duration" data-value="31439">0.000</td>
+              <td class="duration" data-value="31439">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaHistorikenVisaMedAngivetNamn(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="53079">0.000</td>
+              <td class="duration" data-value="53079">0.000</td>
+              <td class="duration" data-value="53079">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaHistorikenVisaMinst(int,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="47118">0.000</td>
+              <td class="duration" data-value="47118">0.000</td>
+              <td class="duration" data-value="47118">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaJobbaAnimationenVisas()</td>
+              <td>2</td>
+              <td class="duration" data-value="3211070693">3.211</td>
+              <td class="duration" data-value="3211070693">5.016</td>
+              <td class="duration" data-value="6422141387">6.422</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaPausAnimationenVisas()</td>
+              <td>1</td>
+              <td class="duration" data-value="5557800369">5.557</td>
+              <td class="duration" data-value="5557800369">5.557</td>
+              <td class="duration" data-value="5557800369">5.557</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaTidernaVaraSattaTill(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1919113587">1.919</td>
+              <td class="duration" data-value="1919113587">1.919</td>
+              <td class="duration" data-value="1919113587">1.919</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaTidernaVara&Aring;terst&auml;llda(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3072829414">3.072</td>
+              <td class="duration" data-value="3072829414">3.072</td>
+              <td class="duration" data-value="3072829414">3.072</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaTimernVisaJobba(java.lang.String,int,int)</td>
+              <td>7</td>
+              <td class="duration" data-value="7948439402">7.948</td>
+              <td class="duration" data-value="7948439402">32.321</td>
+              <td class="duration" data-value="55639075820">55.639</td>
+              <td class="failed">42.86%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaTimernVisaPaus(int)</td>
+              <td>2</td>
+              <td class="duration" data-value="60548">0.000</td>
+              <td class="duration" data-value="60548">0.000</td>
+              <td class="duration" data-value="121096">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaUnderuppgiftenFinnasIFormularet(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="2885324638">2.885</td>
+              <td class="duration" data-value="2885324638">2.885</td>
+              <td class="duration" data-value="2885324638">2.885</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaUnderuppgifternaVaraBorta()</td>
+              <td>1</td>
+              <td class="duration" data-value="2012949460">2.012</td>
+              <td class="duration" data-value="2012949460">2.012</td>
+              <td class="duration" data-value="2012949460">2.012</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaUnderuppgiftsnamnetITimernHaL&auml;ngden(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="4955782958">4.955</td>
+              <td class="duration" data-value="4955782958">4.955</td>
+              <td class="duration" data-value="4955782958">4.955</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaUppgiftenInteL&auml;ngreFinnasIListan(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="46406">0.000</td>
+              <td class="duration" data-value="46406">0.000</td>
+              <td class="duration" data-value="46406">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaUppgiftsnamnetIHistorikenHaL&auml;ngden(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="54191">0.000</td>
+              <td class="duration" data-value="54191">0.000</td>
+              <td class="duration" data-value="54191">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaUppgiftsnamnetP&aring;Forts&auml;ttSk&auml;rmenHaL&auml;ngden(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="49763">0.000</td>
+              <td class="duration" data-value="49763">0.000</td>
+              <td class="duration" data-value="49763">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.skaUppgiftsnamnetVaraTomt()</td>
+              <td>1</td>
+              <td class="duration" data-value="4689446567">4.689</td>
+              <td class="duration" data-value="4689446567">4.689</td>
+              <td class="duration" data-value="4689446567">4.689</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.sparerUppgiften()</td>
+              <td>3</td>
+              <td class="duration" data-value="16518549875">16.518</td>
+              <td class="duration" data-value="16518549875">19.451</td>
+              <td class="duration" data-value="49555649625">49.555</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.starterSekvensen()</td>
+              <td>5</td>
+              <td class="duration" data-value="17694714363">17.694</td>
+              <td class="duration" data-value="17694714363">20.472</td>
+              <td class="duration" data-value="88473571818">1:28.473</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.st&auml;ngerDialogen()</td>
+              <td>2</td>
+              <td class="duration" data-value="1969206851">1.969</td>
+              <td class="duration" data-value="1969206851">3.938</td>
+              <td class="duration" data-value="3938413702">3.938</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.s&auml;tterPausTidTill(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="3563213211">3.563</td>
+              <td class="duration" data-value="3563213211">3.704</td>
+              <td class="duration" data-value="17816066058">17.816</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.s&auml;tterTidTill(java.lang.String)</td>
+              <td>5</td>
+              <td class="duration" data-value="3715843245">3.715</td>
+              <td class="duration" data-value="3715843245">6.096</td>
+              <td class="duration" data-value="18579216226">18.579</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.tarBortSenasteHistorikpost()</td>
+              <td>1</td>
+              <td class="duration" data-value="34794">0.000</td>
+              <td class="duration" data-value="34794">0.000</td>
+              <td class="duration" data-value="34794">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.tarBortSparadUppgift(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="17104746524">17.104</td>
+              <td class="duration" data-value="17104746524">34.209</td>
+              <td class="duration" data-value="34209493049">34.209</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</td>
+              <td>6</td>
+              <td class="duration" data-value="21486517337">21.486</td>
+              <td class="duration" data-value="21486517337">26.603</td>
+              <td class="duration" data-value="128919104023">2:8.919</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.timernR&auml;knarNerKlart()</td>
+              <td>12</td>
+              <td class="duration" data-value="5421897979">5.421</td>
+              <td class="duration" data-value="5421897979">24.429</td>
+              <td class="duration" data-value="65062775749">1:5.062</td>
+              <td class="failed">41.67%</td>
+            </tr>
+            <tr>
+              <td class="location">com.example.steps.TimerSteps.v&auml;ljerSparadUppgift(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="21703699376">21.703</td>
+              <td class="duration" data-value="21703699376">21.703</td>
+              <td class="duration" data-value="21703699376">21.703</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>40</td>
+            <td>109</td>
+            <td class="duration">20.639</td>
+            <td class="duration">26:40.844</td>
+            <td class="duration">37:29.741</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
