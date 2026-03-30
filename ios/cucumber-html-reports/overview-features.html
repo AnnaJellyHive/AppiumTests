@@ -50,9 +50,9 @@ $(document).ready(function() {
     var chartData = {
         datasets: [{
             data: [
-                22,
-                1,
-                32,
+                37,
+                3,
+                29,
                 0,
                 0
             ],
@@ -93,7 +93,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 55) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 69) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -107,7 +107,7 @@ $(document).ready(function() {
         datasets: [{
             data: [
                 1,
-                2
+                3
             ],
             backgroundColor: [
                 "#00B000",
@@ -140,7 +140,7 @@ $(document).ready(function() {
                         var allData = data.datasets[tooltipItem.datasetIndex].data;
                         var tooltipLabel = data.labels[tooltipItem.index];
                         var tooltipData = allData[tooltipItem.index];
-                        var tooltipPercentage = Math.round(10000 * tooltipData / 3) / 100;
+                        var tooltipPercentage = Math.round(10000 * tooltipData / 4) / 100;
                         return tooltipLabel + ": " + tooltipData + " (" + tooltipPercentage + "%)";
                     }
                 }
@@ -230,7 +230,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>30 Mar 2026, 13:17</td>
+      <td>30 Mar 2026, 13:46</td>
     </tr>
   </tbody>
 </table>
@@ -327,18 +327,18 @@ $(document).ready(function() {
       <tr>
         <td class="tagname"><a href="report-feature_142179013.html">Timer-app underuppgiftssekvens</a></td>
 
-        <td      class="passed"    >22</td>
-        <td      class="failed"    >1</td>
-        <td     class="skipped"   >32</td>
+        <td      class="passed"    >37</td>
+        <td      class="failed"    >3</td>
+        <td     class="skipped"   >29</td>
         <td >0</td>
         <td >0</td>
-        <td class="total">55</td>
+        <td class="total">69</td>
 
         <td  class="passed"    >1</td>
-        <td  class="failed"    >2</td>
-        <td class="total">3</td>
+        <td  class="failed"    >3</td>
+        <td class="total">4</td>
 
-        <td class="duration" data-value="86066008000">1:26.066</td>
+        <td class="duration" data-value="224083064000">3:44.083</td>
         <td class="failed">Failed</td>
       </tr>
   </tbody>
@@ -346,30 +346,30 @@ $(document).ready(function() {
   <tfoot class="total">
     <tr>
       <td></td>
-      <td>22</td>
-      <td>1</td>
-      <td>32</td>
-      <td>0</td>
-      <td>0</td>
-      <td>55</td>
-
-      <td>1</td>
-      <td>2</td>
+      <td>37</td>
       <td>3</td>
+      <td>29</td>
+      <td>0</td>
+      <td>0</td>
+      <td>69</td>
 
-      <td class="duration">1:26.066</td>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+
+      <td class="duration">3:44.083</td>
       <td>1</td>
     </tr>
     <tr>
       <td></td>
-      <td>40.00%</td>
-      <td>1.82%</td>
-      <td>58.18%</td>
+      <td>53.62%</td>
+      <td>4.35%</td>
+      <td>42.03%</td>
       <td>0.00%</td>
       <td>0.00%</td>
       <td></td>
-      <td>33.33%</td>
-      <td>66.67%</td>
+      <td>25.00%</td>
+      <td>75.00%</td>
       <td></td>
       <td></td>
       <td>0.00%</td>

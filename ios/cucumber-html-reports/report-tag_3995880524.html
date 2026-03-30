@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>30 Mar 2026, 13:17</td>
+      <td>30 Mar 2026, 13:46</td>
     </tr>
   </tbody>
 </table>
@@ -129,9 +129,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@sekvens</td>
-          <td >0</td>
-          <td >0</td>
-          <td     class="skipped"   >24</td>
+          <td      class="passed"    >7</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >16</td>
           <td >0</td>
           <td >0</td>
           <td class="total">24</td>
@@ -140,7 +140,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="16486000">0.016</td>
+          <td class="duration" data-value="70888729000">1:10.888</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -183,7 +183,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">0.016</span>
+  <span class="lead-duration duration">1:10.888</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -203,9 +203,9 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-2">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -215,52 +215,17 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-2" class="inner-level collapse collapsable-details  in ">
+    <div id="before-2" class="inner-level collapse collapsable-details ">
         <div class="hook">
-          <div class="brief failed">
+          <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3:12.789</span>
+  <span class="lead-duration duration">2:55.474</span>
 
           </div>
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-3">
-          <a>Error message</a>
-      </div>
-      <div id="msg-3" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Unable to start WebDriverAgent session. Original error: Could not proxy command to the remote server. Original error: connect ECONNREFUSED 127.0.0.1:8100 
-Host info: host: 'iad20-fj925-a246091f-f243-488f-98d3-31e5c199ae5b-22DA40E54C39.local', ip: 'fe80:0:0:0:18d9:dfb9:c956:e92d%en0'
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.4', java.version: '17.0.18'
-Driver info: io.appium.java_client.ios.IOSDriver
-Command: [null, newSession {capabilities=[{appium:noReset=true, appium:udid=394B9336-9982-429E-A94A-FE77402C9E3C, appium:wdaLaunchTimeout=300000, appium:bundleId=com.annamarkstrom.zonat, platformName=IOS, appium:automationName=XCuiTest, appium:wdaConnectionTimeout=300000}], desiredCapabilities=Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}}]
-Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:182)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:89)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:101)
-	at io.appium.java_client.ios.IOSDriver.&lt;init&gt;(IOSDriver.java:104)
-	at com.example.steps.TimerSteps.setUpIos(TimerSteps.java:125)
-	at com.example.steps.TimerSteps.setUp(TimerSteps.java:63)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -273,7 +238,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-4">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
 
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -285,15 +250,15 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-4" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
-<div class="brief step-name-Given skipped">
+<div class="brief step-name-Given passed">
   <span class="keyword indention">Given</span>
   <span class="name">appen &auml;r startad</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.015</span>
 
 </div>
 
@@ -316,11 +281,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-When skipped">
+<div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;L&auml;sa bok&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">6.173</span>
 
 </div>
 
@@ -343,11 +308,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;&Ouml;ppna boken&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">5.532</span>
 
 </div>
 
@@ -370,11 +335,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;L&auml;s 2 sidor i boken&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">2.611</span>
 
 </div>
 
@@ -397,11 +362,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;15&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">3.197</span>
 
 </div>
 
@@ -424,11 +389,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;15&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">2.885</span>
 
 </div>
 
@@ -451,11 +416,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren startar sekvensen</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">8.351</span>
 
 </div>
 
@@ -478,11 +443,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-Then skipped">
+<div class="brief step-name-Then failed">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">41.947</span>
 
 </div>
 
@@ -490,6 +455,22 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>java.lang.AssertionError:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>java.lang.AssertionError: Timer visade inte r&auml;tt v&auml;rden inom 20s.
+F&ouml;rv&auml;ntade: mode='FOKUS!', task='&Ouml;ppna boken', progress='1 av 2'
+Hittade:    mode='timerModeLabel', task='timerTaskName', progress='timerProgress'
+	at com.example.steps.TimerSteps.skaTimernVisaJobba(TimerSteps.java:242)
+	at ✽.ska timern visa &quot;FOKUS!&quot; f&ouml;r underuppgift 1 av 2(classpath:features/timer_sekvens.feature:12)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -509,7 +490,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.002</span>
 
 </div>
 
@@ -536,7 +517,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa paus med n&auml;sta underuppgift <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.166</span>
 
 </div>
 
@@ -563,7 +544,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
 </div>
 
@@ -590,7 +571,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">2</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
 </div>
 
@@ -671,7 +652,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueYesButton&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.001</span>
 
 </div>
 
@@ -698,7 +679,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.002</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -806,7 +787,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">2</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.011</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -959,7 +940,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.009</span>
+  <span class="lead-duration duration">1.627</span>
 
           </div>
 
@@ -968,6 +949,21 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_-510952537.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-6" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-510952537.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
