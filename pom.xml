@@ -70,7 +70,7 @@
                             <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
                             <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>
                             <jsonFiles>
-                                <param>**/*.json</param>
+                                <param>*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>

@@ -450,6 +450,7 @@ public class TimerSteps {
                     !d.findElements(AppiumBy.androidUIAutomator(
                             "new UiSelector().text(\"" + name + "\")")).isEmpty());
             item = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + name + "\")"));
+            waitForElementToBeVisible(item);
             rowIndex = 0;
         }
         int y = item.getRect().y + item.getRect().height / 2;
