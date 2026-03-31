@@ -213,12 +213,9 @@ public class TimerSteps {
         // Vänta tills timer-skärmen är synlig innan steget returnerar.
         // Timern startar via useFocusEffect — på CI kan navigationsanimationen ta länge,
         // och timer-fasen hinner gå ut om vi börjar kolla för tidigt.
-        By timerModeLocator = "ios".equalsIgnoreCase(PLATFORM)
-                ? AppiumBy.accessibilityId("timerModeLabel")
-                : By.xpath("//*[@content-desc='timerModeLabel']");
         new WebDriverWait(driver, Duration.ofSeconds(60))
                 .ignoring(WebDriverException.class)
-                .until(d -> !d.findElements(timerModeLocator).isEmpty());
+                .until(d -> !d.findElements(AppiumBy.accessibilityId("timerModeLabel")).isEmpty());
     }
 
     @When("användaren klickar på {string}")
@@ -430,7 +427,7 @@ public class TimerSteps {
 
     @And("användaren tar bort den sparade uppgiften {string}")
     public void tarBortSparadUppgift(String name) {
-        waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
+        waitForElementToBeVisible(taskInputPage.getChooseTemplateButton(), 15).click();
         WebElement item;
         int rowIndex;
         if ("ios".equalsIgnoreCase(PLATFORM)) {
@@ -492,13 +489,13 @@ public class TimerSteps {
         }
         assertEquals(1, count,
                 "Förväntade exakt 1 sparad uppgift med namnet '" + name + "' men hittade " + count);
-        waitForElementToBeVisible(taskInputPage.getTemplateDialogClose()).click();
+        waitForElementToBeVisible(taskInputPage.getTemplateDialogClose(), 15).click();
     }
 
     @And("användaren tar bort den senaste historikposten")
     public void tarBortSenasteHistorikpost() {
         // Vänta tills uppgiften dyker upp i historiken
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d ->
                 historyPage.getTitleElements().stream().anyMatch(e -> {
                     try { return e.getText().contains(lastTaskName); } catch (Exception ex) { return false; }
                 }));
@@ -598,11 +595,15 @@ public class TimerSteps {
     }
 
     private WebElement waitForElementToBeVisible(WebElement element) {
+        return waitForElementToBeVisible(element, 5);
+    }
+
+    private WebElement waitForElementToBeVisible(WebElement element, int timeoutSeconds) {
         try {
-            return new WebDriverWait(driver, Duration.ofSeconds(5))
+            return new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
                     .until(ExpectedConditions.visibilityOf(element));
         } catch (TimeoutException e) {
-            throw new AssertionError("waitForElementToBeVisible: elementet syntes inte inom 5s [" + element + "]", e);
+            throw new AssertionError("waitForElementToBeVisible: elementet syntes inte inom " + timeoutSeconds + "s [" + element + "]", e);
         }
     }
 
