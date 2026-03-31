@@ -206,6 +206,11 @@ public class TimerSteps {
     @When("användaren startar sekvensen")
     public void starterSekvensen() {
         try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .ignoring(Exception.class)
+                    .until(d -> !((IOSDriver) driver).isKeyboardShown());
+        }
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .ignoring(StaleElementReferenceException.class)
                 .until(d -> { taskInputPage.clickStart(); return true; });
@@ -428,7 +433,7 @@ public class TimerSteps {
     }
 
     @And("användaren tar bort den sparade uppgiften {string}")
-    public void tarBortSparadUppgift(String name) throws InterruptedException {
+    public void tarBortSparadUppgift(String name) {
         waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
         WebElement item;
         int rowIndex;
@@ -495,7 +500,7 @@ public class TimerSteps {
     }
 
     @And("användaren tar bort den senaste historikposten")
-    public void tarBortSenasteHistorikpost() throws InterruptedException {
+    public void tarBortSenasteHistorikpost() {
         // Vänta tills uppgiften dyker upp i historiken
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
                 historyPage.getTitleElements().stream().anyMatch(e -> {
@@ -561,38 +566,37 @@ public class TimerSteps {
         });
     }
 
-    private void tapDeleteAndConfirm(String deleteBtnAccessibilityId, int rowIndex, int targetY) throws InterruptedException {
-        // Välj knappen närmast den svepte radens Y — efter ett svep syns bara en delete-knapp
-        List<WebElement> btns = driver.findElements(AppiumBy.accessibilityId(deleteBtnAccessibilityId));
-        assertTrue(!btns.isEmpty(), "Hittade ingen " + deleteBtnAccessibilityId + " efter svep");
-        WebElement deleteBtn = btns.stream()
-                .min(java.util.Comparator.comparingInt(e -> Math.abs(e.getRect().y - targetY)))
-                .get();
+    private void tapDeleteAndConfirm(String deleteBtnAccessibilityId, int rowIndex, int targetY) {
+        // Vänta tills delete-knappen för rätt rad är synlig (svepanimationen klar)
+        WebElement deleteBtn = new WebDriverWait(driver, Duration.ofSeconds(5))
+                .ignoring(StaleElementReferenceException.class)
+                .until(d -> {
+                    List<WebElement> btns = d.findElements(AppiumBy.accessibilityId(deleteBtnAccessibilityId));
+                    return btns.stream()
+                            .filter(e -> e.isDisplayed())
+                            .min(java.util.Comparator.comparingInt(e -> Math.abs(e.getRect().y - targetY)))
+                            .orElse(null);
+                });
+        assertNotNull(deleteBtn, "Hittade ingen synlig " + deleteBtnAccessibilityId + " efter svep");
+
         // X från delete-knappens rect (alltid vid högerkanten), Y från den svepte raden
         int btnX = deleteBtn.getRect().x + deleteBtn.getRect().width / 2;
         int btnY = targetY;
+
+        // PointerInput-tap fungerar på både Android och iOS (mobile: clickGesture är Android-only)
+        PointerInput tapFinger = new PointerInput(PointerInput.Kind.TOUCH, "tapFinger");
+        Sequence tap = new Sequence(tapFinger, 0);
+        tap.addAction(tapFinger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), btnX, btnY));
+        tap.addAction(tapFinger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        tap.addAction(tapFinger.createPointerMove(Duration.ofMillis(50), PointerInput.Origin.viewport(), btnX, btnY));
+        tap.addAction(tapFinger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        driver.perform(Arrays.asList(tap));
+
         // positiv-knappen i native AlertDialog — plattformsberoende
         By jaBy = "ios".equalsIgnoreCase(PLATFORM)
                 ? By.xpath("//XCUIElementTypeButton[@name='Ja']")
                 : By.id("android:id/button1");
-        for (int attempt = 0; attempt < 3; attempt++) {
-            // PointerInput-tap fungerar på både Android och iOS (mobile: clickGesture är Android-only)
-            PointerInput tapFinger = new PointerInput(PointerInput.Kind.TOUCH, "tapFinger");
-            Sequence tap = new Sequence(tapFinger, 0);
-            tap.addAction(tapFinger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), btnX, btnY));
-            tap.addAction(tapFinger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
-            tap.addAction(tapFinger.createPointerMove(Duration.ofMillis(50), PointerInput.Origin.viewport(), btnX, btnY));
-            tap.addAction(tapFinger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-            driver.perform(Arrays.asList(tap));
-            try {
-                new WebDriverWait(driver, Duration.ofSeconds(3))
-                        .until(ExpectedConditions.visibilityOfElementLocated(jaBy)).click();
-                return;
-            } catch (Exception ignored) {
-                Thread.sleep(300);
-            }
-        }
-        throw new RuntimeException("Bekräftelsedialogen ('Ja') visades inte efter 3 försök");
+        waitForElementToBeVisible(jaBy).click();
     }
 
     private WebElement waitForElementToBeVisible(WebElement element) {
