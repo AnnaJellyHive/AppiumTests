@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>31 Mar 2026, 15:16</td>
+      <td>31 Mar 2026, 15:40</td>
     </tr>
   </tbody>
 </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@mall</td>
-          <td      class="passed"    >23</td>
           <td >0</td>
           <td >0</td>
+          <td     class="skipped"   >23</td>
           <td >0</td>
           <td >0</td>
           <td class="total">23</td>
 
-          <td  class="passed"    >1</td>
           <td >0</td>
+          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="98397440157">1:38.397</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="922667">0.000</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -183,12 +183,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1:38.397</span>
+  <span class="lead-duration duration">0.000</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Spara, v&auml;lj och ta bort en sparad uppgift</span>
 
@@ -199,13 +199,13 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-2">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -215,17 +215,37 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-2" class="inner-level collapse collapsable-details ">
+    <div id="before-2" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief failed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:51.641</span>
+  <span class="lead-duration duration">6:32.971</span>
 
           </div>
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-3">
+          <a>Error message</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$869/0x00007f22c8393cf0@69d7bc1a (tried for 240 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 17d7c049-434d-4b9e-ac2d-623fef9cdc16
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.example.steps.TimerSteps.setUp(TimerSteps.java:76)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -238,9 +258,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-4">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -250,11 +270,11 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-4" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
-<div class="brief step-name-Given passed">
+<div class="brief step-name-Given skipped">
   <span class="keyword indention">Given</span>
   <span class="name">appen &auml;r startad</span>
 
@@ -281,11 +301,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">0.986</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -308,11 +328,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;Lite testing&quot;</span></span>
 
-  <span class="lead-duration duration">7.243</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -335,11 +355,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;10&quot;</span></span>
 
-  <span class="lead-duration duration">1.989</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -362,11 +382,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;10&quot;</span></span>
 
-  <span class="lead-duration duration">2.677</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -389,11 +409,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">11.274</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -416,11 +436,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren rensar formul&auml;ret</span>
 
-  <span class="lead-duration duration">1.641</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -443,11 +463,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska uppgiftsnamnet vara tomt</span>
 
-  <span class="lead-duration duration">1.744</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -470,11 +490,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska underuppgifterna vara borta</span>
 
-  <span class="lead-duration duration">0.647</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -497,11 +517,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska tiderna vara &aring;terst&auml;llda till <span class="argument">&quot;120&quot;</span></span>
 
-  <span class="lead-duration duration">1.053</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -524,11 +544,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer den sparade uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">9.093</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -551,11 +571,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska formul&auml;ret vara ifyllt med uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">1.895</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -578,11 +598,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska underuppgiften <span class="argument">&quot;Lite testing&quot;</span> finnas i formul&auml;ret</span>
 
-  <span class="lead-duration duration">1.174</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -605,11 +625,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska tiderna vara satta till <span class="argument">&quot;10&quot;</span></span>
 
-  <span class="lead-duration duration">1.046</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -632,11 +652,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren startar sekvensen</span>
 
-  <span class="lead-duration duration">6.380</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -659,11 +679,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">1</span></span>
 
-  <span class="lead-duration duration">3.084</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -686,11 +706,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">12.082</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -713,11 +733,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
 
-  <span class="lead-duration duration">0.370</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -740,11 +760,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
 
-  <span class="lead-duration duration">0.959</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -767,11 +787,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;uppgifterTab&quot;</span></span>
 
-  <span class="lead-duration duration">4.668</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -794,11 +814,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">25.368</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -821,11 +841,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska den sparade uppgiften <span class="argument">&quot;Testar&quot;</span> inte l&auml;ngre finnas i listan</span>
 
-  <span class="lead-duration duration">2.265</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -848,11 +868,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
-  <span class="lead-duration duration">0.748</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -879,7 +899,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -891,13 +911,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">8.254</span>
+  <span class="lead-duration duration">21.171</span>
 
           </div>
 
@@ -906,6 +926,21 @@ $(document).ready(function() {
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_372180210.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-6" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_372180210.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
