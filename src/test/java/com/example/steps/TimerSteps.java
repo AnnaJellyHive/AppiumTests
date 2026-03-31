@@ -207,9 +207,13 @@ public class TimerSteps {
     public void starterSekvensen() {
         try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
         if ("ios".equalsIgnoreCase(PLATFORM)) {
-            new WebDriverWait(driver, Duration.ofSeconds(5))
-                    .ignoring(Exception.class)
-                    .until(d -> !((IOSDriver) driver).isKeyboardShown());
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(3))
+                        .until(d -> !((IOSDriver) driver).isKeyboardShown());
+            } catch (TimeoutException ignored) {
+                // Tangentbordet gick inte att stänga (t.ex. return-tangent utan done-knapp)
+                // XCUITest scrollar automatiskt till startknappen och klarar klicket ändå
+            }
         }
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .ignoring(StaleElementReferenceException.class)
@@ -576,6 +580,17 @@ public class TimerSteps {
                             .orElse(null);
                 });
         assertNotNull(deleteBtn, "Hittade ingen synlig " + deleteBtnAccessibilityId + " efter svep");
+
+        // Vänta tills knappens position är stabil (svepanimationen klar)
+        int[] prevX = {-1};
+        new WebDriverWait(driver, Duration.ofSeconds(3))
+                .ignoring(StaleElementReferenceException.class)
+                .until(d -> {
+                    int currentX = deleteBtn.getRect().x;
+                    boolean stable = currentX == prevX[0];
+                    prevX[0] = currentX;
+                    return stable;
+                });
 
         // X från delete-knappens rect (alltid vid högerkanten), Y från den svepte raden
         int btnX = deleteBtn.getRect().x + deleteBtn.getRect().width / 2;
