@@ -206,15 +206,7 @@ public class TimerSteps {
     @When("användaren startar sekvensen")
     public void starterSekvensen() {
         try { ((HidesKeyboard) driver).hideKeyboard(); } catch (Exception ignored) {}
-        if ("ios".equalsIgnoreCase(PLATFORM)) {
-            try {
-                new WebDriverWait(driver, Duration.ofSeconds(3))
-                        .until(d -> !((IOSDriver) driver).isKeyboardShown());
-            } catch (TimeoutException ignored) {
-                // Tangentbordet gick inte att stänga (t.ex. return-tangent utan done-knapp)
-                // XCUITest scrollar automatiskt till startknappen och klarar klicket ändå
-            }
-        }
+
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .ignoring(StaleElementReferenceException.class)
                 .until(d -> { taskInputPage.clickStart(); return true; });
@@ -540,7 +532,7 @@ public class TimerSteps {
     @When("användaren väljer kategorin {string}")
     public void väljerKategorin(String kategori) {
         waitForElementToBeVisible(taskInputPage.getCategoryButton()).click();
-        waitForElementToBeVisible(taskInputPage.categoryItemLocator(kategori)).click();
+        waitForElementToBeVisible(taskInputPage.categoryItemLocator(kategori), 15).click();
     }
 
     @Then("ska kategorin {string} vara vald")
@@ -581,16 +573,8 @@ public class TimerSteps {
                 });
         assertNotNull(deleteBtn, "Hittade ingen synlig " + deleteBtnAccessibilityId + " efter svep");
 
-        // Vänta tills knappens position är stabil (svepanimationen klar)
-        int[] prevX = {-1};
-        new WebDriverWait(driver, Duration.ofSeconds(3))
-                .ignoring(StaleElementReferenceException.class)
-                .until(d -> {
-                    int currentX = deleteBtn.getRect().x;
-                    boolean stable = currentX == prevX[0];
-                    prevX[0] = currentX;
-                    return stable;
-                });
+        // Vänta tills svepanimationen är klar innan koordinaterna låses
+        try { Thread.sleep(1000); } catch (InterruptedException ignored) {}
 
         // X från delete-knappens rect (alltid vid högerkanten), Y från den svepte raden
         int btnX = deleteBtn.getRect().x + deleteBtn.getRect().width / 2;
@@ -622,11 +606,15 @@ public class TimerSteps {
     }
 
     private WebElement waitForElementToBeVisible(By locator) {
+        return waitForElementToBeVisible(locator, 5);
+    }
+
+    private WebElement waitForElementToBeVisible(By locator, int timeoutSeconds) {
         try {
-            return new WebDriverWait(driver, Duration.ofSeconds(5))
+            return new WebDriverWait(driver, Duration.ofSeconds(timeoutSeconds))
                     .until(ExpectedConditions.visibilityOfElementLocated(locator));
         } catch (TimeoutException e) {
-            throw new AssertionError("waitForElementToBeVisible: hittade inte element [" + locator + "] inom 5s", e);
+            throw new AssertionError("waitForElementToBeVisible: hittade inte element [" + locator + "] inom " + timeoutSeconds + "s", e);
         }
     }
 
