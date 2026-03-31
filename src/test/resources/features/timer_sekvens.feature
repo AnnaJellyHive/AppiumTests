@@ -52,7 +52,7 @@ Feature: Timer-app underuppgiftssekvens
     When timern räknar ner klart
     Then ska fortsätt-skärmen visa rätt tid
     When användaren klickar på "continueNoButton"
-    And användaren klickar på "newTaskButton"
+    And användaren klickar på "uppgifterTab"
     And användaren tar bort den sparade uppgiften "<uppgift>"
     Then ska den sparade uppgiften "<uppgift>" inte längre finnas i listan
     And användaren stänger dialogen
