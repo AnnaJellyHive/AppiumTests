@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>31 Mar 2026, 06:47</td>
+      <td>31 Mar 2026, 08:36</td>
     </tr>
   </tbody>
 </table>
@@ -140,7 +140,7 @@ $(document).ready(function() {
           <td  class="failed"    >6</td>
           <td class="total">6</td>
 
-          <td class="duration" data-value="47282629529">47.282</td>
+          <td class="duration" data-value="49033721116">49.033</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -183,7 +183,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">7.863</span>
+  <span class="lead-duration duration">7.349</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -221,7 +221,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:51.544</span>
+  <span class="lead-duration duration">1:51.583</span>
 
           </div>
 
@@ -285,7 +285,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
 
-  <span class="lead-duration duration">7.863</span>
+  <span class="lead-duration duration">7.349</span>
 
 </div>
 
@@ -300,20 +300,20 @@ $(document).ready(function() {
           <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [By.xpath: //*[@content-desc='Plugg']] inom 5s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Plugg&quot;)] inom 5s
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:614)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at ✽.anv&auml;ndaren v&auml;ljer kategorin &quot;Plugg&quot;(classpath:features/timer_sekvens.feature:126)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc='Plugg'] (tried for 5 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Plugg&quot;) (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: f4687d3f-f4eb-41b7-b6dd-362460cc64ee
+Session ID: e3525606-740f-48b4-85fd-3dfe682b7f24
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:610)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -491,7 +491,7 @@ Session ID: f4687d3f-f4eb-41b7-b6dd-362460cc64ee
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">13.513</span>
+  <span class="lead-duration duration">13.963</span>
 
           </div>
 
@@ -504,13 +504,13 @@ Session ID: f4687d3f-f4eb-41b7-b6dd-362460cc64ee
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-517800553.png" download target="_blank">
+      <a href="embeddings/embedding_-70229524.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_-517800553.png">
+        <img src="embeddings/embedding_-70229524.png">
       </div>
     </div>
   </div>
@@ -537,7 +537,7 @@ Session ID: f4687d3f-f4eb-41b7-b6dd-362460cc64ee
 </div>
 
 
-  <span class="lead-duration duration">10.077</span>
+  <span class="lead-duration duration">9.724</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-7">
@@ -575,7 +575,7 @@ Session ID: f4687d3f-f4eb-41b7-b6dd-362460cc64ee
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:52.134</span>
+  <span class="lead-duration duration">1:56.714</span>
 
           </div>
 
@@ -639,7 +639,7 @@ Session ID: f4687d3f-f4eb-41b7-b6dd-362460cc64ee
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span></span>
 
-  <span class="lead-duration duration">10.077</span>
+  <span class="lead-duration duration">9.724</span>
 
 </div>
 
@@ -654,20 +654,20 @@ Session ID: f4687d3f-f4eb-41b7-b6dd-362460cc64ee
           <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-10" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [By.xpath: //*[@content-desc='Tr&auml;ning']] inom 5s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Tr&auml;ning&quot;)] inom 5s
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:614)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at ✽.anv&auml;ndaren v&auml;ljer kategorin &quot;Tr&auml;ning&quot;(classpath:features/timer_sekvens.feature:126)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc='Tr&auml;ning'] (tried for 5 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Tr&auml;ning&quot;) (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: f78a8fc7-2371-4179-a596-80edcf22c674
+Session ID: 0cc020c2-98dc-4649-b539-ee07f55d4cb7
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:610)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -845,7 +845,7 @@ Session ID: f78a8fc7-2371-4179-a596-80edcf22c674
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">13.163</span>
+  <span class="lead-duration duration">13.975</span>
 
           </div>
 
@@ -858,13 +858,13 @@ Session ID: f78a8fc7-2371-4179-a596-80edcf22c674
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-12" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_1430348149.png" download target="_blank">
+      <a href="embeddings/embedding_-1888099990.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-12" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_1430348149.png">
+        <img src="embeddings/embedding_-1888099990.png">
       </div>
     </div>
   </div>
@@ -891,7 +891,7 @@ Session ID: f78a8fc7-2371-4179-a596-80edcf22c674
 </div>
 
 
-  <span class="lead-duration duration">6.552</span>
+  <span class="lead-duration duration">7.113</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-13">
@@ -929,7 +929,7 @@ Session ID: f78a8fc7-2371-4179-a596-80edcf22c674
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:52.578</span>
+  <span class="lead-duration duration">1:54.199</span>
 
           </div>
 
@@ -993,7 +993,7 @@ Session ID: f78a8fc7-2371-4179-a596-80edcf22c674
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Hem&quot;</span></span>
 
-  <span class="lead-duration duration">6.552</span>
+  <span class="lead-duration duration">7.113</span>
 
 </div>
 
@@ -1008,20 +1008,20 @@ Session ID: f78a8fc7-2371-4179-a596-80edcf22c674
           <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-16" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [By.xpath: //*[@content-desc='Hem']] inom 5s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Hem&quot;)] inom 5s
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:614)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at ✽.anv&auml;ndaren v&auml;ljer kategorin &quot;Hem&quot;(classpath:features/timer_sekvens.feature:126)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc='Hem'] (tried for 5 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Hem&quot;) (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 3d0aa8e4-f8f9-431a-b022-2055b0406080
+Session ID: 3bdb002a-26c5-465b-9b59-20ef534b5a49
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:610)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1199,7 +1199,7 @@ Session ID: 3d0aa8e4-f8f9-431a-b022-2055b0406080
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">14.876</span>
+  <span class="lead-duration duration">14.486</span>
 
           </div>
 
@@ -1212,13 +1212,13 @@ Session ID: 3d0aa8e4-f8f9-431a-b022-2055b0406080
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-18" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_780037076.png" download target="_blank">
+      <a href="embeddings/embedding_-1773950690.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-18" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_780037076.png">
+        <img src="embeddings/embedding_-1773950690.png">
       </div>
     </div>
   </div>
@@ -1245,7 +1245,7 @@ Session ID: 3d0aa8e4-f8f9-431a-b022-2055b0406080
 </div>
 
 
-  <span class="lead-duration duration">7.402</span>
+  <span class="lead-duration duration">7.910</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-19">
@@ -1283,7 +1283,7 @@ Session ID: 3d0aa8e4-f8f9-431a-b022-2055b0406080
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:55.065</span>
+  <span class="lead-duration duration">1:54.216</span>
 
           </div>
 
@@ -1347,7 +1347,7 @@ Session ID: 3d0aa8e4-f8f9-431a-b022-2055b0406080
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Socialt&quot;</span></span>
 
-  <span class="lead-duration duration">7.402</span>
+  <span class="lead-duration duration">7.910</span>
 
 </div>
 
@@ -1362,20 +1362,20 @@ Session ID: 3d0aa8e4-f8f9-431a-b022-2055b0406080
           <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-22" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [By.xpath: //*[@content-desc='Socialt']] inom 5s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Socialt&quot;)] inom 5s
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:614)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at ✽.anv&auml;ndaren v&auml;ljer kategorin &quot;Socialt&quot;(classpath:features/timer_sekvens.feature:126)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc='Socialt'] (tried for 5 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Socialt&quot;) (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: ad731861-e7dc-4d71-a4a5-30fa4fd25b03
+Session ID: e8be0883-5e07-48a0-84cb-8b48ebc95cf0
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:610)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1553,7 +1553,7 @@ Session ID: ad731861-e7dc-4d71-a4a5-30fa4fd25b03
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">13.408</span>
+  <span class="lead-duration duration">13.744</span>
 
           </div>
 
@@ -1566,13 +1566,13 @@ Session ID: ad731861-e7dc-4d71-a4a5-30fa4fd25b03
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-24" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_462528746.png" download target="_blank">
+      <a href="embeddings/embedding_845478245.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-24" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_462528746.png">
+        <img src="embeddings/embedding_845478245.png">
       </div>
     </div>
   </div>
@@ -1599,7 +1599,7 @@ Session ID: ad731861-e7dc-4d71-a4a5-30fa4fd25b03
 </div>
 
 
-  <span class="lead-duration duration">8.087</span>
+  <span class="lead-duration duration">7.211</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-25">
@@ -1637,7 +1637,7 @@ Session ID: ad731861-e7dc-4d71-a4a5-30fa4fd25b03
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:55.893</span>
+  <span class="lead-duration duration">1:54.720</span>
 
           </div>
 
@@ -1701,7 +1701,7 @@ Session ID: ad731861-e7dc-4d71-a4a5-30fa4fd25b03
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span></span>
 
-  <span class="lead-duration duration">8.087</span>
+  <span class="lead-duration duration">7.211</span>
 
 </div>
 
@@ -1716,20 +1716,20 @@ Session ID: ad731861-e7dc-4d71-a4a5-30fa4fd25b03
           <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-28" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [By.xpath: //*[@content-desc='Mental h&auml;lsa']] inom 5s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Mental h&auml;lsa&quot;)] inom 5s
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:614)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at ✽.anv&auml;ndaren v&auml;ljer kategorin &quot;Mental h&auml;lsa&quot;(classpath:features/timer_sekvens.feature:126)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc='Mental h&auml;lsa'] (tried for 5 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().text(&quot;Mental h&auml;lsa&quot;) (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: acd964d1-224b-45e2-84ea-3a439d56ea21
+Session ID: 29091f26-900c-48a7-b2f4-e3830614bb40
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:610)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -1907,7 +1907,7 @@ Session ID: acd964d1-224b-45e2-84ea-3a439d56ea21
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">13.742</span>
+  <span class="lead-duration duration">14.179</span>
 
           </div>
 
@@ -1920,13 +1920,13 @@ Session ID: acd964d1-224b-45e2-84ea-3a439d56ea21
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-30" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_1377466877.png" download target="_blank">
+      <a href="embeddings/embedding_-1017620630.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-30" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_1377466877.png">
+        <img src="embeddings/embedding_-1017620630.png">
       </div>
     </div>
   </div>
@@ -1953,7 +1953,7 @@ Session ID: acd964d1-224b-45e2-84ea-3a439d56ea21
 </div>
 
 
-  <span class="lead-duration duration">7.298</span>
+  <span class="lead-duration duration">9.723</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-31">
@@ -1991,7 +1991,7 @@ Session ID: acd964d1-224b-45e2-84ea-3a439d56ea21
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:52.614</span>
+  <span class="lead-duration duration">1:58.275</span>
 
           </div>
 
@@ -2055,7 +2055,7 @@ Session ID: acd964d1-224b-45e2-84ea-3a439d56ea21
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span></span>
 
-  <span class="lead-duration duration">7.298</span>
+  <span class="lead-duration duration">9.722</span>
 
 </div>
 
@@ -2070,20 +2070,20 @@ Session ID: acd964d1-224b-45e2-84ea-3a439d56ea21
           <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-34" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [By.xpath: //*[@content-desc='&Ouml;vrigt']] inom 5s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().text(&quot;&Ouml;vrigt&quot;)] inom 5s
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:614)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at ✽.anv&auml;ndaren v&auml;ljer kategorin &quot;&Ouml;vrigt&quot;(classpath:features/timer_sekvens.feature:126)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc='&Ouml;vrigt'] (tried for 5 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().text(&quot;&Ouml;vrigt&quot;) (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1008-azure', java.version: '17.0.18'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9d74c2dd-0cd2-46a3-9bc7-e74823b868ec
+Session ID: ce4e970c-8bbb-425c-8059-9c9dc8ae529d
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:610)
-	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:536)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:612)
+	at com.example.steps.TimerSteps.v&auml;ljerKategorin(TimerSteps.java:539)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2261,7 +2261,7 @@ Session ID: 9d74c2dd-0cd2-46a3-9bc7-e74823b868ec
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">15.061</span>
+  <span class="lead-duration duration">14.284</span>
 
           </div>
 
@@ -2274,13 +2274,13 @@ Session ID: 9d74c2dd-0cd2-46a3-9bc7-e74823b868ec
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-36" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-881300889.png" download target="_blank">
+      <a href="embeddings/embedding_-610232535.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-36" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_-881300889.png">
+        <img src="embeddings/embedding_-610232535.png">
       </div>
     </div>
   </div>
