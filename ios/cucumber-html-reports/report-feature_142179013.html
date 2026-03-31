@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>31 Mar 2026, 05:04</td>
+      <td>31 Mar 2026, 06:01</td>
     </tr>
   </tbody>
 </table>
@@ -129,18 +129,18 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">Timer-app underuppgiftssekvens</td>
-          <td      class="passed"    >95</td>
-          <td      class="failed"    >1</td>
-          <td     class="skipped"   >7</td>
+          <td      class="passed"    >26</td>
+          <td      class="failed"    >5</td>
+          <td     class="skipped"   >72</td>
           <td >0</td>
           <td >0</td>
           <td class="total">103</td>
 
-          <td  class="passed"    >10</td>
-          <td  class="failed"    >1</td>
+          <td  class="passed"    >6</td>
+          <td  class="failed"    >5</td>
           <td class="total">11</td>
 
-          <td class="duration" data-value="372156845000">6:12.156</td>
+          <td class="duration" data-value="102796983000">1:42.796</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -193,12 +193,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">2:22.030</span>
+  <span class="lead-duration duration">16.974</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Underuppgifter genomf&ouml;rs i r&auml;tt ordning, forts&auml;tt och avsluta</span>
 
@@ -209,7 +209,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
@@ -231,7 +231,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">2:58.856</span>
+  <span class="lead-duration duration">1:53.486</span>
 
           </div>
 
@@ -248,9 +248,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -260,7 +260,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -291,11 +291,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;L&auml;sa bok&quot;</span></span>
 
-  <span class="lead-duration duration">4.858</span>
+  <span class="lead-duration duration">16.973</span>
 
 </div>
 
@@ -303,6 +303,29 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-4" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.pages.TaskInputPage$$Lambda$899/0x0000007001518c50@638afcaa (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.4', java.version: '17.0.18'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: b2c6a5b0-57be-4a41-b2c7-b7926d9446a1
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.example.pages.TaskInputPage.setFieldText(TaskInputPage.java:95)
+	at com.example.pages.TaskInputPage.enterTaskName(TaskInputPage.java:115)
+	at com.example.steps.TimerSteps.fyllIUppgiften(TimerSteps.java:136)
+	at ✽.anv&auml;ndaren fyller i uppgiften &quot;L&auml;sa bok&quot;(classpath:features/timer_sekvens.feature:6)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -318,11 +341,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;&Ouml;ppna boken&quot;</span></span>
 
-  <span class="lead-duration duration">2.466</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -345,11 +368,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;L&auml;s 2 sidor i boken&quot;</span></span>
 
-  <span class="lead-duration duration">1.830</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -372,11 +395,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;20&quot;</span></span>
 
-  <span class="lead-duration duration">1.885</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -399,11 +422,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;20&quot;</span></span>
 
-  <span class="lead-duration duration">1.880</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -426,11 +449,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren startar sekvensen</span>
 
-  <span class="lead-duration duration">6.109</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -453,11 +476,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.792</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -480,11 +503,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">17.910</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -507,11 +530,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa paus med n&auml;sta underuppgift <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.265</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -534,11 +557,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">19.843</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -561,11 +584,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">2</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.264</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -588,11 +611,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">20.499</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -615,11 +638,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
 
-  <span class="lead-duration duration">0.124</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -642,11 +665,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueYesButton&quot;</span></span>
 
-  <span class="lead-duration duration">0.799</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -669,11 +692,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.269</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -696,11 +719,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">19.612</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -723,11 +746,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa paus med n&auml;sta underuppgift <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.273</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -750,11 +773,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">20.515</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -777,11 +800,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">2</span> av <span class="argument">2</span></span>
 
-  <span class="lead-duration duration">0.261</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -804,11 +827,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">20.241</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -831,11 +854,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
 
-  <span class="lead-duration duration">0.111</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -858,11 +881,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
 
-  <span class="lead-duration duration">1.007</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -885,11 +908,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska historiken visa minst <span class="argument">2</span> k&ouml;rningar med uppgiften <span class="argument">&quot;L&auml;sa bok&quot;</span></span>
 
-  <span class="lead-duration duration">0.209</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -916,7 +939,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -928,13 +951,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.060</span>
+  <span class="lead-duration duration">0.248</span>
 
           </div>
 
@@ -943,6 +966,21 @@ $(document).ready(function() {
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_2123778510.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-6" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_2123778510.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
@@ -961,12 +999,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">45.083</span>
+  <span class="lead-duration duration">18.411</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-7">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Spara, v&auml;lj och ta bort en sparad uppgift</span>
 
@@ -977,11 +1015,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-5" class="collapse collapsable-details ">
+  <div id="element-7" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-6">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-8">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -993,13 +1031,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-6" class="inner-level collapse collapsable-details ">
+    <div id="before-8" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">8.411</span>
+  <span class="lead-duration duration">14.987</span>
 
           </div>
 
@@ -1016,9 +1054,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-7">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-9">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -1028,7 +1066,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-7" class="inner-level collapse collapsable-details ">
+  <div id="steps-9" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -1063,7 +1101,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">4.279</span>
+  <span class="lead-duration duration">2.544</span>
 
 </div>
 
@@ -1086,11 +1124,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;Lite testing&quot;</span></span>
 
-  <span class="lead-duration duration">2.282</span>
+  <span class="lead-duration duration">15.866</span>
 
 </div>
 
@@ -1098,6 +1136,29 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-10">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-10" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.pages.TaskInputPage$$Lambda$899/0x0000007001518c50@86377d5 (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.4', java.version: '17.0.18'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 3bf74839-96a2-4802-9cd4-67da35d52480
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.example.pages.TaskInputPage.setFieldText(TaskInputPage.java:95)
+	at com.example.pages.TaskInputPage.addSubtask(TaskInputPage.java:119)
+	at com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(TimerSteps.java:142)
+	at ✽.anv&auml;ndaren l&auml;gger till underuppgift &quot;Lite testing&quot;(classpath:features/timer_sekvens.feature:38)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -1113,11 +1174,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;10&quot;</span></span>
 
-  <span class="lead-duration duration">1.757</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1140,11 +1201,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;10&quot;</span></span>
 
-  <span class="lead-duration duration">1.813</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1167,11 +1228,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">8.962</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1194,11 +1255,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren rensar formul&auml;ret</span>
 
-  <span class="lead-duration duration">0.728</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1221,11 +1282,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska uppgiftsnamnet vara tomt</span>
 
-  <span class="lead-duration duration">0.159</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1248,11 +1309,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska underuppgifterna vara borta</span>
 
-  <span class="lead-duration duration">0.100</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1275,11 +1336,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska tiderna vara &aring;terst&auml;llda till <span class="argument">&quot;120&quot;</span></span>
 
-  <span class="lead-duration duration">0.331</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1302,11 +1363,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer den sparade uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">2.262</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1329,11 +1390,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska formul&auml;ret vara ifyllt med uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">0.241</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1356,11 +1417,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska underuppgiften <span class="argument">&quot;Lite testing&quot;</span> finnas i formul&auml;ret</span>
 
-  <span class="lead-duration duration">0.192</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1383,11 +1444,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">ska tiderna vara satta till <span class="argument">&quot;10&quot;</span></span>
 
-  <span class="lead-duration duration">0.350</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1410,11 +1471,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren startar sekvensen</span>
 
-  <span class="lead-duration duration">1.188</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1437,11 +1498,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska timern visa <span class="argument">&quot;FOKUS!&quot;</span> f&ouml;r underuppgift <span class="argument">1</span> av <span class="argument">1</span></span>
 
-  <span class="lead-duration duration">0.436</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1464,11 +1525,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">9.920</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1491,11 +1552,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska forts&auml;tt-sk&auml;rmen visa r&auml;tt tid</span>
 
-  <span class="lead-duration duration">0.104</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1518,11 +1579,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
 
-  <span class="lead-duration duration">0.787</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1545,11 +1606,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;newTaskButton&quot;</span></span>
 
-  <span class="lead-duration duration">0.801</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1572,11 +1633,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;Testar&quot;</span></span>
 
-  <span class="lead-duration duration">7.411</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1599,11 +1660,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska den sparade uppgiften <span class="argument">&quot;Testar&quot;</span> inte l&auml;ngre finnas i listan</span>
 
-  <span class="lead-duration duration">0.051</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1626,11 +1687,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
-  <span class="lead-duration duration">0.919</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1657,7 +1718,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-8">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-11">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1669,13 +1730,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-8" class="inner-level collapse collapsable-details ">
+    <div id="after-11" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.027</span>
+  <span class="lead-duration duration">0.133</span>
 
           </div>
 
@@ -1684,6 +1745,21 @@ $(document).ready(function() {
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-12" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_1139378941.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-12" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_1139378941.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
@@ -1702,10 +1778,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1:12.994</span>
+  <span class="lead-duration duration">17.746</span>
 
 
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-9">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-13">
 
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1718,11 +1794,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-9" class="collapse collapsable-details  in ">
+  <div id="element-13" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-10">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-14">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1734,13 +1810,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-10" class="inner-level collapse collapsable-details ">
+    <div id="before-14" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">8.701</span>
+  <span class="lead-duration duration">15.666</span>
 
           </div>
 
@@ -1757,7 +1833,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-11">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-15">
 
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -1769,7 +1845,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-11" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-15" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -1800,200 +1876,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When failed">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i ett uppgiftsnamn p&aring; <span class="argument">60</span> tecken</span>
 
-  <span class="lead-duration duration">2.230</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska feltext f&ouml;r uppgiftsnamnet visas</span>
-
-  <span class="lead-duration duration">0.166</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren l&auml;gger till underuppgiften p&aring; <span class="argument">60</span> tecken</span>
-
-  <span class="lead-duration duration">2.072</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska feltext f&ouml;r underuppgiftsnamnet visas</span>
-
-  <span class="lead-duration duration">0.165</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren bekr&auml;ftar underuppgiften</span>
-
-  <span class="lead-duration duration">0.521</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;10&quot;</span></span>
-
-  <span class="lead-duration duration">1.528</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;10&quot;</span></span>
-
-  <span class="lead-duration duration">1.882</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And failed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren startar sekvensen</span>
-
-  <span class="lead-duration duration">1:4.426</span>
+  <span class="lead-duration duration">17.746</span>
 
 </div>
 
@@ -2004,24 +1891,215 @@ $(document).ready(function() {
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-12">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-16">
           <a>org.openqa.selenium.TimeoutException:</a>
       </div>
-      <div id="msg-12" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$926/0x000000980151f890@2d5b549b (tried for 60 second(s) with 500 milliseconds interval)
+      <div id="msg-16" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.pages.TaskInputPage$$Lambda$899/0x0000007001518c50@55202ba6 (tried for 15 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.4', java.version: '17.0.18'
 Driver info: io.appium.java_client.ios.IOSDriver
 Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
-Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
+Session ID: fde47917-2172-4b70-854d-13c8d0b35f78
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.starterSekvensen(TimerSteps.java:220)
-	at ✽.anv&auml;ndaren startar sekvensen(classpath:features/timer_sekvens.feature:74)
+	at com.example.pages.TaskInputPage.setFieldText(TaskInputPage.java:95)
+	at com.example.pages.TaskInputPage.enterTaskName(TaskInputPage.java:115)
+	at com.example.steps.TimerSteps.fyllIUppgiftsnamn(TimerSteps.java:156)
+	at ✽.anv&auml;ndaren fyller i ett uppgiftsnamn p&aring; 60 tecken(classpath:features/timer_sekvens.feature:67)
 </pre>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">ska feltext f&ouml;r uppgiftsnamnet visas</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">anv&auml;ndaren l&auml;gger till underuppgiften p&aring; <span class="argument">60</span> tecken</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">ska feltext f&ouml;r underuppgiftsnamnet visas</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When skipped">
+  <span class="keyword indention">When</span>
+  <span class="name">anv&auml;ndaren bekr&auml;ftar underuppgiften</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;10&quot;</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;10&quot;</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren startar sekvensen</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
 
 
 
@@ -2230,7 +2308,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-13">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-17">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2242,13 +2320,13 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
     </div>
 
-    <div id="after-13" class="inner-level collapse collapsable-details ">
+    <div id="after-17" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.383</span>
+  <span class="lead-duration duration">0.136</span>
 
           </div>
 
@@ -2259,15 +2337,15 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
   <div class="embeddings inner-level">
   <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-14" class="collapsable-control">
+    <div data-toggle="collapse" data-target="#embedding-18" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-1340938805.png" download target="_blank">
+      <a href="embeddings/embedding_-1430948653.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
-    <div id="embedding-14" class="collapse collapsable-details ">
+    <div id="embedding-18" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_-1340938805.png">
+        <img src="embeddings/embedding_-1430948653.png">
       </div>
     </div>
   </div>
@@ -2290,12 +2368,12 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 </div>
 
 
-  <span class="lead-duration duration">1:17.303</span>
+  <span class="lead-duration duration">19.560</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-15">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-19">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Animationerna visas p&aring; r&auml;tt sk&auml;rmar</span>
 
@@ -2306,11 +2384,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
   </span>
   <div class="description indention"></div>
 
-  <div id="element-15" class="collapse collapsable-details ">
+  <div id="element-19" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-16">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-20">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2322,13 +2400,13 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
     </div>
 
-    <div id="before-16" class="inner-level collapse collapsable-details ">
+    <div id="before-20" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">8.795</span>
+  <span class="lead-duration duration">9.596</span>
 
           </div>
 
@@ -2345,9 +2423,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-17">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-21">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -2357,7 +2435,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
   </div>
 
-  <div id="steps-17" class="inner-level collapse collapsable-details ">
+  <div id="steps-21" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -2392,7 +2470,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;AnimTest&quot;</span></span>
 
-  <span class="lead-duration duration">1.739</span>
+  <span class="lead-duration duration">3.621</span>
 
 </div>
 
@@ -2415,11 +2493,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;Uppgift ett&quot;</span></span>
 
-  <span class="lead-duration duration">3.868</span>
+  <span class="lead-duration duration">15.935</span>
 
 </div>
 
@@ -2427,6 +2505,29 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-22">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-22" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.pages.TaskInputPage$$Lambda$899/0x0000007001518c50@1529d534 (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.4', java.version: '17.0.18'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: d0c3e7cb-f516-49b9-a707-cc5d6c1253c8
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.example.pages.TaskInputPage.setFieldText(TaskInputPage.java:95)
+	at com.example.pages.TaskInputPage.addSubtask(TaskInputPage.java:119)
+	at com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(TimerSteps.java:142)
+	at ✽.anv&auml;ndaren l&auml;gger till underuppgift &quot;Uppgift ett&quot;(classpath:features/timer_sekvens.feature:91)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -2442,11 +2543,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;Uppgift tv&aring;&quot;</span></span>
 
-  <span class="lead-duration duration">1.512</span>
+  <span class="lead-duration duration">0.002</span>
 
 </div>
 
@@ -2469,11 +2570,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter tid till <span class="argument">&quot;20&quot;</span></span>
 
-  <span class="lead-duration duration">1.868</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2496,11 +2597,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren s&auml;tter paus-tid till <span class="argument">&quot;20&quot;</span></span>
 
-  <span class="lead-duration duration">1.908</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2523,11 +2624,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren startar sekvensen</span>
 
-  <span class="lead-duration duration">4.488</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2550,11 +2651,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska jobba-animationen visas och paus-animationen vara dold</span>
 
-  <span class="lead-duration duration">0.315</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2577,11 +2678,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">19.958</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2604,11 +2705,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska paus-animationen visas och jobba-animationen vara dold</span>
 
-  <span class="lead-duration duration">0.371</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2631,11 +2732,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">19.831</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2658,11 +2759,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska jobba-animationen visas och paus-animationen vara dold</span>
 
-  <span class="lead-duration duration">0.143</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2685,11 +2786,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">timern r&auml;knar ner klart</span>
 
-  <span class="lead-duration duration">20.200</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2712,11 +2813,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;continueNoButton&quot;</span></span>
 
-  <span class="lead-duration duration">1.095</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2743,7 +2844,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-18">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-23">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2755,13 +2856,13 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
     </div>
 
-    <div id="after-18" class="inner-level collapse collapsable-details ">
+    <div id="after-23" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.059</span>
+  <span class="lead-duration duration">0.180</span>
 
           </div>
 
@@ -2770,6 +2871,21 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-24" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_-181662017.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-24" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-181662017.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
@@ -2788,12 +2904,12 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 </div>
 
 
-  <span class="lead-duration duration">22.475</span>
+  <span class="lead-duration duration">18.955</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-19">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-25">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Det g&aring;r inte att spara en uppgift med ett redan anv&auml;nt namn</span>
 
@@ -2804,11 +2920,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
   </span>
   <div class="description indention"></div>
 
-  <div id="element-19" class="collapse collapsable-details ">
+  <div id="element-25" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-20">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-26">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2820,13 +2936,13 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
     </div>
 
-    <div id="before-20" class="inner-level collapse collapsable-details ">
+    <div id="before-26" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">12.735</span>
+  <span class="lead-duration duration">14.834</span>
 
           </div>
 
@@ -2843,9 +2959,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-21">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-27">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -2855,7 +2971,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
   </div>
 
-  <div id="steps-21" class="inner-level collapse collapsable-details ">
+  <div id="steps-27" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -2890,7 +3006,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">3.828</span>
+  <span class="lead-duration duration">2.420</span>
 
 </div>
 
@@ -2913,11 +3029,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
 
-  <span class="lead-duration duration">2.525</span>
+  <span class="lead-duration duration">16.534</span>
 
 </div>
 
@@ -2925,6 +3041,29 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-28">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-28" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.pages.TaskInputPage$$Lambda$899/0x0000007001518c50@242a3997 (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.4', java.version: '17.0.18'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 394B9336-9982-429E-A94A-FE7..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 1c63dc1b-57c3-4fe5-a4d8-448e9dc5148d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.example.pages.TaskInputPage.setFieldText(TaskInputPage.java:95)
+	at com.example.pages.TaskInputPage.addSubtask(TaskInputPage.java:119)
+	at com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(TimerSteps.java:142)
+	at ✽.anv&auml;ndaren l&auml;gger till underuppgift &quot;En underuppgift&quot;(classpath:features/timer_sekvens.feature:112)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -2940,11 +3079,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">3.401</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2967,11 +3106,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">2.082</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -2994,11 +3133,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
 
-  <span class="lead-duration duration">2.252</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -3021,11 +3160,11 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">7.382</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -3048,157 +3187,10 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
-  <span class="lead-duration duration">1.002</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-  </div>
-</div>
-
-
-
-
-  <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-22">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="after-22" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">0.036</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
-
-  </div>
-</div>
-
-
-<div class="element">
-
-
-<div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_3542606885.html">@kategori</a>
-</div>
-
-
-  <span class="lead-duration duration">2.239</span>
-
-
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-23">
-
-<div class="brief passed">
-  <span class="keyword indention">Scenario Outline</span>
-  <span class="name">Vald kategori visas i formul&auml;ret</span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-23" class="collapse collapsable-details ">
-
-
-  <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-24">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="before-24" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-              <span class="location name">com.example.steps.TimerSteps.setUp()</span>
-
-  <span class="lead-duration duration">14.530</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
-
-
-
-<div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-25">
-
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </div>
-
-  <div id="steps-25" class="inner-level collapse collapsable-details ">
-      <div class="step">
-
-
-<div class="brief step-name-Given passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">appen &auml;r startad</span>
-
   <span class="lead-duration duration">0.000</span>
 
 </div>
@@ -3219,60 +3211,6 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
       </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span></span>
-
-  <span class="lead-duration duration">2.073</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span> vara vald</span>
-
-  <span class="lead-duration duration">0.166</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
   </div>
 </div>
 
@@ -3280,7 +3218,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-26">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-29">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -3292,13 +3230,13 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
     </div>
 
-    <div id="after-26" class="inner-level collapse collapsable-details ">
+    <div id="after-29" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.188</span>
+  <span class="lead-duration duration">0.128</span>
 
           </div>
 
@@ -3307,6 +3245,21 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-30" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_-329037314.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-30" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-329037314.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
@@ -3325,208 +3278,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 </div>
 
 
-  <span class="lead-duration duration">1.948</span>
-
-
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-27">
-
-<div class="brief passed">
-  <span class="keyword indention">Scenario Outline</span>
-  <span class="name">Vald kategori visas i formul&auml;ret</span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-27" class="collapse collapsable-details ">
-
-
-  <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-28">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="before-28" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-              <span class="location name">com.example.steps.TimerSteps.setUp()</span>
-
-  <span class="lead-duration duration">11.508</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
-
-
-
-<div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-29">
-
-<div class="brief passed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </div>
-
-  <div id="steps-29" class="inner-level collapse collapsable-details ">
-      <div class="step">
-
-
-<div class="brief step-name-Given passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">appen &auml;r startad</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
-
-  <span class="lead-duration duration">1.833</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska kategorin <span class="argument">&quot;Plugg&quot;</span> vara vald</span>
-
-  <span class="lead-duration duration">0.114</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-  </div>
-</div>
-
-
-
-
-  <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-30">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="after-30" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">0.029</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
-
-  </div>
-</div>
-
-
-<div class="element">
-
-
-<div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_3542606885.html">@kategori</a>
-</div>
-
-
-  <span class="lead-duration duration">1.972</span>
+  <span class="lead-duration duration">1.967</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-31">
@@ -3564,7 +3316,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">9.158</span>
+  <span class="lead-duration duration">7.560</span>
 
           </div>
 
@@ -3626,9 +3378,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span></span>
+  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
 
-  <span class="lead-duration duration">1.860</span>
+  <span class="lead-duration duration">1.851</span>
 
 </div>
 
@@ -3653,9 +3405,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
-  <span class="name">ska kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span> vara vald</span>
+  <span class="name">ska kategorin <span class="argument">&quot;Plugg&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.112</span>
+  <span class="lead-duration duration">0.116</span>
 
 </div>
 
@@ -3700,7 +3452,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.012</span>
+  <span class="lead-duration duration">0.011</span>
 
           </div>
 
@@ -3727,7 +3479,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 </div>
 
 
-  <span class="lead-duration duration">1.983</span>
+  <span class="lead-duration duration">1.819</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-35">
@@ -3765,7 +3517,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">8.797</span>
+  <span class="lead-duration duration">5.512</span>
 
           </div>
 
@@ -3827,9 +3579,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Hem&quot;</span></span>
+  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span></span>
 
-  <span class="lead-duration duration">1.842</span>
+  <span class="lead-duration duration">1.719</span>
 
 </div>
 
@@ -3854,9 +3606,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
-  <span class="name">ska kategorin <span class="argument">&quot;Hem&quot;</span> vara vald</span>
+  <span class="name">ska kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.140</span>
+  <span class="lead-duration duration">0.100</span>
 
 </div>
 
@@ -3901,7 +3653,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.029</span>
+  <span class="lead-duration duration">0.008</span>
 
           </div>
 
@@ -3928,7 +3680,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 </div>
 
 
-  <span class="lead-duration duration">1.922</span>
+  <span class="lead-duration duration">1.827</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-39">
@@ -3966,7 +3718,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">7.967</span>
+  <span class="lead-duration duration">5.617</span>
 
           </div>
 
@@ -4028,9 +3780,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Socialt&quot;</span></span>
+  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Hem&quot;</span></span>
 
-  <span class="lead-duration duration">1.802</span>
+  <span class="lead-duration duration">1.690</span>
 
 </div>
 
@@ -4055,9 +3807,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
-  <span class="name">ska kategorin <span class="argument">&quot;Socialt&quot;</span> vara vald</span>
+  <span class="name">ska kategorin <span class="argument">&quot;Hem&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.119</span>
+  <span class="lead-duration duration">0.136</span>
 
 </div>
 
@@ -4102,7 +3854,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.010</span>
+  <span class="lead-duration duration">0.012</span>
 
           </div>
 
@@ -4129,7 +3881,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 </div>
 
 
-  <span class="lead-duration duration">2.203</span>
+  <span class="lead-duration duration">1.839</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-43">
@@ -4167,7 +3919,7 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">9.469</span>
+  <span class="lead-duration duration">5.326</span>
 
           </div>
 
@@ -4229,9 +3981,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span></span>
+  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Socialt&quot;</span></span>
 
-  <span class="lead-duration duration">2.054</span>
+  <span class="lead-duration duration">1.732</span>
 
 </div>
 
@@ -4256,9 +4008,9 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
 
 <div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
-  <span class="name">ska kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span> vara vald</span>
+  <span class="name">ska kategorin <span class="argument">&quot;Socialt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.147</span>
+  <span class="lead-duration duration">0.107</span>
 
 </div>
 
@@ -4303,7 +4055,409 @@ Session ID: 04aca5d7-107d-4a88-abfb-90c7e075174f
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.031</span>
+  <span class="lead-duration duration">0.010</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_3542606885.html">@kategori</a>
+</div>
+
+
+  <span class="lead-duration duration">1.826</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-47">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Vald kategori visas i formul&auml;ret</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-47" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-48">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-48" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">com.example.steps.TimerSteps.setUp()</span>
+
+  <span class="lead-duration duration">5.355</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-49">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-49" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">appen &auml;r startad</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span></span>
+
+  <span class="lead-duration duration">1.688</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">ska kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span> vara vald</span>
+
+  <span class="lead-duration duration">0.138</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-50">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-50" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
+
+  <span class="lead-duration duration">0.008</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+<div class="element">
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_3542606885.html">@kategori</a>
+</div>
+
+
+  <span class="lead-duration duration">1.866</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-51">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Vald kategori visas i formul&auml;ret</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-51" class="collapse collapsable-details ">
+
+
+  <div class="inner-level hooks-element-before">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-52">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="before-52" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">Before</span>
+              <span class="location name">com.example.steps.TimerSteps.setUp()</span>
+
+  <span class="lead-duration duration">6.095</span>
+
+          </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </div>
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-53">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </div>
+
+  <div id="steps-53" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">appen &auml;r startad</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span></span>
+
+  <span class="lead-duration duration">1.759</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">ska kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span> vara vald</span>
+
+  <span class="lead-duration duration">0.106</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+  </div>
+</div>
+
+
+
+
+  <div class="inner-level hooks-element-after">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-54">
+
+<div class="brief passed">
+  <span class="keyword indention">Hooks</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+    </div>
+
+    <div id="after-54" class="inner-level collapse collapsable-details ">
+        <div class="hook">
+          <div class="brief passed">
+            <span class="keyword indention">After</span>
+              <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
+
+  <span class="lead-duration duration">0.011</span>
 
           </div>
 
