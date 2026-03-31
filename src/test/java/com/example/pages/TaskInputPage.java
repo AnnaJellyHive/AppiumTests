@@ -5,6 +5,7 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -94,10 +95,17 @@ public class TaskInputPage {
             .until(d -> {
                 WebElement field = d.findElement(locator);
                 field.clear();
+                if ("ios".equalsIgnoreCase(platform)) {
+                    String remaining = field.getText();
+                    if (remaining != null && !remaining.isEmpty()) {
+                        field.sendKeys(Keys.chord(Keys.COMMAND, "a"));
+                        field.sendKeys(Keys.BACK_SPACE);
+                    }
+                }
                 field.sendKeys(text);
                 if ("ios".equalsIgnoreCase(platform)) {
                     String actual = field.getText();
-                    return text.equals(actual) || actual.startsWith(text);
+                    return text.equals(actual);
                 }
                 return true;
             });
@@ -130,6 +138,13 @@ public class TaskInputPage {
 
     public void clickAddSubtask() {
         addSubtaskButton.click();
+    }
+
+    public By categoryItemLocator(String name) {
+        if ("ios".equalsIgnoreCase(platform)) {
+            return AppiumBy.accessibilityId(name);
+        }
+        return AppiumBy.xpath("//*[@content-desc='" + name + "']");
     }
 
     public WebElement getCategoryButton()        { return categoryButton; }

@@ -533,7 +533,7 @@ public class TimerSteps {
     @When("användaren väljer kategorin {string}")
     public void väljerKategorin(String kategori) {
         waitForElementToBeVisible(taskInputPage.getCategoryButton()).click();
-        waitForElementToBeVisible(AppiumBy.accessibilityId(kategori)).click();
+        waitForElementToBeVisible(taskInputPage.categoryItemLocator(kategori)).click();
     }
 
     @Then("ska kategorin {string} vara vald")

@@ -128,12 +128,12 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | kategori     |
-      | Övrigt       |
       | Plugg        |
       | Träning      |
       | Hem          |
       | Socialt      |
       | Mental hälsa |
+      | Övrigt       |
 
   @historik
   Scenario Outline: En historisk post kan tas bort
