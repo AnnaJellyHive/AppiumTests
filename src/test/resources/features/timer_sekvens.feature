@@ -82,7 +82,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | antal | tid |
-      | 60    | 15  |
+      | 60    | 20  |
 
   @animation
   Scenario Outline: Animationerna visas på rätt skärmar

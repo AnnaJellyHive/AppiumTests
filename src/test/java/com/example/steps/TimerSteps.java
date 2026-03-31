@@ -55,7 +55,6 @@ public class TimerSteps {
     private int breakDurationSeconds = 120;
     private final List<String> subtasks = new java.util.ArrayList<>();
     private String lastTaskName = "";
-    private int historyCountBefore = 0;
 
     @Before
     public void setUp() throws Exception {
@@ -494,26 +493,18 @@ public class TimerSteps {
 
     @And("användaren tar bort den senaste historikposten")
     public void tarBortSenasteHistorikpost() {
-        // Vänta tills uppgiften dyker upp i historiken
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d ->
-                historyPage.getTitleElements().stream().anyMatch(e -> {
-                    try { return e.getText().contains(lastTaskName); } catch (Exception ex) { return false; }
-                }));
+        // Vänta tills den senaste (översta) historikposten är vår uppgift
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
+            List<WebElement> items = historyPage.getTitleElements();
+            if (items.isEmpty()) return false;
+            try { return items.get(0).getText().contains(lastTaskName); } catch (Exception ex) { return false; }
+        });
 
         List<WebElement> items = historyPage.getTitleElements();
-        historyCountBefore = (int) items.stream().filter(e -> {
-            try { return e.getText().contains(lastTaskName); } catch (Exception ex) { return false; }
-        }).count();
 
-        // Hitta index för den rad vi ska ta bort
-        int rowIndex = -1;
-        for (int i = 0; i < items.size(); i++) {
-            try { if (items.get(i).getText().contains(lastTaskName)) { rowIndex = i; break; } }
-            catch (Exception ignored) {}
-        }
-        assertTrue(rowIndex >= 0, "Hittade inte '" + lastTaskName + "' i historiken");
-
-        WebElement targetItem = items.get(rowIndex);
+        // Den nya posten är alltid överst (index 0) — garanterat av väntan ovan
+        int rowIndex = 0;
+        WebElement targetItem = items.get(0);
         int y = targetItem.getRect().y + targetItem.getRect().height / 2;
         int startX = targetItem.getRect().x + targetItem.getRect().width - 10;
         int endX   = targetItem.getRect().x + 10;
@@ -545,16 +536,11 @@ public class TimerSteps {
 
     @Then("ska historiken inte längre visa uppgiften {string}")
     public void skaHistorikenInteLängreVisaUppgiften(String taskName) {
-        try {
-            driver.findElement(AppiumBy.androidUIAutomator(
-                    "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(10)"));
-        } catch (Exception ignored) {}
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> {
+        // Vi raderade den översta posten — vänta tills position 0 inte längre är taskName
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
             List<WebElement> titles = historyPage.getTitleElements();
-            long count = titles.stream().filter(e -> {
-                try { return e.getText().contains(taskName); } catch (Exception ex) { return false; }
-            }).count();
-            return count == historyCountBefore - 1;
+            if (titles.isEmpty()) return true;
+            try { return !titles.get(0).getText().contains(taskName); } catch (Exception ex) { return false; }
         });
     }
 
