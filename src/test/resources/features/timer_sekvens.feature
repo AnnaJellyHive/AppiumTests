@@ -29,7 +29,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | uppgift  | underuppgift1 | underuppgift2       | tid | pausTid |
-      | Läsa bok | Öppna boken   | Läs 2 sidor i boken | 15  | 15      |
+      | Läsa bok | Öppna boken   | Läs 2 sidor i boken | 20  | 20      |
 
   @mall
   Scenario Outline: Spara, välj och ta bort en sparad uppgift
@@ -59,7 +59,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | uppgift | underuppgift | tid | standardtid |
-      | Testar  | Lite testing | 8   | 120         |
+      | Testar  | Lite testing | 10  | 120         |
 
   @kantfall
   Scenario Outline: Uppgiftsnamn med <antal> tecken trunkeras till 50
@@ -82,7 +82,7 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | antal | tid |
-      | 60    | 8   |
+      | 60    | 10  |
 
   @animation
   Scenario Outline: Animationerna visas på rätt skärmar
@@ -120,6 +120,21 @@ Feature: Timer-app underuppgiftssekvens
       | uppgift      | underuppgift    |
       | DuplikatTest | En underuppgift |
 
+  @kategori
+  Scenario Outline: Vald kategori visas i formuläret
+    Given appen är startad
+    When användaren väljer kategorin "<kategori>"
+    Then ska kategorin "<kategori>" vara vald
+
+    Examples:
+      | kategori     |
+      | Övrigt       |
+      | Plugg        |
+      | Träning      |
+      | Hem          |
+      | Socialt      |
+      | Mental hälsa |
+
   @historik
   Scenario Outline: En historisk post kan tas bort
     Given appen är startad
@@ -137,4 +152,4 @@ Feature: Timer-app underuppgiftssekvens
 
     Examples:
       | uppgift  | underuppgift      | tid |
-      | BortTest | Testa borttagning |  8  |
+      | BortTest | Testa borttagning |  10 |

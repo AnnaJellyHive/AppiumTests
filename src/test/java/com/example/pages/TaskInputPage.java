@@ -68,6 +68,14 @@ public class TaskInputPage {
     @iOSXCUITFindBy(accessibility = "clearButton")
     private WebElement clearButton;
 
+    @AndroidFindBy(accessibility = "categoryButton")
+    @iOSXCUITFindBy(accessibility = "categoryButton")
+    private WebElement categoryButton;
+
+    @AndroidFindBy(accessibility = "selectedCategoryLabel")
+    @iOSXCUITFindBy(accessibility = "selectedCategoryLabel")
+    private WebElement selectedCategoryLabel;
+
     @AndroidFindBy(xpath = "//*[@content-desc='templateItemName']")
     @iOSXCUITFindBy(accessibility = "templateItemName")
     private List<WebElement> templateItems;
@@ -124,6 +132,8 @@ public class TaskInputPage {
         addSubtaskButton.click();
     }
 
+    public WebElement getCategoryButton()        { return categoryButton; }
+    public WebElement getSelectedCategoryLabel() { return selectedCategoryLabel; }
     public List<WebElement> getSubtaskChips()        { return subtaskChips; }
     public WebElement getSaveTemplateButton()        { return saveTemplateButton; }
     public WebElement getChooseTemplateButton()      { return chooseTemplateButton; }

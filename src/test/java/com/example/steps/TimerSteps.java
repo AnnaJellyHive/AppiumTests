@@ -311,21 +311,13 @@ public class TimerSteps {
 
     @Then("ska historiken visa minst {int} körningar med uppgiften {string}")
     public void skaHistorikenVisaMinst(int minCount, String taskName) {
-        // Vänta tills minst minCount poster med taskName syns i historiken
+        // Vänta tills de minCount översta posterna i historiken (= senaste körningarna) har taskName
         new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
-            try {
-                if ("ios".equalsIgnoreCase(PLATFORM)) {
-                    driver.executeScript("mobile: scroll",
-                            Map.of("direction", "down", "element", historyPage.getTaskHistoryList()));
-                } else {
-                    d.findElement(AppiumBy.androidUIAutomator(
-                            "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(10)"));
-                }
-            } catch (Exception ignored) {}
-            long matchCount = historyPage.getTitleElements().stream().filter(e -> {
+            List<WebElement> titles = historyPage.getTitleElements();
+            if (titles.size() < minCount) return false;
+            return titles.subList(0, minCount).stream().allMatch(e -> {
                 try { return e.getText().contains(taskName); } catch (Exception ex) { return false; }
-            }).count();
-            return matchCount >= minCount;
+            });
         });
     }
 
@@ -536,6 +528,22 @@ public class TimerSteps {
         driver.perform(Arrays.asList(swipe));
         Thread.sleep(2500); // vänta på svep-animationen
         tapDeleteAndConfirm("historyDeleteYes", rowIndex, y);
+    }
+
+    @When("användaren väljer kategorin {string}")
+    public void väljerKategorin(String kategori) {
+        waitForElementToBeVisible(taskInputPage.getCategoryButton()).click();
+        waitForElementToBeVisible(AppiumBy.accessibilityId(kategori)).click();
+    }
+
+    @Then("ska kategorin {string} vara vald")
+    public void skaKategorinVaraVald(String kategori) {
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .ignoring(WebDriverException.class)
+                .until(d -> {
+                    try { return getElementText(taskInputPage.getSelectedCategoryLabel()).contains(kategori); }
+                    catch (Exception e) { return false; }
+                });
     }
 
     @Then("ska historiken inte längre visa uppgiften {string}")
