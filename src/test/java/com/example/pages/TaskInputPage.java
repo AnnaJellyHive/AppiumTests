@@ -96,7 +96,8 @@ public class TaskInputPage {
                 field.clear();
                 field.sendKeys(text);
                 if ("ios".equalsIgnoreCase(platform)) {
-                    String actual = field.getText();
+                    String actual = field.getAttribute("value");
+                    if (actual == null) actual = "";
                     return text.equals(actual) || actual.startsWith(text);
                 }
                 return true;

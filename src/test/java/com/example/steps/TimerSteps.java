@@ -466,7 +466,6 @@ public class TimerSteps {
         swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
-        Thread.sleep(2500); // vänta på svep-animationen
         tapDeleteAndConfirm("templateDeleteYes", rowIndex, y);
     }
 
@@ -531,7 +530,6 @@ public class TimerSteps {
         swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
         swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(swipe));
-        Thread.sleep(2500); // vänta på svep-animationen
         tapDeleteAndConfirm("historyDeleteYes", rowIndex, y);
     }
 
