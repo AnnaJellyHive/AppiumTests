@@ -257,7 +257,7 @@ public class TimerSteps {
     @Then("ska timern visa paus med nästa underuppgift {int}")
     public void skaTimernVisaPaus(int nextIndex) {
         String expectedText = "Nästa: " + subtasks.get(nextIndex - 1);
-        waitForTextIgnoringWDE(timerPage.getModeElement(),     "PAUSA!");
+        waitForTextIgnoringWDE(timerPage.getModeElement(),     "Ta en paus");
         waitForTextIgnoringWDE(timerPage.getTaskElement(),     expectedText);
         waitForTextIgnoringWDE(timerPage.getProgressElement(), "Paus");
     }
@@ -278,7 +278,7 @@ public class TimerSteps {
                             return !d.findElements(continueBy).isEmpty();
                         }
                         String text = getElementText(els.get(0));
-                        return wasFokus ? !text.equals("FOKUS!") : !text.equals("PAUSA!");
+                        return wasFokus ? !text.equals("FOKUS!") : !text.equals("Ta en paus");
                     } catch (Exception e) {
                         return false;
                     }
