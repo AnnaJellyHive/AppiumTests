@@ -214,7 +214,7 @@ public class TimerSteps {
         // och timer-fasen hinner gå ut om vi börjar kolla för tidigt.
         new WebDriverWait(driver, Duration.ofSeconds(60))
                 .ignoring(WebDriverException.class)
-                .until(d -> !d.findElements(AppiumBy.accessibilityId("timerModeLabel")).isEmpty());
+                .until(d -> !d.findElements(AppiumBy.accessibilityId("cancelTimerButton")).isEmpty());
     }
 
     @When("användaren klickar på {string}")
