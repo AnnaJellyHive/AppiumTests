@@ -171,7 +171,7 @@ public class TimerSteps {
     public void skaFeltextFörUppgiftsnamnetVisas() {
         By locator = "ios".equalsIgnoreCase(PLATFORM)
             ? AppiumBy.accessibilityId("taskInputError")
-            : By.xpath("//*[contains(@text, 'Max 50 tecken')]");
+            : AppiumBy.androidUIAutomator("new UiSelector().text(\"Max 50 tecken\")");
         waitForElementToBeVisible(locator);
     }
 
@@ -179,7 +179,7 @@ public class TimerSteps {
     public void skaFeltextFörUnderuppgiftsnamnetVisas() {
         By locator = "ios".equalsIgnoreCase(PLATFORM)
             ? AppiumBy.accessibilityId("subtaskInputError")
-            : By.xpath("//*[contains(@text, 'Max 50 tecken')]");
+            : AppiumBy.androidUIAutomator("new UiSelector().text(\"Max 50 tecken\")");
         waitForElementToBeVisible(locator);
     }
 
@@ -351,7 +351,7 @@ public class TimerSteps {
         // inte text-innehållet. Sök direkt på texten i det inre text-elementet istället.
         By locator = "ios".equalsIgnoreCase(PLATFORM)
             ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + subtask + "')]")
-            : By.xpath("//*[contains(@text, '" + subtask + "')]");
+            : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + subtask + "\")");
         waitForElementToBeVisible(locator);
     }
 
@@ -573,10 +573,10 @@ public class TimerSteps {
         tap.addAction(tapFinger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(tap));
 
-        // positiv-knappen i native AlertDialog — plattformsberoende
+        // positiv-knappen i RN Alert — plattformsberoende
         By jaBy = "ios".equalsIgnoreCase(PLATFORM)
                 ? By.xpath("//XCUIElementTypeButton[@name='Ja']")
-                : By.id("android:id/button1");
+                : AppiumBy.androidUIAutomator("new UiSelector().textMatches(\"(?i)^Ja$\")");
         waitForElementToBeVisible(jaBy).click();
     }
 
