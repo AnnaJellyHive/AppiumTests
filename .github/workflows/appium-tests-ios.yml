@@ -130,11 +130,7 @@ jobs:
       - name: Install Appium + XCUITest
         run: |
           npm install -g appium
-          if [ "${{ steps.appium-cache.outputs.cache-hit }}" != "true" ]; then
-            appium driver install xcuitest
-          else
-            appium driver list --installed | grep xcuitest || appium driver install xcuitest
-          fi
+          appium driver list --installed | grep -q xcuitest || appium driver install xcuitest
 
       - name: Check port 8100
         run: lsof -i :8100 || echo "Port 8100 is free"
