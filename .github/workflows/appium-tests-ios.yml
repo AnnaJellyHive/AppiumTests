@@ -56,7 +56,7 @@ jobs:
             TimerApp/ios/Pods
             TimerApp/ios/TimerApp.xcworkspace
             TimerApp/ios/Podfile.lock
-          key: macos15-pods-v8-${{ hashFiles('TimerApp/ios/Podfile', 'TimerApp/package-lock.json') }}
+          key: macos15-pods-v9-${{ hashFiles('TimerApp/ios/Podfile', 'TimerApp/package-lock.json') }}
 
       - name: Cache Appium driver
         id: appium-cache
