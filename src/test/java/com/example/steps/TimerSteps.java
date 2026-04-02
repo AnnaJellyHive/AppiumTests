@@ -13,6 +13,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
@@ -46,7 +47,7 @@ public class TimerSteps {
     private static final String ANDROID_APP_ID = "com.timerapp";
     private static final String IOS_BUNDLE_ID  = "com.annamarkstrom.zonat";
 
-    private AppiumDriver driver;
+    private static AppiumDriver driver;
     private TaskInputPage taskInputPage;
     private TimerPage timerPage;
     private ContinuePage continuePage;
@@ -58,10 +59,12 @@ public class TimerSteps {
 
     @Before
     public void setUp() throws Exception {
-        if ("ios".equalsIgnoreCase(PLATFORM)) {
-            setUpIos();
-        } else {
-            setUpAndroid();
+        if (driver == null) {
+            if ("ios".equalsIgnoreCase(PLATFORM)) {
+                setUpIos();
+            } else {
+                setUpAndroid();
+            }
         }
 
         String appId = "ios".equalsIgnoreCase(PLATFORM) ? IOS_BUNDLE_ID : ANDROID_APP_ID;
@@ -329,7 +332,7 @@ public class TimerSteps {
         new WebDriverWait(driver, Duration.ofSeconds(5)).until(d -> {
             WebElement input = d.findElement(AppiumBy.accessibilityId("taskInput"));
             String text = input.getText();
-            return text.isEmpty() || text.equals("T.ex. plugga matte, städa rummet");
+            return text.isEmpty() || text.equals("T.ex. städa rummet, läsa bok");
         });
     }
 
@@ -441,11 +444,11 @@ public class TimerSteps {
             assertTrue(rowIndex >= 0, "Hittade inte mallen '" + name + "' i listan");
             item = itemNames.get(rowIndex);
         } else {
-            // Android: getText() returnerar "" för content-desc-element — sök på synlig text
+            // Android: containern kan aggregera barntext (namn + kategori) — använd textContains
             new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
                     !d.findElements(AppiumBy.androidUIAutomator(
-                            "new UiSelector().text(\"" + name + "\")")).isEmpty());
-            item = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().text(\"" + name + "\")"));
+                            "new UiSelector().textContains(\"" + name + "\")")).isEmpty());
+            item = driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + name + "\")"));
             waitForElementToBeVisible(item);
             rowIndex = 0;
         }
@@ -574,9 +577,11 @@ public class TimerSteps {
         driver.perform(Arrays.asList(tap));
 
         // positiv-knappen i RN Alert — plattformsberoende
+        // Android: Material Design uppgraderar knapptext till versaler ("JA")
+        // iOS: behåller originaltext ("Ja")
         By jaBy = "ios".equalsIgnoreCase(PLATFORM)
                 ? By.xpath("//XCUIElementTypeButton[@name='Ja']")
-                : AppiumBy.androidUIAutomator("new UiSelector().textMatches(\"(?i)^Ja$\")");
+                : AppiumBy.androidUIAutomator("new UiSelector().text(\"JA\")");
         waitForElementToBeVisible(jaBy).click();
     }
 
@@ -639,12 +644,17 @@ public class TimerSteps {
 
     @After
     public void tearDown(Scenario scenario) {
+        if (driver != null && scenario.isFailed()) {
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "Screenshot on failure");
+        }
+    }
+
+    @AfterAll
+    public static void tearDownAll() {
         if (driver != null) {
-            if (scenario.isFailed()) {
-                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                scenario.attach(screenshot, "image/png", "Screenshot on failure");
-            }
             driver.quit();
+            driver = null;
         }
     }
 }
