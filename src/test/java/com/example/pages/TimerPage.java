@@ -27,10 +27,6 @@ public class TimerPage {
     @iOSXCUITFindBy(accessibility = "timerAnimation")
     private WebElement timerAnimation;
 
-    @AndroidFindBy(accessibility = "breakAnimation")
-    @iOSXCUITFindBy(accessibility = "breakAnimation")
-    private WebElement breakAnimation;
-
     public TimerPage(RemoteWebDriver driver) {
         PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ZERO), this);
     }
@@ -39,5 +35,4 @@ public class TimerPage {
     public WebElement getTaskElement()     { return timerTaskName; }
     public WebElement getProgressElement() { return timerProgress; }
     public WebElement getTimerAnimation()  { return timerAnimation; }
-    public WebElement getBreakAnimation()  { return breakAnimation; }
 }

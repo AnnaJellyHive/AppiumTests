@@ -1,5 +1,7 @@
 package com.example.steps;
 
+import com.example.pages.ChecklistDetailPage;
+import com.example.pages.ChecklistsPage;
 import com.example.pages.ContinuePage;
 import com.example.pages.HistoryPage;
 import com.example.pages.TaskInputPage;
@@ -52,6 +54,8 @@ public class TimerSteps {
     private TimerPage timerPage;
     private ContinuePage continuePage;
     private HistoryPage historyPage;
+    private ChecklistsPage checklistsPage;
+    private ChecklistDetailPage checklistDetailPage;
     private int durationSeconds = 120;
     private int breakDurationSeconds = 120;
     private final List<String> subtasks = new java.util.ArrayList<>();
@@ -97,10 +101,12 @@ public class TimerSteps {
         subtasks.clear();
         durationSeconds = 120;
         breakDurationSeconds = 120;
-        taskInputPage = new TaskInputPage(driver);
-        timerPage     = new TimerPage(driver);
-        continuePage  = new ContinuePage(driver);
-        historyPage   = new HistoryPage(driver);
+        taskInputPage       = new TaskInputPage(driver);
+        timerPage           = new TimerPage(driver);
+        continuePage        = new ContinuePage(driver);
+        historyPage         = new HistoryPage(driver);
+        checklistsPage      = new ChecklistsPage(driver);
+        checklistDetailPage = new ChecklistDetailPage(driver);
     }
 
     private void setUpAndroid() throws Exception {
@@ -141,10 +147,18 @@ public class TimerSteps {
     @And("användaren lägger till underuppgift {string}")
     public void läggerTillUnderuppgift(String subtask) {
         subtasks.add(subtask);
-        taskInputPage.addSubtask(subtask);
         int expectedCount = subtasks.size();
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(d -> taskInputPage.getSubtaskChips().size() >= expectedCount);
+        taskInputPage.addSubtask(subtask);
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(15))
+                    .until(d -> taskInputPage.getSubtaskChips().size() >= expectedCount);
+        } catch (TimeoutException e) {
+            // Retry once — på Android kan keyboardtiming göra att addSubtaskButton-klicket
+            // inte registreras om en React-omrendering sker precis efter sendKeys
+            taskInputPage.addSubtask(subtask);
+            new WebDriverWait(driver, Duration.ofSeconds(15))
+                    .until(d -> taskInputPage.getSubtaskChips().size() >= expectedCount);
+        }
     }
 
     @And("användaren sätter tid till {string}")
@@ -250,11 +264,13 @@ public class TimerSteps {
     @Then("ska jobba-animationen visas och paus-animationen vara dold")
     public void skaJobbaAnimationenVisas() {
         waitForElementToBeVisible(timerPage.getTimerAnimation());
+        waitForTextIgnoringWDE(timerPage.getModeElement(), "FOKUS!");
     }
 
     @Then("ska paus-animationen visas och jobba-animationen vara dold")
     public void skaPausAnimationenVisas() {
-        waitForElementToBeVisible(timerPage.getBreakAnimation());
+        waitForElementToBeVisible(timerPage.getTimerAnimation());
+        waitForTextIgnoringWDE(timerPage.getModeElement(), "Ta en paus");
     }
 
     @Then("ska timern visa paus med nästa underuppgift {int}")
@@ -290,18 +306,19 @@ public class TimerSteps {
 
     @Then("ska fortsätt-skärmen visa rätt tid")
     public void skaFortsättSkärmenVisaRättTid() {
+        waitForElementToBeVisible(AppiumBy.accessibilityId("continueDoneLabel"));
         int totalSeconds = subtasks.size() * durationSeconds + (subtasks.size() - 1) * breakDurationSeconds;
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
         String expectedLabel;
         if (minutes > 0 && seconds == 0) {
-            expectedLabel = minutes + " minuter klara!";
+            expectedLabel = minutes + " min";
         } else if (minutes > 0) {
-            expectedLabel = minutes + " min " + seconds + " sek klara!";
+            expectedLabel = minutes + " min " + seconds + " sek";
         } else {
-            expectedLabel = seconds + " sekunder klara!";
+            expectedLabel = seconds + " sek";
         }
-        assertEquals(expectedLabel, continuePage.getDoneLabel(), "Fel tid på fortsätt-skärmen");
+        assertEquals(expectedLabel, continuePage.getTimeLabel(), "Fel tid på fortsätt-skärmen");
     }
 
     @Then("ska historiken visa {int} körning med det angivna uppgiftsnamnet")
@@ -342,10 +359,10 @@ public class TimerSteps {
         assertTrue(chips.isEmpty(), "Underuppgifter finns kvar efter rensning");
     }
 
-    @And("ska tiderna vara återställda till {string}")
-    public void skaTidernaVaraÅterställda(String expected) {
-        assertEquals(expected, taskInputPage.getDurationText(),      "Uppgiftstiden är inte återställd");
-        assertEquals(expected, taskInputPage.getBreakDurationText(), "Paus-tiden är inte återställd");
+    @And("ska tiderna vara återställda till fokus {string} och paus {string}")
+    public void skaTidernaVaraÅterställda(String expectedFocus, String expectedBreak) {
+        assertEquals(expectedFocus, taskInputPage.getDurationText(),      "Fokustiden är inte återställd");
+        assertEquals(expectedBreak, taskInputPage.getBreakDurationText(), "Paus-tiden är inte återställd");
     }
 
     @And("ska underuppgiften {string} finnas i formuläret")
@@ -395,7 +412,14 @@ public class TimerSteps {
 
     @And("användaren rensar formuläret")
     public void rensarFormularet() {
-        waitForElementToBeVisible(taskInputPage.getClearButton()).click();
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            waitForElementToBeVisible(taskInputPage.getClearButton()).click();
+        } else {
+            // Scrollar till clearButton om den hamnat under synlig yta (formuläret är högt med preset-chips)
+            driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(" +
+                    "new UiSelector().description(\"clearButton\"))")).click();
+        }
     }
 
     @And("användaren väljer den sparade uppgiften {string}")
@@ -452,9 +476,26 @@ public class TimerSteps {
             waitForElementToBeVisible(item);
             rowIndex = 0;
         }
-        int y = item.getRect().y + item.getRect().height / 2;
-        int startX = item.getRect().x + item.getRect().width - 10;
-        int endX   = item.getRect().x + 10;
+        // Extrahera koordinater i en retry-loop — React-omrendering kan göra item stale
+        // mellan findElement och getRect-anropet
+        int[] coords = {0, 0, 0}; // [y, startX, endX]
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            coords[0] = item.getRect().y + item.getRect().height / 2;
+            coords[1] = item.getRect().x + item.getRect().width - 10;
+            coords[2] = item.getRect().x + 10;
+        } else {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .ignoring(StaleElementReferenceException.class)
+                    .until(d -> {
+                        WebElement el = d.findElement(AppiumBy.androidUIAutomator(
+                                "new UiSelector().textContains(\"" + name + "\")"));
+                        coords[0] = el.getRect().y + el.getRect().height / 2;
+                        coords[1] = el.getRect().x + el.getRect().width - 10;
+                        coords[2] = el.getRect().x + 10;
+                        return true;
+                    });
+        }
+        int y = coords[0], startX = coords[1], endX = coords[2];
         PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
         Sequence swipe = new Sequence(finger, 0);
         swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, y));
@@ -544,6 +585,102 @@ public class TimerSteps {
             List<WebElement> titles = historyPage.getTitleElements();
             if (titles.isEmpty()) return true;
             try { return !titles.get(0).getText().contains(taskName); } catch (Exception ex) { return false; }
+        });
+    }
+
+    @When("användaren navigerar till Listor")
+    public void navigerarTillListor() {
+        waitForElementToBeVisible(AppiumBy.accessibilityId("listorTab")).click();
+    }
+
+    @When("användaren skapar en ny lista {string}")
+    public void skaparNyLista(String name) {
+        waitForElementToBeVisible(checklistsPage.getCreateListButton()).click();
+        waitForElementToBeVisible(checklistsPage.getChecklistNameInput()).sendKeys(name);
+        waitForElementToBeVisible(checklistsPage.getCreateListConfirmButton()).click();
+    }
+
+    @Then("ska detaljvyn för {string} visas")
+    public void skaDetaljvynVisas(String name) {
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .ignoring(WebDriverException.class)
+                    .until(d -> name.equals(getElementText(checklistDetailPage.getChecklistDetailTitle())));
+        } catch (TimeoutException e) {
+            String actual = safeGetText(checklistDetailPage.getChecklistDetailTitle());
+            throw new AssertionError("Detaljvyn visade inte '" + name + "', hittade: '" + actual + "'", e);
+        }
+    }
+
+    @When("användaren lägger till listpunkten {string}")
+    public void läggerTillListpunkten(String text) {
+        waitForElementToBeVisible(checklistDetailPage.getAddItemInput()).sendKeys(text);
+        checklistDetailPage.getAddItemButton().click();
+        // Vänta tills punkten är synlig
+        By locator = "ios".equalsIgnoreCase(PLATFORM)
+                ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
+                : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
+        waitForElementToBeVisible(locator, 10);
+    }
+
+    @Then("ska listpunkten {string} finnas i listan")
+    public void skaListpunktenFinnasIListan(String text) {
+        By locator = "ios".equalsIgnoreCase(PLATFORM)
+                ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
+                : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
+        waitForElementToBeVisible(locator, 10);
+    }
+
+    @When("användaren bockar av listpunkten {string}")
+    public void bockarAvListpunkten(String text) {
+        By textLocator = "ios".equalsIgnoreCase(PLATFORM)
+                ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
+                : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
+        WebElement textEl = waitForElementToBeVisible(textLocator, 10);
+        int targetY = textEl.getRect().y + textEl.getRect().height / 2;
+
+        // Klicka checkboxen i samma rad (närmast i Y-led)
+        List<WebElement> checkboxes = driver.findElements(AppiumBy.accessibilityId("checklistItemCheckbox"));
+        WebElement closest = checkboxes.stream()
+                .min(java.util.Comparator.comparingInt(e -> Math.abs(e.getRect().y - targetY)))
+                .orElseThrow(() -> new AssertionError("Ingen checkbox hittad för: " + text));
+        closest.click();
+    }
+
+    @Then("ska historiken visa listan {string}")
+    public void skaHistorikenVisaListan(String listName) {
+        skaHistorikenVisaMinst(1, listName);
+    }
+
+    @When("användaren tar bort checklistan {string}")
+    public void tarBortChecklistan(String name) {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
+                !checklistsPage.getChecklistItemTitles().isEmpty());
+        List<WebElement> titles = checklistsPage.getChecklistItemTitles();
+        WebElement item = titles.stream()
+                .filter(e -> { try { return e.getText().contains(name); } catch (Exception ex) { return false; } })
+                .findFirst()
+                .orElseThrow(() -> new AssertionError("Hittade inte checklistan '" + name + "'"));
+        int y = item.getRect().y + item.getRect().height / 2;
+        int startX = item.getRect().x + item.getRect().width - 10;
+        int endX   = item.getRect().x + 10;
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence swipe = new Sequence(finger, 0);
+        swipe.addAction(finger.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, y));
+        swipe.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        swipe.addAction(finger.createPointerMove(Duration.ofMillis(800), PointerInput.Origin.viewport(), endX, y));
+        swipe.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        driver.perform(Arrays.asList(swipe));
+        tapDeleteAndConfirm("checklistDeleteYes", 0, y);
+    }
+
+    @Then("ska checklistan {string} inte längre finnas i Listor")
+    public void skaChecklistanInteLängreFinnasIListor(String name) {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> {
+            List<WebElement> titles = checklistsPage.getChecklistItemTitles();
+            return titles.stream().noneMatch(e -> {
+                try { return e.getText().contains(name); } catch (Exception ex) { return false; }
+            });
         });
     }
 

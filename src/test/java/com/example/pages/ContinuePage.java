@@ -19,6 +19,10 @@ public class ContinuePage {
     @iOSXCUITFindBy(accessibility = "continueTaskName")
     private WebElement continueTaskName;
 
+    @AndroidFindBy(accessibility = "continueTimeLabel")
+    @iOSXCUITFindBy(iOSNsPredicate = "identifier == 'continueTimeLabel'")
+    private WebElement continueTimeLabel;
+
     @AndroidFindBy(accessibility = "continueYesButton")
     @iOSXCUITFindBy(accessibility = "continueYesButton")
     private WebElement continueYesButton;
@@ -33,6 +37,7 @@ public class ContinuePage {
 
     public String getDoneLabel()  { return continueDoneLabel.getText(); }
     public String getTaskName()   { return continueTaskName.getText(); }
+    public String getTimeLabel()  { return continueTimeLabel.getText(); }
     public void clickYes() { continueYesButton.click(); }
     public void clickNo()  { continueNoButton.click(); }
 }

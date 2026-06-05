@@ -28,14 +28,6 @@ public class TaskInputPage {
     @iOSXCUITFindBy(accessibility = "addSubtaskButton")
     private WebElement addSubtaskButton;
 
-    @AndroidFindBy(accessibility = "durationInput")
-    @iOSXCUITFindBy(accessibility = "durationInput")
-    private WebElement durationInput;
-
-    @AndroidFindBy(accessibility = "breakDurationInput")
-    @iOSXCUITFindBy(accessibility = "breakDurationInput")
-    private WebElement breakDurationInput;
-
     @AndroidFindBy(accessibility = "startButton")
     @iOSXCUITFindBy(accessibility = "startButton")
     private WebElement startButton;
@@ -80,8 +72,21 @@ public class TaskInputPage {
     @iOSXCUITFindBy(accessibility = "templateItemName")
     private List<WebElement> templateItems;
 
+    @AndroidFindBy(accessibility = "focusDurationValue")
+    @iOSXCUITFindBy(iOSNsPredicate = "identifier == 'focusDurationValue'")
+    private WebElement focusDurationValue;
+
+    @AndroidFindBy(accessibility = "breakDurationValue")
+    @iOSXCUITFindBy(iOSNsPredicate = "identifier == 'breakDurationValue'")
+    private WebElement breakDurationValue;
+
     private final RemoteWebDriver driver;
     private final String platform = System.getProperty("platform", "android");
+
+    // Fokus-presets i sekunder
+    private static final int[] FOCUS_PRESETS = {60, 120, 300};
+    // Paus-presets i sekunder
+    private static final int[] BREAK_PRESETS = {0, 30, 60};
 
     public TaskInputPage(RemoteWebDriver driver) {
         this.driver = driver;
@@ -104,6 +109,11 @@ public class TaskInputPage {
             });
     }
 
+    private boolean isPreset(int seconds, int[] presets) {
+        for (int p : presets) if (p == seconds) return true;
+        return false;
+    }
+
     public void enterTaskName(String task) {
         setFieldText(AppiumBy.accessibilityId("taskInput"), task);
     }
@@ -114,16 +124,31 @@ public class TaskInputPage {
     }
 
     public void setDuration(String seconds) {
-        setFieldText(AppiumBy.accessibilityId("durationInput"), seconds);
+        int secs = Integer.parseInt(seconds);
+        if (isPreset(secs, FOCUS_PRESETS)) {
+            driver.findElement(AppiumBy.accessibilityId("focusPreset_" + secs)).click();
+        } else {
+            driver.findElement(AppiumBy.accessibilityId("focusCustomChip")).click();
+            setFieldText(AppiumBy.accessibilityId("focusCustomInput"), seconds);
+            driver.findElement(AppiumBy.accessibilityId("focusCustomSekButton")).click();
+        }
     }
 
     public void setBreakDuration(String seconds) {
-        setFieldText(AppiumBy.accessibilityId("breakDurationInput"), seconds);
+        int secs = Integer.parseInt(seconds);
+        if (isPreset(secs, BREAK_PRESETS)) {
+            driver.findElement(AppiumBy.accessibilityId("breakPreset_" + secs)).click();
+        } else {
+            driver.findElement(AppiumBy.accessibilityId("breakCustomChip")).click();
+            setFieldText(AppiumBy.accessibilityId("breakCustomInput"), seconds);
+            driver.findElement(AppiumBy.accessibilityId("breakCustomSekButton")).click();
+        }
     }
 
-    public String getTaskInputText()      { return taskInput.getText(); }
-    public String getDurationText()       { return durationInput.getText(); }
-    public String getBreakDurationText()  { return breakDurationInput.getText(); }
+    public String getDurationText()      { return focusDurationValue.getText(); }
+    public String getBreakDurationText() { return breakDurationValue.getText(); }
+
+    public String getTaskInputText() { return taskInput.getText(); }
 
     public void fillSubtaskInput(String text) {
         setFieldText(AppiumBy.accessibilityId("subtaskInput"), text);

@@ -42,7 +42,7 @@ Feature: Timer-app underuppgiftssekvens
     And användaren rensar formuläret
     Then ska uppgiftsnamnet vara tomt
     And ska underuppgifterna vara borta
-    And ska tiderna vara återställda till "<standardtid>"
+    And ska tiderna vara återställda till fokus "60" och paus "30"
     When användaren väljer den sparade uppgiften "<uppgift>"
     Then ska formuläret vara ifyllt med uppgiften "<uppgift>"
     And ska underuppgiften "<underuppgift>" finnas i formuläret
@@ -58,8 +58,8 @@ Feature: Timer-app underuppgiftssekvens
     And användaren stänger dialogen
 
     Examples:
-      | uppgift | underuppgift | tid | standardtid |
-      | Testar  | Lite testing | 10  | 120         |
+      | uppgift | underuppgift | tid |
+      | Testar  | Lite testing | 10  |
 
   @kantfall
   Scenario Outline: Uppgiftsnamn med <antal> tecken trunkeras till 50
@@ -134,6 +134,37 @@ Feature: Timer-app underuppgiftssekvens
       | Socialt      |
       | Mental hälsa |
       | Övrigt       |
+
+  @listor
+  Scenario Outline: Skapa lista, lägg till punkter och bocka av alla
+    Given appen är startad
+    When användaren navigerar till Listor
+    And användaren skapar en ny lista "<listnamn>"
+    Then ska detaljvyn för "<listnamn>" visas
+    When användaren lägger till listpunkten "<punkt1>"
+    And användaren lägger till listpunkten "<punkt2>"
+    Then ska listpunkten "<punkt1>" finnas i listan
+    And ska listpunkten "<punkt2>" finnas i listan
+    When användaren bockar av listpunkten "<punkt1>"
+    And användaren bockar av listpunkten "<punkt2>"
+    Then ska historiken visa listan "<listnamn>"
+
+    Examples:
+      | listnamn    | punkt1 | punkt2 |
+      | Inköpslista | Mjölk  | Bröd   |
+
+  @listor_ta_bort
+  Scenario Outline: Ta bort en checklista
+    Given appen är startad
+    When användaren navigerar till Listor
+    And användaren skapar en ny lista "<listnamn>"
+    And användaren klickar på "checklistBackButton"
+    And användaren tar bort checklistan "<listnamn>"
+    Then ska checklistan "<listnamn>" inte längre finnas i Listor
+
+    Examples:
+      | listnamn     |
+      | TaBortListan |
 
   @historik
   Scenario Outline: En historisk post kan tas bort

@@ -2,18 +2,6 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Köra tester
-
-```bash
-# Kör alla tester (kräver Appium-server + emulator på emulator-5554)
-mvn test
-
-# Kör ett specifikt scenario med tag
-mvn test -Dcucumber.filter.tags="@sekvens"
-```
-
-Appium-servern måste vara igång (`appium`) och appen installerad på `emulator-5554` innan testerna körs.
-
 ## Arkitektur
 
 Cucumber BDD med JUnit Platform. Tre lager:
@@ -42,10 +30,56 @@ Alla hjälpmetoder kastar `AssertionError` (inte `TimeoutException`) vid timeout
 
 ## Elementlokalisering
 
-- Använd i första hand `accessibilityId` eller `id`
-- Använd `xpath` bara när `accessibilityId`/`id` inte fungerar
-- Deklarera element i page-klasserna med `@AndroidFindBy` (och `@iOSXCUITFindBy` för iOS) — använd aldrig `driver.findElements(AppiumBy.accessibilityId(...))` direkt i steg-klassen när ett page object-fält kan användas istället
+- Deklarera element i page-klasserna med `@AndroidFindBy` (och `@iOSXCUITFindBy` för iOS) — använd aldrig `driver.findElement()` direkt i steg-klassen när ett page object-fält kan användas istället
 - Page objects använder `AppiumFieldDecorator(Duration.ZERO)` — viktigt för att `WebDriverWait` ska kunna polla snabbt
+
+### Android: UiSelector för textinnehåll
+
+React Native Text-element exponerar textinnehållet på olika sätt beroende på API-nivå:
+- **API 33 (CI-emulator):** textinnehållet ligger i `@content-desc`
+- **API 36 (lokal emulator):** textinnehållet ligger i `@text`
+
+Xpath-attributen `@text` och `@content-desc` är API-beroende — använd aldrig dessa för att matcha textinnehåll. Använd `UiSelector` som är konsekvent på alla API-nivåer:
+
+```java
+// Exakt match
+AppiumBy.androidUIAutomator("new UiSelector().text(\"Max 50 tecken\")")
+
+// Delsträngsmatch (t.ex. chip med prefix)
+AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + subtask + "\")")
+```
+
+### Android: Alert-knappar
+
+React Native `Alert.alert` renderar knappar vars text uppgraderas till versaler av Material Design-temat (`"Ja"` → `"JA"`). `By.id("android:id/button1")` fungerar inte — RN Alert är inte en native AlertDialog.
+
+```java
+// Android — versaler p.g.a. Material Design
+AppiumBy.androidUIAutomator("new UiSelector().text(\"JA\")")
+// iOS — originaltext
+By.xpath("//XCUIElementTypeButton[@name='Ja']")
+```
+
+Om CI-emulator (API 33) visar "Ja" istället för "JA": använd `textMatches("[Jj][Aa]")` (character classes — inte `(?i)` inline-flagga, fungerar inte i alla UIAutomator2-versioner).
+
+### iOS: accessibilityLabel vs testID
+
+`accessibility id`-strategin på iOS (`@iOSXCUITFindBy(accessibility = "xxx")`) matchar mot **accessibilityLabel**, inte mot `testID`.
+
+När ett element har `testID` men ingen `accessibilityLabel` på iOS — använd `iOSNsPredicate`:
+
+```java
+@iOSXCUITFindBy(iOSNsPredicate = "identifier == 'timerModeLabel'")
+```
+
+`identifier` i NSPredicate matchar iOS `accessibilityIdentifier` = React Natives `testID`.
+
+I TimerPage gäller detta `timerModeLabel`, `timerTaskName`, `timerProgress` — de har `testID` men `accessibilityLabel` satt bara på Android:
+```jsx
+accessibilityLabel={Platform.OS === 'android' ? 'timerModeLabel' : undefined}
+```
+
+Om ett element inte hittas på iOS: fixa lokalisatorn i page-filen — inte i `TimerSteps.java`.
 
 ## CI-pipeline
 
@@ -69,6 +103,5 @@ gh workflow run appium-tests.yml --repo AnnaJellyHive/AppiumTests
 
 ## React Native-specifikt
 
-- Text-element hittas INTE med `AppiumBy.accessibilityId()` (använder `UiSelector().description()`) — använd `@AndroidFindBy(xpath = "//*[@content-desc='...']")` för Text-komponenter
 - `content-desc` på `ViewGroup` innehåller ofta ingen text — texten sitter på ett syskon-`TextView`, inte på barnet
 - `TimerScreen` startar timern via `useFocusEffect` (inte på mount) — på CI tar navigationsanimationen flera sekunder, och timern tickade ner under den tiden innan skärmen var synlig för Appium
