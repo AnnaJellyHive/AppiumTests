@@ -148,7 +148,7 @@ jobs:
           mvn test \
             -Dplatform=ios \
             -DdeviceUDID=$SIMULATOR_UDID \
-            -Dcucumber.filter.tags="@sekvens or @mall or @duplikat or @animation or @kantfall or @kategori or @historik"
+            -Dcucumber.filter.tags="@duplikat or @kategori or @listor or @listor_ta_bort"
 
       - name: Generera HTML-rapport
         if: always()
