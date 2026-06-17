@@ -34,6 +34,7 @@ public class ChecklistsPage {
     private WebElement emptyChecklistsText;
 
     private final RemoteWebDriver driver;
+    private final String platform = System.getProperty("platform", "android");
 
     public ChecklistsPage(RemoteWebDriver driver) {
         this.driver = driver;
@@ -47,6 +48,9 @@ public class ChecklistsPage {
     public WebElement getEmptyChecklistsText()    { return emptyChecklistsText; }
 
     public List<WebElement> getChecklistItemTitles() {
+        if ("ios".equalsIgnoreCase(platform)) {
+            return driver.findElements(AppiumBy.iOSNsPredicate("identifier == 'checklistItemTitle'"));
+        }
         return driver.findElements(AppiumBy.accessibilityId("checklistItemTitle"));
     }
 }

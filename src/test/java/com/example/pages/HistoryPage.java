@@ -18,6 +18,7 @@ public class HistoryPage {
     private WebElement taskHistoryList;
 
     private final RemoteWebDriver driver;
+    private final String platform = System.getProperty("platform", "android");
 
     public HistoryPage(RemoteWebDriver driver) {
         this.driver = driver;
@@ -31,6 +32,9 @@ public class HistoryPage {
     public WebElement getTaskHistoryList() { return taskHistoryList; }
 
     public List<WebElement> getTitleElements() {
+        if ("ios".equalsIgnoreCase(platform)) {
+            return driver.findElements(AppiumBy.iOSNsPredicate("identifier == 'taskItemTitle'"));
+        }
         return driver.findElements(AppiumBy.accessibilityId("taskItemTitle"));
     }
 }
