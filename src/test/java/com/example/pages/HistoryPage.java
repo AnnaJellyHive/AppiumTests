@@ -33,7 +33,7 @@ public class HistoryPage {
 
     public List<WebElement> getTitleElements() {
         if ("ios".equalsIgnoreCase(platform)) {
-            return driver.findElements(AppiumBy.iOSNsPredicate("identifier == 'taskItemTitle'"));
+            return driver.findElements(AppiumBy.iOSNsPredicateString("identifier == 'taskItemTitle'"));
         }
         return driver.findElements(AppiumBy.accessibilityId("taskItemTitle"));
     }

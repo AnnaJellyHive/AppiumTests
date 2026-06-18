@@ -49,7 +49,7 @@ public class ChecklistsPage {
 
     public List<WebElement> getChecklistItemTitles() {
         if ("ios".equalsIgnoreCase(platform)) {
-            return driver.findElements(AppiumBy.iOSNsPredicate("identifier == 'checklistItemTitle'"));
+            return driver.findElements(AppiumBy.iOSNsPredicateString("identifier == 'checklistItemTitle'"));
         }
         return driver.findElements(AppiumBy.accessibilityId("checklistItemTitle"));
     }
