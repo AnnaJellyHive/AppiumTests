@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>18 Jun 2026, 09:58</td>
+      <td>18 Jun 2026, 13:57</td>
     </tr>
   </tbody>
 </table>
@@ -129,9 +129,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">Timer-app underuppgiftssekvens</td>
-          <td      class="passed"    >41</td>
+          <td      class="passed"    >37</td>
           <td      class="failed"    >1</td>
-          <td     class="skipped"   >1</td>
+          <td     class="skipped"   >5</td>
           <td >0</td>
           <td >0</td>
           <td class="total">43</td>
@@ -140,7 +140,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">9</td>
 
-          <td class="duration" data-value="286403519495">4:46.403</td>
+          <td class="duration" data-value="169700175137">2:49.700</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -193,7 +193,7 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1:49.997</span>
+  <span class="lead-duration duration">11.912</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
@@ -231,7 +231,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">5:48.815</span>
+  <span class="lead-duration duration">6:53.033</span>
 
           </div>
 
@@ -295,115 +295,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">1.530</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
-
-  <span class="lead-duration duration">13.583</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren sparar uppgiften</span>
-
-  <span class="lead-duration duration">17.131</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren sparar uppgiften</span>
-
-  <span class="lead-duration duration">13.977</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
-
-  <span class="lead-duration duration">20.362</span>
+  <span class="lead-duration duration">1.922</span>
 
 </div>
 
@@ -428,9 +320,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
+  <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
 
-  <span class="lead-duration duration">43.410</span>
+  <span class="lead-duration duration">9.989</span>
 
 </div>
 
@@ -442,27 +334,27 @@ $(document).ready(function() {
   <div class="inner-level">
     <div class="message indention">
       <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>java.lang.AssertionError:</a>
+          <a>org.openqa.selenium.NoSuchElementException:</a>
       </div>
       <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().text(&quot;JA&quot;)] inom 5s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:774)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:766)
-	at com.example.steps.TimerSteps.tapDeleteAndConfirm(TimerSteps.java:749)
-	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:506)
-	at ✽.anv&auml;ndaren tar bort den sparade uppgiften &quot;DuplikatTest&quot;(classpath:features/timer_sekvens.feature:116)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().text(&quot;JA&quot;) (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1018-azure', java.version: '17.0.19'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+        <pre>org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.accessibilityId: addSubtaskButton})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$4Qh2JFgM.click(Unknown Source)
+	at com.example.pages.TaskInputPage.addSubtask(TaskInputPage.java:123)
+	at com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(TimerSteps.java:151)
+	at ✽.anv&auml;ndaren l&auml;gger till underuppgift &quot;En underuppgift&quot;(classpath:features/timer_sekvens.feature:112)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@74bbc273 (tried for 0 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:772)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:766)
-	at com.example.steps.TimerSteps.tapDeleteAndConfirm(TimerSteps.java:749)
-	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:506)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$4Qh2JFgM.click(Unknown Source)
+	at com.example.pages.TaskInputPage.addSubtask(TaskInputPage.java:123)
+	at com.example.steps.TimerSteps.l&auml;ggerTillUnderuppgift(TimerSteps.java:151)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -572,10 +464,138 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.accessibilityId: addSubtaskButton})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1018-azure', java.version: '17.0.19'
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:81)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:81)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 116 more
 </pre>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren sparar uppgiften</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren sparar uppgiften</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-And skipped">
+  <span class="keyword indention">And</span>
+  <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
 
 
 
@@ -640,7 +660,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">12.678</span>
+  <span class="lead-duration duration">11.244</span>
 
           </div>
 
@@ -653,13 +673,13 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-562596273.png" download target="_blank">
+      <a href="embeddings/embedding_-1317408079.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_-562596273.png">
+        <img src="embeddings/embedding_-1317408079.png">
       </div>
     </div>
   </div>
@@ -682,7 +702,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">13.828</span>
+  <span class="lead-duration duration">15.925</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-7">
@@ -720,7 +740,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:55.523</span>
+  <span class="lead-duration duration">2:42.872</span>
 
           </div>
 
@@ -784,7 +804,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
 
-  <span class="lead-duration duration">10.094</span>
+  <span class="lead-duration duration">12.373</span>
 
 </div>
 
@@ -811,7 +831,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Plugg&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.733</span>
+  <span class="lead-duration duration">3.552</span>
 
 </div>
 
@@ -883,7 +903,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">12.956</span>
+  <span class="lead-duration duration">13.563</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-11">
@@ -921,7 +941,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:32.436</span>
+  <span class="lead-duration duration">1:30.132</span>
 
           </div>
 
@@ -985,7 +1005,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span></span>
 
-  <span class="lead-duration duration">9.591</span>
+  <span class="lead-duration duration">10.111</span>
 
 </div>
 
@@ -1012,7 +1032,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.364</span>
+  <span class="lead-duration duration">3.451</span>
 
 </div>
 
@@ -1084,7 +1104,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">13.931</span>
+  <span class="lead-duration duration">11.460</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-15">
@@ -1122,7 +1142,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:31.025</span>
+  <span class="lead-duration duration">1:23.224</span>
 
           </div>
 
@@ -1186,7 +1206,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Hem&quot;</span></span>
 
-  <span class="lead-duration duration">10.066</span>
+  <span class="lead-duration duration">8.465</span>
 
 </div>
 
@@ -1213,7 +1233,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Hem&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.865</span>
+  <span class="lead-duration duration">2.994</span>
 
 </div>
 
@@ -1285,7 +1305,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">14.506</span>
+  <span class="lead-duration duration">10.752</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-19">
@@ -1323,7 +1343,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:41.622</span>
+  <span class="lead-duration duration">1:17.351</span>
 
           </div>
 
@@ -1387,7 +1407,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Socialt&quot;</span></span>
 
-  <span class="lead-duration duration">10.700</span>
+  <span class="lead-duration duration">8.357</span>
 
 </div>
 
@@ -1414,7 +1434,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Socialt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.806</span>
+  <span class="lead-duration duration">2.395</span>
 
 </div>
 
@@ -1486,7 +1506,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">13.654</span>
+  <span class="lead-duration duration">10.923</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-23">
@@ -1524,7 +1544,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:38.907</span>
+  <span class="lead-duration duration">1:20.582</span>
 
           </div>
 
@@ -1588,7 +1608,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span></span>
 
-  <span class="lead-duration duration">9.705</span>
+  <span class="lead-duration duration">8.375</span>
 
 </div>
 
@@ -1615,7 +1635,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.948</span>
+  <span class="lead-duration duration">2.547</span>
 
 </div>
 
@@ -1687,7 +1707,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">13.225</span>
+  <span class="lead-duration duration">9.620</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-27">
@@ -1725,7 +1745,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:31.011</span>
+  <span class="lead-duration duration">1:20.000</span>
 
           </div>
 
@@ -1789,7 +1809,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span></span>
 
-  <span class="lead-duration duration">9.548</span>
+  <span class="lead-duration duration">7.095</span>
 
 </div>
 
@@ -1816,7 +1836,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.677</span>
+  <span class="lead-duration duration">2.525</span>
 
 </div>
 
@@ -1888,7 +1908,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">53.235</span>
+  <span class="lead-duration duration">45.410</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-31">
@@ -1926,7 +1946,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:37.432</span>
+  <span class="lead-duration duration">1:24.703</span>
 
           </div>
 
@@ -1990,7 +2010,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">1.535</span>
+  <span class="lead-duration duration">1.514</span>
 
 </div>
 
@@ -2017,7 +2037,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;Ink&ouml;pslista&quot;</span></span>
 
-  <span class="lead-duration duration">14.069</span>
+  <span class="lead-duration duration">12.776</span>
 
 </div>
 
@@ -2044,7 +2064,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska detaljvyn f&ouml;r <span class="argument">&quot;Ink&ouml;pslista&quot;</span> visas</span>
 
-  <span class="lead-duration duration">8.528</span>
+  <span class="lead-duration duration">6.852</span>
 
 </div>
 
@@ -2071,7 +2091,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren l&auml;gger till listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span></span>
 
-  <span class="lead-duration duration">4.368</span>
+  <span class="lead-duration duration">3.329</span>
 
 </div>
 
@@ -2098,7 +2118,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span></span>
 
-  <span class="lead-duration duration">5.115</span>
+  <span class="lead-duration duration">4.594</span>
 
 </div>
 
@@ -2125,7 +2145,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span> finnas i listan</span>
 
-  <span class="lead-duration duration">0.813</span>
+  <span class="lead-duration duration">1.068</span>
 
 </div>
 
@@ -2152,7 +2172,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">And</span>
   <span class="name">ska listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span> finnas i listan</span>
 
-  <span class="lead-duration duration">2.308</span>
+  <span class="lead-duration duration">0.670</span>
 
 </div>
 
@@ -2179,7 +2199,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren bockar av listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span></span>
 
-  <span class="lead-duration duration">2.156</span>
+  <span class="lead-duration duration">1.524</span>
 
 </div>
 
@@ -2206,7 +2226,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren bockar av listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span></span>
 
-  <span class="lead-duration duration">3.943</span>
+  <span class="lead-duration duration">3.745</span>
 
 </div>
 
@@ -2233,7 +2253,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska historiken visa listan <span class="argument">&quot;Ink&ouml;pslista&quot;</span></span>
 
-  <span class="lead-duration duration">10.397</span>
+  <span class="lead-duration duration">9.333</span>
 
 </div>
 
@@ -2305,7 +2325,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
 </div>
 
 
-  <span class="lead-duration duration">41.066</span>
+  <span class="lead-duration duration">40.130</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-35">
@@ -2343,7 +2363,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:27.762</span>
+  <span class="lead-duration duration">1:20.247</span>
 
           </div>
 
@@ -2407,7 +2427,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">1.481</span>
+  <span class="lead-duration duration">1.312</span>
 
 </div>
 
@@ -2434,7 +2454,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">14.527</span>
+  <span class="lead-duration duration">12.086</span>
 
 </div>
 
@@ -2461,7 +2481,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;checklistBackButton&quot;</span></span>
 
-  <span class="lead-duration duration">7.234</span>
+  <span class="lead-duration duration">7.931</span>
 
 </div>
 
@@ -2488,7 +2508,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort checklistan <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">16.601</span>
+  <span class="lead-duration duration">16.591</span>
 
 </div>
 
@@ -2515,7 +2535,7 @@ Session ID: 9e50950b-68bd-473a-a655-6914c35bf72f
   <span class="keyword indention">Then</span>
   <span class="name">ska checklistan <span class="argument">&quot;TaBortListan&quot;</span> inte l&auml;ngre finnas i Listor</span>
 
-  <span class="lead-duration duration">1.222</span>
+  <span class="lead-duration duration">2.208</span>
 
 </div>
 
