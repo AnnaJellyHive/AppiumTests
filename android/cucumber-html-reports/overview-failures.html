@@ -77,7 +77,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>18 Jun 2026, 14:09</td>
+      <td>18 Jun 2026, 14:33</td>
     </tr>
   </tbody>
 </table>
@@ -123,18 +123,18 @@ $(document).ready(function() {
 
 <div class="tags indention">
     <b>Tags:</b>
-       <a href="report-tag_395076833.html">@duplikat</a>
+       <a href="report-tag_582653666.html">@listor_ta_bort</a>
 </div>
 
 
-  <span class="lead-duration duration">2:34.377</span>
+  <span class="lead-duration duration">22.891</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
-  <span class="name">Det g&aring;r inte att spara en uppgift med ett redan anv&auml;nt namn</span>
+  <span class="name">Ta bort en checklista</span>
 
 
      <i class="chevron fa fa-fw"></i>
@@ -165,7 +165,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">5:52.180</span>
+  <span class="lead-duration duration">1:24.981</span>
 
           </div>
 
@@ -227,36 +227,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
+  <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">2.038</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
-
-  <span class="lead-duration duration">38.857</span>
+  <span class="lead-duration duration">1.600</span>
 
 </div>
 
@@ -281,63 +254,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren sparar uppgiften</span>
+  <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">18.012</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And passed">
-  <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren sparar uppgiften</span>
-
-  <span class="lead-duration duration">26.318</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then passed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
-
-  <span class="lead-duration duration">22.767</span>
+  <span class="lead-duration duration">15.113</span>
 
 </div>
 
@@ -362,9 +281,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-And failed">
   <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
+  <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;checklistBackButton&quot;</span></span>
 
-  <span class="lead-duration duration">46.383</span>
+  <span class="lead-duration duration">6.177</span>
 
 </div>
 
@@ -379,22 +298,22 @@ $(document).ready(function() {
           <a>java.lang.AssertionError:</a>
       </div>
       <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().textMatches(&quot;[Jj][Aa]&quot;)] inom 10s
+        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.accessibilityId: checklistBackButton] inom 5s
 	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:779)
-	at com.example.steps.TimerSteps.tapDeleteAndConfirm(TimerSteps.java:754)
-	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:511)
-	at ✽.anv&auml;ndaren tar bort den sparade uppgiften &quot;DuplikatTest&quot;(classpath:features/timer_sekvens.feature:116)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().textMatches(&quot;[Jj][Aa]&quot;) (tried for 10 second(s) with 500 milliseconds interval)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:771)
+	at com.example.steps.TimerSteps.klickarP&aring;(TimerSteps.java:239)
+	at ✽.anv&auml;ndaren klickar p&aring; &quot;checklistBackButton&quot;(classpath:features/timer_sekvens.feature:161)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.accessibilityId: checklistBackButton (tried for 5 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1018-azure', java.version: '17.0.19'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9613a250-c968-4c77-bd81-b826f55246df
+Session ID: 50874b14-d381-4be5-ab6c-d27b15ba1ffb
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
 	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:777)
-	at com.example.steps.TimerSteps.tapDeleteAndConfirm(TimerSteps.java:754)
-	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:511)
+	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:771)
+	at com.example.steps.TimerSteps.klickarP&aring;(TimerSteps.java:239)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -525,7 +444,34 @@ Session ID: 9613a250-c968-4c77-bd81-b826f55246df
 
 <div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
-  <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
+  <span class="name">anv&auml;ndaren tar bort checklistan <span class="argument">&quot;TaBortListan&quot;</span></span>
+
+  <span class="lead-duration duration">0.000</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then skipped">
+  <span class="keyword indention">Then</span>
+  <span class="name">ska checklistan <span class="argument">&quot;TaBortListan&quot;</span> inte l&auml;ngre finnas i Listor</span>
 
   <span class="lead-duration duration">0.000</span>
 
@@ -572,7 +518,7 @@ Session ID: 9613a250-c968-4c77-bd81-b826f55246df
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">11.689</span>
+  <span class="lead-duration duration">9.825</span>
 
           </div>
 
@@ -585,254 +531,13 @@ Session ID: 9613a250-c968-4c77-bd81-b826f55246df
   <div class="embedding indention">
     <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_569794771.png" download target="_blank">
+      <a href="embeddings/embedding_-1262111984.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
     <div id="embedding-6" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_569794771.png">
-      </div>
-    </div>
-  </div>
-  </div>
-
-        </div>
-    </div>
-  </div>
-
-  </div>
-</div>
-
-
-<div class="element">
-    <div class="indention">
-      <b>Feature:</b>
-      <a href="report-feature_142179013.html">Timer-app underuppgiftssekvens</a>
-    </div>
-
-
-<div class="tags indention">
-    <b>Tags:</b>
-       <a href="report-tag_3542606885.html">@kategori</a>
-</div>
-
-
-  <span class="lead-duration duration">33.853</span>
-
-
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-7">
-
-<div class="brief failed">
-  <span class="keyword indention">Scenario Outline</span>
-  <span class="name">Vald kategori visas i formul&auml;ret</span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </span>
-  <div class="description indention"></div>
-
-  <div id="element-7" class="collapse collapsable-details  in ">
-
-
-  <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-8">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="before-8" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-              <span class="location name">com.example.steps.TimerSteps.setUp()</span>
-
-  <span class="lead-duration duration">3:2.052</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
-
-
-
-<div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-9">
-
-<div class="brief failed">
-  <span class="keyword indention">Steps</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-  </div>
-
-  <div id="steps-9" class="inner-level collapse collapsable-details  in ">
-      <div class="step">
-
-
-<div class="brief step-name-Given passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">appen &auml;r startad</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-When passed">
-  <span class="keyword indention">When</span>
-  <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
-
-  <span class="lead-duration duration">16.300</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then failed">
-  <span class="keyword indention">Then</span>
-  <span class="name">ska kategorin <span class="argument">&quot;Plugg&quot;</span> vara vald</span>
-
-  <span class="lead-duration duration">17.553</span>
-
-</div>
-
-
-
-
-
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-10">
-          <a>org.openqa.selenium.TimeoutException:</a>
-      </div>
-      <div id="msg-10" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$974/0x00007f9478567c88@2cb53bfc (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1018-azure', java.version: '17.0.19'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9613a250-c968-4c77-bd81-b826f55246df
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.skaKategorinVaraVald(TimerSteps.java:580)
-	at ✽.ska kategorin &quot;Plugg&quot; vara vald(classpath:features/timer_sekvens.feature:127)
-</pre>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-  </div>
-</div>
-
-
-
-
-  <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-11">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="after-11" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">15.164</span>
-
-          </div>
-
-
-
-
-
-
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-12" class="collapsable-control">
-      <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_1902579049.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-12" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_1902579049.png">
+        <img src="embeddings/embedding_-1262111984.png">
       </div>
     </div>
   </div>
