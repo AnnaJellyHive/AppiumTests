@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>18 Jun 2026, 07:32</td>
+      <td>18 Jun 2026, 08:13</td>
     </tr>
   </tbody>
 </table>
@@ -129,18 +129,18 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">Timer-app underuppgiftssekvens</td>
-          <td      class="passed"    >25</td>
+          <td      class="passed"    >33</td>
           <td      class="failed"    >2</td>
-          <td     class="skipped"   >16</td>
+          <td     class="skipped"   >8</td>
           <td >0</td>
           <td >0</td>
           <td class="total">43</td>
 
-          <td  class="passed"    >6</td>
-          <td  class="failed"    >3</td>
+          <td  class="passed"    >7</td>
+          <td  class="failed"    >2</td>
           <td class="total">9</td>
 
-          <td class="duration" data-value="50411534000">50.411</td>
+          <td class="duration" data-value="87320860000">1:27.320</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -193,12 +193,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">0.001</span>
+  <span class="lead-duration duration">36.225</span>
 
 
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Det g&aring;r inte att spara en uppgift med ett redan anv&auml;nt namn</span>
 
@@ -209,13 +209,13 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details  in ">
+  <div id="element-1" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-2">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -225,52 +225,17 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-2" class="inner-level collapse collapsable-details  in ">
+    <div id="before-2" class="inner-level collapse collapsable-details ">
         <div class="hook">
-          <div class="brief failed">
+          <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3:7.728</span>
+  <span class="lead-duration duration">3:31.442</span>
 
           </div>
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-3">
-          <a>Error message</a>
-      </div>
-      <div id="msg-3" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Unable to start WebDriverAgent session. Original error: Could not proxy command to the remote server. Original error: connect ECONNREFUSED 127.0.0.1:8100 
-Host info: host: 'sat12-bq160-c1ef404e-50b6-4fae-85d2-7a63ee781b5f-7EC438FE9DC6.local', ip: 'fe80:0:0:0:888:6674:cb51:aaf1%en0'
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.7', java.version: '17.0.19'
-Driver info: io.appium.java_client.ios.IOSDriver
-Command: [null, newSession {capabilities=[{appium:noReset=true, appium:udid=021C494B-1999-439A-AB4E-7032197C164D, appium:wdaLaunchTimeout=300000, appium:bundleId=com.annamarkstrom.zonat, platformName=IOS, appium:automationName=XCuiTest, appium:wdaConnectionTimeout=300000}], desiredCapabilities=Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 021C494B-1999-439A-AB4E-703..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}}]
-Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 021C494B-1999-439A-AB4E-703..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
-	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
-	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:182)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:89)
-	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:101)
-	at io.appium.java_client.ios.IOSDriver.&lt;init&gt;(IOSDriver.java:104)
-	at com.example.steps.TimerSteps.setUpIos(TimerSteps.java:133)
-	at com.example.steps.TimerSteps.setUp(TimerSteps.java:68)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -283,9 +248,9 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-4">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -295,11 +260,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-4" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-3" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
-<div class="brief step-name-Given skipped">
+<div class="brief step-name-Given passed">
   <span class="keyword indention">Given</span>
   <span class="name">appen &auml;r startad</span>
 
@@ -326,11 +291,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-When skipped">
+<div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">4.807</span>
 
 </div>
 
@@ -353,11 +318,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">3.611</span>
 
 </div>
 
@@ -380,11 +345,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">5.486</span>
 
 </div>
 
@@ -407,11 +372,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">3.051</span>
 
 </div>
 
@@ -434,11 +399,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-Then skipped">
+<div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
   <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">4.218</span>
 
 </div>
 
@@ -461,11 +426,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">13.679</span>
 
 </div>
 
@@ -488,11 +453,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">1.370</span>
 
 </div>
 
@@ -519,7 +484,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -531,13 +496,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="after-5" class="inner-level collapse collapsable-details ">
+    <div id="after-4" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.004</span>
 
           </div>
 
@@ -564,10 +529,10 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 </div>
 
 
-  <span class="lead-duration duration">2.969</span>
+  <span class="lead-duration duration">2.764</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-6">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -580,11 +545,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   </span>
   <div class="description indention"></div>
 
-  <div id="element-6" class="collapse collapsable-details ">
+  <div id="element-5" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-7">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-6">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -596,13 +561,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="before-7" class="inner-level collapse collapsable-details ">
+    <div id="before-6" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">45.995</span>
+  <span class="lead-duration duration">5.203</span>
 
           </div>
 
@@ -619,7 +584,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-8">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-7">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -631,7 +596,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-8" class="inner-level collapse collapsable-details ">
+  <div id="steps-7" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -666,7 +631,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
 
-  <span class="lead-duration duration">2.736</span>
+  <span class="lead-duration duration">2.518</span>
 
 </div>
 
@@ -693,7 +658,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Plugg&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.232</span>
+  <span class="lead-duration duration">0.245</span>
 
 </div>
 
@@ -720,7 +685,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-9">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-8">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -732,7 +697,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="after-9" class="inner-level collapse collapsable-details ">
+    <div id="after-8" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -765,10 +730,10 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 </div>
 
 
-  <span class="lead-duration duration">2.280</span>
+  <span class="lead-duration duration">2.475</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-10">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-9">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -781,11 +746,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   </span>
   <div class="description indention"></div>
 
-  <div id="element-10" class="collapse collapsable-details ">
+  <div id="element-9" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-11">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-10">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -797,13 +762,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="before-11" class="inner-level collapse collapsable-details ">
+    <div id="before-10" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">5.335</span>
+  <span class="lead-duration duration">5.008</span>
 
           </div>
 
@@ -820,7 +785,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-12">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-11">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -832,7 +797,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-12" class="inner-level collapse collapsable-details ">
+  <div id="steps-11" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -867,7 +832,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span></span>
 
-  <span class="lead-duration duration">2.094</span>
+  <span class="lead-duration duration">2.241</span>
 
 </div>
 
@@ -894,7 +859,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.186</span>
+  <span class="lead-duration duration">0.234</span>
 
 </div>
 
@@ -921,7 +886,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-13">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-12">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -933,7 +898,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="after-13" class="inner-level collapse collapsable-details ">
+    <div id="after-12" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -966,10 +931,10 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 </div>
 
 
-  <span class="lead-duration duration">2.353</span>
+  <span class="lead-duration duration">2.454</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-14">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-13">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -982,11 +947,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   </span>
   <div class="description indention"></div>
 
-  <div id="element-14" class="collapse collapsable-details ">
+  <div id="element-13" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-15">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-14">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -998,13 +963,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="before-15" class="inner-level collapse collapsable-details ">
+    <div id="before-14" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">4.356</span>
+  <span class="lead-duration duration">4.684</span>
 
           </div>
 
@@ -1021,7 +986,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-16">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-15">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1033,7 +998,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-16" class="inner-level collapse collapsable-details ">
+  <div id="steps-15" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1068,7 +1033,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Hem&quot;</span></span>
 
-  <span class="lead-duration duration">2.182</span>
+  <span class="lead-duration duration">2.245</span>
 
 </div>
 
@@ -1095,7 +1060,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Hem&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.170</span>
+  <span class="lead-duration duration">0.208</span>
 
 </div>
 
@@ -1122,7 +1087,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-17">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-16">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1134,7 +1099,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="after-17" class="inner-level collapse collapsable-details ">
+    <div id="after-16" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1167,10 +1132,10 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 </div>
 
 
-  <span class="lead-duration duration">2.301</span>
+  <span class="lead-duration duration">2.312</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-18">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-17">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1183,11 +1148,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   </span>
   <div class="description indention"></div>
 
-  <div id="element-18" class="collapse collapsable-details ">
+  <div id="element-17" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-19">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-18">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1199,13 +1164,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="before-19" class="inner-level collapse collapsable-details ">
+    <div id="before-18" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">4.343</span>
+  <span class="lead-duration duration">4.119</span>
 
           </div>
 
@@ -1222,7 +1187,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-20">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-19">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1234,7 +1199,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-20" class="inner-level collapse collapsable-details ">
+  <div id="steps-19" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1269,7 +1234,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Socialt&quot;</span></span>
 
-  <span class="lead-duration duration">2.074</span>
+  <span class="lead-duration duration">2.098</span>
 
 </div>
 
@@ -1296,7 +1261,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Socialt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.226</span>
+  <span class="lead-duration duration">0.213</span>
 
 </div>
 
@@ -1323,7 +1288,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-21">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-20">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1335,7 +1300,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="after-21" class="inner-level collapse collapsable-details ">
+    <div id="after-20" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1368,10 +1333,10 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 </div>
 
 
-  <span class="lead-duration duration">2.319</span>
+  <span class="lead-duration duration">2.938</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-22">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-21">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1384,11 +1349,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   </span>
   <div class="description indention"></div>
 
-  <div id="element-22" class="collapse collapsable-details ">
+  <div id="element-21" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-23">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-22">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1400,13 +1365,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="before-23" class="inner-level collapse collapsable-details ">
+    <div id="before-22" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">4.320</span>
+  <span class="lead-duration duration">8.435</span>
 
           </div>
 
@@ -1423,7 +1388,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-24">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-23">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1435,7 +1400,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-24" class="inner-level collapse collapsable-details ">
+  <div id="steps-23" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1470,7 +1435,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span></span>
 
-  <span class="lead-duration duration">2.098</span>
+  <span class="lead-duration duration">2.677</span>
 
 </div>
 
@@ -1497,7 +1462,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.221</span>
+  <span class="lead-duration duration">0.260</span>
 
 </div>
 
@@ -1524,7 +1489,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-25">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-24">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1536,7 +1501,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="after-25" class="inner-level collapse collapsable-details ">
+    <div id="after-24" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1569,10 +1534,10 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 </div>
 
 
-  <span class="lead-duration duration">2.443</span>
+  <span class="lead-duration duration">3.630</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-26">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-25">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1585,11 +1550,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   </span>
   <div class="description indention"></div>
 
-  <div id="element-26" class="collapse collapsable-details ">
+  <div id="element-25" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-27">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-26">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1601,13 +1566,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="before-27" class="inner-level collapse collapsable-details ">
+    <div id="before-26" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">4.089</span>
+  <span class="lead-duration duration">12.089</span>
 
           </div>
 
@@ -1624,7 +1589,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-28">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-27">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1636,7 +1601,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-28" class="inner-level collapse collapsable-details ">
+  <div id="steps-27" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1671,7 +1636,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span></span>
 
-  <span class="lead-duration duration">2.252</span>
+  <span class="lead-duration duration">3.168</span>
 
 </div>
 
@@ -1698,7 +1663,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.191</span>
+  <span class="lead-duration duration">0.461</span>
 
 </div>
 
@@ -1725,7 +1690,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-29">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-28">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1737,7 +1702,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="after-29" class="inner-level collapse collapsable-details ">
+    <div id="after-28" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1770,10 +1735,10 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 </div>
 
 
-  <span class="lead-duration duration">18.923</span>
+  <span class="lead-duration duration">17.527</span>
 
 
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-30">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-29">
 
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1786,11 +1751,11 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   </span>
   <div class="description indention"></div>
 
-  <div id="element-30" class="collapse collapsable-details  in ">
+  <div id="element-29" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-31">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-30">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1802,13 +1767,13 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
     </div>
 
-    <div id="before-31" class="inner-level collapse collapsable-details ">
+    <div id="before-30" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">4.353</span>
+  <span class="lead-duration duration">12.657</span>
 
           </div>
 
@@ -1825,7 +1790,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-32">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-31">
 
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -1837,7 +1802,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   </div>
 
-  <div id="steps-32" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-31" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -1872,7 +1837,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">1.011</span>
+  <span class="lead-duration duration">1.292</span>
 
 </div>
 
@@ -1899,7 +1864,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;Ink&ouml;pslista&quot;</span></span>
 
-  <span class="lead-duration duration">6.022</span>
+  <span class="lead-duration duration">5.709</span>
 
 </div>
 
@@ -1926,7 +1891,7 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
   <span class="keyword indention">Then</span>
   <span class="name">ska detaljvyn f&ouml;r <span class="argument">&quot;Ink&ouml;pslista&quot;</span> visas</span>
 
-  <span class="lead-duration duration">11.888</span>
+  <span class="lead-duration duration">10.523</span>
 
 </div>
 
@@ -1937,17 +1902,22 @@ Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstro
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-33">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-32">
           <a>java.lang.AssertionError:</a>
       </div>
-      <div id="msg-33" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: Detaljvyn visade inte 'Ink&ouml;pslista', hittade: '&lt;kunde inte l&auml;sa: Can't locate an element by this strategy: By.chained({AppiumBy.iOSNsPredicate: identifier == 'checklistDetailTitle'})&gt;'
-	at com.example.steps.TimerSteps.skaDetaljvynVisas(TimerSteps.java:611)
+      <div id="msg-32" class="collapse collapsable-details  in ">
+        <pre>java.lang.AssertionError: Detaljvyn visade inte 'Ink&ouml;pslista'
+	at com.example.steps.TimerSteps.skaDetaljvynVisas(TimerSteps.java:612)
 	at ✽.ska detaljvyn f&ouml;r &quot;Ink&ouml;pslista&quot; visas(classpath:features/timer_sekvens.feature:143)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$946/0x0000007001a50480@1331742 (tried for 10 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$947/0x0000008801567770@d4c6a43 (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.7', java.version: '17.0.19'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 021C494B-1999-439A-AB4E-703..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 141bd687-500f-4368-9a7b-745662d99dd8
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.skaDetaljvynVisas(TimerSteps.java:608)
+	at com.example.steps.TimerSteps.skaDetaljvynVisas(TimerSteps.java:609)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -2057,41 +2027,6 @@ Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: wait
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.iOSNsPredicate: identifier == 'checklistDetailTitle'})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:166)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:64)
-	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
-	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$xMJHCOFg.getText(Unknown Source)
-	at com.example.steps.TimerSteps.getElementText(TimerSteps.java:752)
-	at com.example.steps.TimerSteps.lambda$skaDetaljvynVisas$31(TimerSteps.java:608)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 110 more
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@3b21b0f5 (tried for 0 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:135)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:160)
-	... 116 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.iOSNsPredicate: identifier == 'checklistDetailTitle'})
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.7', java.version: '17.0.19'
-Driver info: driver.version: RemoteWebDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:53)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$1(AppiumElementLocator.java:160)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:217)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:210)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 118 more
 </pre>
       </div>
     </div>
@@ -2304,7 +2239,7 @@ Driver info: driver.version: RemoteWebDriver
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-34">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-33">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2316,13 +2251,13 @@ Driver info: driver.version: RemoteWebDriver
 
     </div>
 
-    <div id="after-34" class="inner-level collapse collapsable-details ">
+    <div id="after-33" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.310</span>
+  <span class="lead-duration duration">0.419</span>
 
           </div>
 
@@ -2333,15 +2268,15 @@ Driver info: driver.version: RemoteWebDriver
 
   <div class="embeddings inner-level">
   <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-35" class="collapsable-control">
+    <div data-toggle="collapse" data-target="#embedding-34" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_627541584.png" download target="_blank">
+      <a href="embeddings/embedding_82444984.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
-    <div id="embedding-35" class="collapse collapsable-details ">
+    <div id="embedding-34" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_627541584.png">
+        <img src="embeddings/embedding_82444984.png">
       </div>
     </div>
   </div>
@@ -2364,10 +2299,10 @@ Driver info: driver.version: RemoteWebDriver
 </div>
 
 
-  <span class="lead-duration duration">16.819</span>
+  <span class="lead-duration duration">16.992</span>
 
 
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-36">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-35">
 
 <div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
@@ -2380,11 +2315,11 @@ Driver info: driver.version: RemoteWebDriver
   </span>
   <div class="description indention"></div>
 
-  <div id="element-36" class="collapse collapsable-details  in ">
+  <div id="element-35" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-37">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-36">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2396,13 +2331,13 @@ Driver info: driver.version: RemoteWebDriver
 
     </div>
 
-    <div id="before-37" class="inner-level collapse collapsable-details ">
+    <div id="before-36" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">4.940</span>
+  <span class="lead-duration duration">6.579</span>
 
           </div>
 
@@ -2419,7 +2354,7 @@ Driver info: driver.version: RemoteWebDriver
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-38">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-37">
 
 <div class="brief failed">
   <span class="keyword indention">Steps</span>
@@ -2431,7 +2366,7 @@ Driver info: driver.version: RemoteWebDriver
 
   </div>
 
-  <div id="steps-38" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-37" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -2466,7 +2401,7 @@ Driver info: driver.version: RemoteWebDriver
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">0.972</span>
+  <span class="lead-duration duration">1.130</span>
 
 </div>
 
@@ -2493,7 +2428,7 @@ Driver info: driver.version: RemoteWebDriver
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">4.338</span>
+  <span class="lead-duration duration">4.536</span>
 
 </div>
 
@@ -2520,7 +2455,7 @@ Driver info: driver.version: RemoteWebDriver
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;checklistBackButton&quot;</span></span>
 
-  <span class="lead-duration duration">1.170</span>
+  <span class="lead-duration duration">1.117</span>
 
 </div>
 
@@ -2547,7 +2482,7 @@ Driver info: driver.version: RemoteWebDriver
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort checklistan <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">10.337</span>
+  <span class="lead-duration duration">10.208</span>
 
 </div>
 
@@ -2558,19 +2493,19 @@ Driver info: driver.version: RemoteWebDriver
 
   <div class="inner-level">
     <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-39">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-38">
           <a>org.openqa.selenium.TimeoutException:</a>
       </div>
-      <div id="msg-39" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$955/0x0000007001a525e8@172b39c3 (tried for 10 second(s) with 500 milliseconds interval)
+      <div id="msg-38" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$964/0x0000008801b30478@46ddacb (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: '4.13.0', revision: 'ba948ece5b*'
 System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.7', java.version: '17.0.19'
 Driver info: io.appium.java_client.ios.IOSDriver
 Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 021C494B-1999-439A-AB4E-703..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
-Session ID: b3a95f76-9b6a-44eb-a1b2-a3f93fff559b
+Session ID: 141bd687-500f-4368-9a7b-745662d99dd8
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.tarBortChecklistan(TimerSteps.java:657)
+	at com.example.steps.TimerSteps.tarBortChecklistan(TimerSteps.java:672)
 	at ✽.anv&auml;ndaren tar bort checklistan &quot;TaBortListan&quot;(classpath:features/timer_sekvens.feature:162)
 </pre>
       </div>
@@ -2622,7 +2557,7 @@ Session ID: b3a95f76-9b6a-44eb-a1b2-a3f93fff559b
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-40">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-39">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2634,13 +2569,13 @@ Session ID: b3a95f76-9b6a-44eb-a1b2-a3f93fff559b
 
     </div>
 
-    <div id="after-40" class="inner-level collapse collapsable-details ">
+    <div id="after-39" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.123</span>
+  <span class="lead-duration duration">0.317</span>
 
           </div>
 
@@ -2651,15 +2586,15 @@ Session ID: b3a95f76-9b6a-44eb-a1b2-a3f93fff559b
 
   <div class="embeddings inner-level">
   <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-41" class="collapsable-control">
+    <div data-toggle="collapse" data-target="#embedding-40" class="collapsable-control">
       <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_667340333.png" download target="_blank">
+      <a href="embeddings/embedding_-711549509.png" download target="_blank">
         <span class="download-button glyphicon glyphicon-download-alt"></span>
       </a>
     </div>
-    <div id="embedding-41" class="collapse collapsable-details ">
+    <div id="embedding-40" class="collapse collapsable-details ">
       <div class="embedding-content">
-        <img src="embeddings/embedding_667340333.png">
+        <img src="embeddings/embedding_-711549509.png">
       </div>
     </div>
   </div>
