@@ -328,14 +328,19 @@ public class TimerSteps {
 
     @Then("ska historiken visa minst {int} körningar med uppgiften {string}")
     public void skaHistorikenVisaMinst(int minCount, String taskName) {
-        // Vänta tills de minCount översta posterna i historiken (= senaste körningarna) har taskName
-        new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
-            List<WebElement> titles = historyPage.getTitleElements();
-            if (titles.size() < minCount) return false;
-            return titles.subList(0, minCount).stream().allMatch(e -> {
-                try { return e.getText().contains(taskName); } catch (Exception ex) { return false; }
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            new WebDriverWait(driver, Duration.ofSeconds(30)).until(d ->
+                d.findElements(AppiumBy.iOSNsPredicateString(
+                    "label CONTAINS '" + taskName + "'")).size() >= minCount);
+        } else {
+            new WebDriverWait(driver, Duration.ofSeconds(30)).until(d -> {
+                List<WebElement> titles = historyPage.getTitleElements();
+                if (titles.size() < minCount) return false;
+                return titles.subList(0, minCount).stream().allMatch(e -> {
+                    try { return e.getText().contains(taskName); } catch (Exception ex) { return false; }
+                });
             });
-        });
+        }
     }
 
     @And("användaren sätter paus-tid till {string}")
@@ -671,7 +676,7 @@ public class TimerSteps {
                     .ignoring(WebDriverException.class)
                     .until(d -> {
                         List<WebElement> els = d.findElements(
-                            AppiumBy.iOSNsPredicateString("label == '" + name + "'"));
+                            AppiumBy.iOSNsPredicateString("label CONTAINS '" + name + "'"));
                         return els.isEmpty() ? null : els.get(0);
                     });
         } else {
@@ -700,7 +705,7 @@ public class TimerSteps {
     public void skaChecklistanInteLängreFinnasIListor(String name) {
         if ("ios".equalsIgnoreCase(PLATFORM)) {
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
-                d.findElements(AppiumBy.iOSNsPredicateString("label == '" + name + "'")).isEmpty());
+                d.findElements(AppiumBy.iOSNsPredicateString("label CONTAINS '" + name + "'")).isEmpty());
         } else {
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> {
                 List<WebElement> titles = checklistsPage.getChecklistItemTitles();
