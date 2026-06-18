@@ -602,13 +602,24 @@ public class TimerSteps {
 
     @Then("ska detaljvyn för {string} visas")
     public void skaDetaljvynVisas(String name) {
-        try {
-            new WebDriverWait(driver, Duration.ofSeconds(10))
-                    .ignoring(WebDriverException.class)
-                    .until(d -> name.equals(getElementText(checklistDetailPage.getChecklistDetailTitle())));
-        } catch (TimeoutException e) {
-            String actual = safeGetText(checklistDetailPage.getChecklistDetailTitle());
-            throw new AssertionError("Detaljvyn visade inte '" + name + "', hittade: '" + actual + "'", e);
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(10))
+                        .ignoring(WebDriverException.class)
+                        .until(d -> !d.findElements(
+                            AppiumBy.iOSNsPredicateString("label == '" + name + "'")).isEmpty());
+            } catch (TimeoutException e) {
+                throw new AssertionError("Detaljvyn visade inte '" + name + "'", e);
+            }
+        } else {
+            try {
+                new WebDriverWait(driver, Duration.ofSeconds(10))
+                        .ignoring(WebDriverException.class)
+                        .until(d -> name.equals(getElementText(checklistDetailPage.getChecklistDetailTitle())));
+            } catch (TimeoutException e) {
+                String actual = safeGetText(checklistDetailPage.getChecklistDetailTitle());
+                throw new AssertionError("Detaljvyn visade inte '" + name + "', hittade: '" + actual + "'", e);
+            }
         }
     }
 
@@ -654,13 +665,24 @@ public class TimerSteps {
 
     @When("användaren tar bort checklistan {string}")
     public void tarBortChecklistan(String name) {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
-                !checklistsPage.getChecklistItemTitles().isEmpty());
-        List<WebElement> titles = checklistsPage.getChecklistItemTitles();
-        WebElement item = titles.stream()
-                .filter(e -> { try { return e.getText().contains(name); } catch (Exception ex) { return false; } })
-                .findFirst()
-                .orElseThrow(() -> new AssertionError("Hittade inte checklistan '" + name + "'"));
+        WebElement item;
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            item = new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .ignoring(WebDriverException.class)
+                    .until(d -> {
+                        List<WebElement> els = d.findElements(
+                            AppiumBy.iOSNsPredicateString("label == '" + name + "'"));
+                        return els.isEmpty() ? null : els.get(0);
+                    });
+        } else {
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
+                    !checklistsPage.getChecklistItemTitles().isEmpty());
+            List<WebElement> titles = checklistsPage.getChecklistItemTitles();
+            item = titles.stream()
+                    .filter(e -> { try { return e.getText().contains(name); } catch (Exception ex) { return false; } })
+                    .findFirst()
+                    .orElseThrow(() -> new AssertionError("Hittade inte checklistan '" + name + "'"));
+        }
         int y = item.getRect().y + item.getRect().height / 2;
         int startX = item.getRect().x + item.getRect().width - 10;
         int endX   = item.getRect().x + 10;
@@ -676,12 +698,17 @@ public class TimerSteps {
 
     @Then("ska checklistan {string} inte längre finnas i Listor")
     public void skaChecklistanInteLängreFinnasIListor(String name) {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> {
-            List<WebElement> titles = checklistsPage.getChecklistItemTitles();
-            return titles.stream().noneMatch(e -> {
-                try { return e.getText().contains(name); } catch (Exception ex) { return false; }
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(d ->
+                d.findElements(AppiumBy.iOSNsPredicateString("label == '" + name + "'")).isEmpty());
+        } else {
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(d -> {
+                List<WebElement> titles = checklistsPage.getChecklistItemTitles();
+                return titles.stream().noneMatch(e -> {
+                    try { return e.getText().contains(name); } catch (Exception ex) { return false; }
+                });
             });
-        });
+        }
     }
 
     private void tapDeleteAndConfirm(String deleteBtnAccessibilityId, int rowIndex, int targetY) {
