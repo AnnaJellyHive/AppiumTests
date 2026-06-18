@@ -612,7 +612,7 @@ public class TimerSteps {
                 new WebDriverWait(driver, Duration.ofSeconds(10))
                         .ignoring(WebDriverException.class)
                         .until(d -> !d.findElements(
-                            AppiumBy.iOSNsPredicateString("label == '" + name + "'")).isEmpty());
+                            By.xpath("//XCUIElementTypeStaticText[@label='" + name + "']")).isEmpty());
             } catch (TimeoutException e) {
                 throw new AssertionError("Detaljvyn visade inte '" + name + "'", e);
             }
