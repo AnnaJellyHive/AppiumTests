@@ -236,7 +236,7 @@ public class TimerSteps {
 
     @When("användaren klickar på {string}")
     public void klickarPå(String accessibilityId) {
-        waitForElementToBeVisible(AppiumBy.accessibilityId(accessibilityId)).click();
+        waitForElementToBeVisible(AppiumBy.accessibilityId(accessibilityId), 15).click();
     }
 
     @Then("ska timern visa {string} för underuppgift {int} av {int}")
@@ -612,7 +612,7 @@ public class TimerSteps {
                 new WebDriverWait(driver, Duration.ofSeconds(10))
                         .ignoring(WebDriverException.class)
                         .until(d -> !d.findElements(
-                            By.xpath("//XCUIElementTypeStaticText[@label='" + name + "']")).isEmpty());
+                            AppiumBy.iOSNsPredicateString("label == '" + name + "'")).isEmpty());
             } catch (TimeoutException e) {
                 throw new AssertionError("Detaljvyn visade inte '" + name + "'", e);
             }
