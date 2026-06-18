@@ -745,8 +745,8 @@ public class TimerSteps {
         // iOS: behåller originaltext ("Ja")
         By jaBy = "ios".equalsIgnoreCase(PLATFORM)
                 ? By.xpath("//XCUIElementTypeButton[@name='Ja']")
-                : AppiumBy.androidUIAutomator("new UiSelector().text(\"JA\")");
-        waitForElementToBeVisible(jaBy).click();
+                : AppiumBy.androidUIAutomator("new UiSelector().textMatches(\"[Jj][Aa]\")");
+        waitForElementToBeVisible(jaBy, 10).click();
     }
 
     private WebElement waitForElementToBeVisible(WebElement element) {
