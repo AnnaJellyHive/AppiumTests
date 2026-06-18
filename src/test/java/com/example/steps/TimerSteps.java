@@ -596,8 +596,8 @@ public class TimerSteps {
     @When("användaren skapar en ny lista {string}")
     public void skaparNyLista(String name) {
         waitForElementToBeVisible(checklistsPage.getCreateListButton(), 15).click();
-        waitForElementToBeVisible(checklistsPage.getChecklistNameInput()).sendKeys(name);
-        waitForElementToBeVisible(checklistsPage.getCreateListConfirmButton()).click();
+        waitForElementToBeVisible(checklistsPage.getChecklistNameInput(), 15).sendKeys(name);
+        waitForElementToBeVisible(checklistsPage.getCreateListConfirmButton(), 15).click();
     }
 
     @Then("ska detaljvyn för {string} visas")
