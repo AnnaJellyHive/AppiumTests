@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>22 Jun 2026, 12:55</td>
+      <td>22 Jun 2026, 13:19</td>
     </tr>
   </tbody>
 </table>
@@ -129,9 +129,9 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">Timer-app underuppgiftssekvens</td>
-          <td      class="passed"    >41</td>
-          <td      class="failed"    >1</td>
-          <td     class="skipped"   >1</td>
+          <td      class="passed"    >40</td>
+          <td >0</td>
+          <td     class="skipped"   >3</td>
           <td >0</td>
           <td >0</td>
           <td class="total">43</td>
@@ -140,7 +140,7 @@ $(document).ready(function() {
           <td  class="failed"    >1</td>
           <td class="total">9</td>
 
-          <td class="duration" data-value="258853407630">4:18.853</td>
+          <td class="duration" data-value="34736716602">34.736</td>
           <td class="failed">Failed</td>
         </tr>
         </tbody>
@@ -193,12 +193,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1:42.996</span>
+  <span class="lead-duration duration">10.882</span>
 
 
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Det g&aring;r inte att spara en uppgift med ett redan anv&auml;nt namn</span>
 
@@ -209,7 +209,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details  in ">
+  <div id="element-1" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
@@ -231,7 +231,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">5:5.187</span>
+  <span class="lead-duration duration">11.382</span>
 
           </div>
 
@@ -248,9 +248,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -260,7 +260,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-3" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -295,7 +295,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">1.330</span>
+  <span class="lead-duration duration">0.121</span>
 
 </div>
 
@@ -322,7 +322,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
 
-  <span class="lead-duration duration">11.615</span>
+  <span class="lead-duration duration">0.602</span>
 
 </div>
 
@@ -349,7 +349,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">17.707</span>
+  <span class="lead-duration duration">1.870</span>
 
 </div>
 
@@ -376,7 +376,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">11.418</span>
+  <span class="lead-duration duration">1.286</span>
 
 </div>
 
@@ -403,7 +403,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
 
-  <span class="lead-duration duration">19.783</span>
+  <span class="lead-duration duration">0.962</span>
 
 </div>
 
@@ -426,11 +426,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And failed">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">41.139</span>
+  <span class="lead-duration duration">5.547</span>
 
 </div>
 
@@ -438,142 +438,6 @@ $(document).ready(function() {
 
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>java.lang.AssertionError:</a>
-      </div>
-      <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>java.lang.AssertionError: waitForElementToBeVisible: hittade inte element [AppiumBy.androidUIAutomator: new UiSelector().textMatches(&quot;[Jj][Aa]&quot;)] inom 10s
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:779)
-	at com.example.steps.TimerSteps.tapDeleteAndConfirm(TimerSteps.java:754)
-	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:511)
-	at ✽.anv&auml;ndaren tar bort den sparade uppgiften &quot;DuplikatTest&quot;(classpath:features/timer_sekvens.feature:116)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by AppiumBy.androidUIAutomator: new UiSelector().textMatches(&quot;[Jj][Aa]&quot;) (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1018-azure', java.version: '17.0.19'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.example.steps.TimerSteps.waitForElementToBeVisible(TimerSteps.java:777)
-	at com.example.steps.TimerSteps.tapDeleteAndConfirm(TimerSteps.java:754)
-	at com.example.steps.TimerSteps.tarBortSparadUppgift(TimerSteps.java:511)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
-	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.lambda$runTestCase$4(CucumberEngineExecutionContext.java:112)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
-	at io.cucumber.junit.platform.engine.CucumberEngineExecutionContext.runTestCase(CucumberEngineExecutionContext.java:109)
-	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:168)
-	at io.cucumber.junit.platform.engine.NodeDescriptor$PickleDescriptor.execute(NodeDescriptor.java:90)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:76)
-	at org.junit.platform.suite.engine.SuiteLauncher.execute(SuiteLauncher.java:63)
-	at org.junit.platform.suite.engine.SuiteTestDescriptor.execute(SuiteTestDescriptor.java:128)
-	at org.junit.platform.suite.engine.SuiteTestEngine.lambda$execute$0(SuiteTestEngine.java:73)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at org.junit.platform.suite.engine.SuiteTestEngine.execute(SuiteTestEngine.java:73)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
-	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
-	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -589,11 +453,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.491</span>
 
 </div>
 
@@ -620,7 +484,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -632,13 +496,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="after-5" class="inner-level collapse collapsable-details ">
+    <div id="after-4" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">8.967</span>
+  <span class="lead-duration duration">0.001</span>
 
           </div>
 
@@ -647,21 +511,6 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
-      <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_-1063804509.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-6" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_-1063804509.png">
-      </div>
-    </div>
-  </div>
-  </div>
 
         </div>
     </div>
@@ -680,10 +529,10 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">10.830</span>
+  <span class="lead-duration duration">1.959</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-7">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -696,11 +545,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   </span>
   <div class="description indention"></div>
 
-  <div id="element-7" class="collapse collapsable-details ">
+  <div id="element-5" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-8">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-6">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -712,13 +561,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="before-8" class="inner-level collapse collapsable-details ">
+    <div id="before-6" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:21.448</span>
+  <span class="lead-duration duration">4.841</span>
 
           </div>
 
@@ -735,7 +584,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-9">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-7">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -747,7 +596,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
   </div>
 
-  <div id="steps-9" class="inner-level collapse collapsable-details ">
+  <div id="steps-7" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -782,7 +631,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
 
-  <span class="lead-duration duration">7.893</span>
+  <span class="lead-duration duration">1.274</span>
 
 </div>
 
@@ -809,7 +658,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Plugg&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">2.936</span>
+  <span class="lead-duration duration">0.685</span>
 
 </div>
 
@@ -836,7 +685,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-10">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-8">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -848,7 +697,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="after-10" class="inner-level collapse collapsable-details ">
+    <div id="after-8" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -881,10 +730,10 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">12.292</span>
+  <span class="lead-duration duration">1.461</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-11">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-9">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -897,11 +746,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   </span>
   <div class="description indention"></div>
 
-  <div id="element-11" class="collapse collapsable-details ">
+  <div id="element-9" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-12">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-10">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -913,13 +762,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="before-12" class="inner-level collapse collapsable-details ">
+    <div id="before-10" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:20.547</span>
+  <span class="lead-duration duration">4.579</span>
 
           </div>
 
@@ -936,7 +785,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-13">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-11">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -948,7 +797,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
   </div>
 
-  <div id="steps-13" class="inner-level collapse collapsable-details ">
+  <div id="steps-11" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -983,7 +832,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span></span>
 
-  <span class="lead-duration duration">8.374</span>
+  <span class="lead-duration duration">1.144</span>
 
 </div>
 
@@ -1010,7 +859,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.917</span>
+  <span class="lead-duration duration">0.317</span>
 
 </div>
 
@@ -1037,7 +886,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-14">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-12">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1049,7 +898,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="after-14" class="inner-level collapse collapsable-details ">
+    <div id="after-12" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1082,10 +931,10 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">11.357</span>
+  <span class="lead-duration duration">2.062</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-15">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-13">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1098,11 +947,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   </span>
   <div class="description indention"></div>
 
-  <div id="element-15" class="collapse collapsable-details ">
+  <div id="element-13" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-16">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-14">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1114,13 +963,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="before-16" class="inner-level collapse collapsable-details ">
+    <div id="before-14" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:27.740</span>
+  <span class="lead-duration duration">4.319</span>
 
           </div>
 
@@ -1137,7 +986,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-17">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-15">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1149,7 +998,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
   </div>
 
-  <div id="steps-17" class="inner-level collapse collapsable-details ">
+  <div id="steps-15" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1184,7 +1033,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Hem&quot;</span></span>
 
-  <span class="lead-duration duration">8.233</span>
+  <span class="lead-duration duration">1.203</span>
 
 </div>
 
@@ -1211,7 +1060,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Hem&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.123</span>
+  <span class="lead-duration duration">0.858</span>
 
 </div>
 
@@ -1238,7 +1087,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-18">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-16">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1250,7 +1099,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="after-18" class="inner-level collapse collapsable-details ">
+    <div id="after-16" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1283,10 +1132,10 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">12.159</span>
+  <span class="lead-duration duration">1.810</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-19">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-17">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1299,11 +1148,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   </span>
   <div class="description indention"></div>
 
-  <div id="element-19" class="collapse collapsable-details ">
+  <div id="element-17" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-20">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-18">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1315,13 +1164,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="before-20" class="inner-level collapse collapsable-details ">
+    <div id="before-18" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:23.692</span>
+  <span class="lead-duration duration">4.103</span>
 
           </div>
 
@@ -1338,7 +1187,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-21">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-19">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1350,7 +1199,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
   </div>
 
-  <div id="steps-21" class="inner-level collapse collapsable-details ">
+  <div id="steps-19" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1385,7 +1234,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Socialt&quot;</span></span>
 
-  <span class="lead-duration duration">8.539</span>
+  <span class="lead-duration duration">1.223</span>
 
 </div>
 
@@ -1412,7 +1261,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Socialt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">3.620</span>
+  <span class="lead-duration duration">0.586</span>
 
 </div>
 
@@ -1439,7 +1288,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-22">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-20">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1451,7 +1300,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="after-22" class="inner-level collapse collapsable-details ">
+    <div id="after-20" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1484,10 +1333,10 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">11.918</span>
+  <span class="lead-duration duration">1.689</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-23">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-21">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1500,11 +1349,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   </span>
   <div class="description indention"></div>
 
-  <div id="element-23" class="collapse collapsable-details ">
+  <div id="element-21" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-24">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-22">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1516,13 +1365,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="before-24" class="inner-level collapse collapsable-details ">
+    <div id="before-22" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:20.010</span>
+  <span class="lead-duration duration">4.012</span>
 
           </div>
 
@@ -1539,7 +1388,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-25">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-23">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1551,7 +1400,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
   </div>
 
-  <div id="steps-25" class="inner-level collapse collapsable-details ">
+  <div id="steps-23" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1586,7 +1435,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span></span>
 
-  <span class="lead-duration duration">8.923</span>
+  <span class="lead-duration duration">1.376</span>
 
 </div>
 
@@ -1613,7 +1462,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">2.994</span>
+  <span class="lead-duration duration">0.313</span>
 
 </div>
 
@@ -1640,7 +1489,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-26">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-24">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1652,7 +1501,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="after-26" class="inner-level collapse collapsable-details ">
+    <div id="after-24" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
@@ -1685,12 +1534,12 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">10.009</span>
+  <span class="lead-duration duration">0.000</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-27">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-25">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Vald kategori visas i formul&auml;ret</span>
 
@@ -1701,13 +1550,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   </span>
   <div class="description indention"></div>
 
-  <div id="element-27" class="collapse collapsable-details ">
+  <div id="element-25" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-28">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-26">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -1717,17 +1566,37 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="before-28" class="inner-level collapse collapsable-details ">
+    <div id="before-26" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief failed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:19.259</span>
+  <span class="lead-duration duration">4:0.498</span>
 
           </div>
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-27">
+          <a>Error message</a>
+      </div>
+      <div id="msg-27" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$874/0x00007f4ab4395250@4136d4da (tried for 240 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.17.0-1018-azure', java.version: '17.0.19'
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:adbExecTimeout: 120000, appium:appActivity: .SplashActivity, appium:appPackage: com.timerapp, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {adbExecTimeout: 120000, appActivity: .SplashActivity, appPackage: com.timerapp, automationName: UIAutomator2, deviceName: emulator-5554, noReset: true, platformName: ANDROID, uiautomator2ServerInstallTimeout: 120000, uiautomator2ServerLaunchTimeout: 120000}, appium:deviceApiLevel: 33, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86_64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.625, appium:platformVersion: 13, appium:statBarHeight: 128, appium:takesScreenshot: true, appium:uiautomator2ServerInstallTimeout: 120000, appium:uiautomator2ServerLaunchTimeout: 120000, appium:viewportRect: {height: 2272, left: 0, top: 128, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: a2836e55-658a-426e-bee4-394ffb9f2f55
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.example.steps.TimerSteps.setUp(TimerSteps.java:83)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -1740,9 +1609,9 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-29">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-28">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -1752,11 +1621,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
   </div>
 
-  <div id="steps-29" class="inner-level collapse collapsable-details ">
+  <div id="steps-28" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
-<div class="brief step-name-Given passed">
+<div class="brief step-name-Given skipped">
   <span class="keyword indention">Given</span>
   <span class="name">appen &auml;r startad</span>
 
@@ -1783,11 +1652,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span></span>
 
-  <span class="lead-duration duration">7.454</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1810,11 +1679,11 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">2.554</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -1841,7 +1710,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-30">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-29">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1853,13 +1722,13 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
     </div>
 
-    <div id="after-30" class="inner-level collapse collapsable-details ">
+    <div id="after-29" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">1.058</span>
 
           </div>
 
@@ -1868,6 +1737,21 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-30" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_-860282330.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-30" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-860282330.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
@@ -1886,7 +1770,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">46.641</span>
+  <span class="lead-duration duration">7.250</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-31">
@@ -1924,7 +1808,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:18.405</span>
+  <span class="lead-duration duration">3.979</span>
 
           </div>
 
@@ -1988,7 +1872,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">1.385</span>
+  <span class="lead-duration duration">0.478</span>
 
 </div>
 
@@ -2015,7 +1899,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;Ink&ouml;pslista&quot;</span></span>
 
-  <span class="lead-duration duration">14.748</span>
+  <span class="lead-duration duration">2.007</span>
 
 </div>
 
@@ -2042,7 +1926,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska detaljvyn f&ouml;r <span class="argument">&quot;Ink&ouml;pslista&quot;</span> visas</span>
 
-  <span class="lead-duration duration">7.621</span>
+  <span class="lead-duration duration">0.943</span>
 
 </div>
 
@@ -2069,7 +1953,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren l&auml;gger till listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span></span>
 
-  <span class="lead-duration duration">2.987</span>
+  <span class="lead-duration duration">1.382</span>
 
 </div>
 
@@ -2096,7 +1980,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span></span>
 
-  <span class="lead-duration duration">4.640</span>
+  <span class="lead-duration duration">0.876</span>
 
 </div>
 
@@ -2123,7 +2007,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span> finnas i listan</span>
 
-  <span class="lead-duration duration">0.816</span>
+  <span class="lead-duration duration">0.037</span>
 
 </div>
 
@@ -2150,7 +2034,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">And</span>
   <span class="name">ska listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span> finnas i listan</span>
 
-  <span class="lead-duration duration">1.729</span>
+  <span class="lead-duration duration">0.027</span>
 
 </div>
 
@@ -2177,7 +2061,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren bockar av listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span></span>
 
-  <span class="lead-duration duration">1.472</span>
+  <span class="lead-duration duration">0.165</span>
 
 </div>
 
@@ -2204,7 +2088,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren bockar av listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span></span>
 
-  <span class="lead-duration duration">3.021</span>
+  <span class="lead-duration duration">0.220</span>
 
 </div>
 
@@ -2231,7 +2115,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska historiken visa listan <span class="argument">&quot;Ink&ouml;pslista&quot;</span></span>
 
-  <span class="lead-duration duration">8.216</span>
+  <span class="lead-duration duration">1.110</span>
 
 </div>
 
@@ -2303,7 +2187,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
 </div>
 
 
-  <span class="lead-duration duration">40.648</span>
+  <span class="lead-duration duration">7.618</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-35">
@@ -2341,7 +2225,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">1:18.439</span>
+  <span class="lead-duration duration">4.214</span>
 
           </div>
 
@@ -2405,7 +2289,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">1.349</span>
+  <span class="lead-duration duration">0.134</span>
 
 </div>
 
@@ -2432,7 +2316,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">13.471</span>
+  <span class="lead-duration duration">2.045</span>
 
 </div>
 
@@ -2459,7 +2343,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;checklistBackButton&quot;</span></span>
 
-  <span class="lead-duration duration">8.487</span>
+  <span class="lead-duration duration">0.965</span>
 
 </div>
 
@@ -2486,7 +2370,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort checklistan <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">16.760</span>
+  <span class="lead-duration duration">3.964</span>
 
 </div>
 
@@ -2513,7 +2397,7 @@ Session ID: 719d0cb3-9629-421b-9563-5b6eb188bb88
   <span class="keyword indention">Then</span>
   <span class="name">ska checklistan <span class="argument">&quot;TaBortListan&quot;</span> inte l&auml;ngre finnas i Listor</span>
 
-  <span class="lead-duration duration">0.580</span>
+  <span class="lead-duration duration">0.508</span>
 
 </div>
 
