@@ -66,6 +66,16 @@ jobs:
         working-directory: TimerApp
         run: npm ci
 
+      - name: Patcha @react-native/gradle-plugin (ta bort ktfmt)
+        if: steps.apk-cache.outputs.cache-hit != 'true'
+        working-directory: TimerApp
+        run: |
+          FILE="node_modules/@react-native/gradle-plugin/build.gradle.kts"
+          [ -f "$FILE" ] || exit 0
+          sed -i '/com\.ncorti\.ktfmt\.gradle/d' "$FILE"
+          sed -i '/configure<KtfmtExtension>/,/^[[:space:]]*}/d' "$FILE"
+          echo "Patchade $FILE"
+
       - name: Bundle JS into APK
         if: steps.apk-cache.outputs.cache-hit != 'true'
         working-directory: TimerApp
