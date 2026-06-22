@@ -608,13 +608,13 @@ public class TimerSteps {
     @Then("ska detaljvyn för {string} visas")
     public void skaDetaljvynVisas(String name) {
         if ("ios".equalsIgnoreCase(PLATFORM)) {
-            try {
-                new WebDriverWait(driver, Duration.ofSeconds(10))
-                        .ignoring(WebDriverException.class)
-                        .until(d -> !d.findElements(
-                            AppiumBy.iOSNsPredicateString("label == '" + name + "'")).isEmpty());
-            } catch (TimeoutException e) {
-                throw new AssertionError("Detaljvyn visade inte '" + name + "'", e);
+            // Vänta på backButton som bekräftelse på att skärmen är laddad (checklist != null)
+            new WebDriverWait(driver, Duration.ofSeconds(15))
+                    .ignoring(WebDriverException.class)
+                    .until(d -> !d.findElements(AppiumBy.accessibilityId("checklistBackButton")).isEmpty());
+            // Verifiera rätt lista via accessibilityLabel (TouchableOpacity.accessibilityLabel={checklist.name})
+            if (driver.findElements(AppiumBy.accessibilityId(name)).isEmpty()) {
+                throw new AssertionError("Detaljvyn visade inte '" + name + "'");
             }
         } else {
             try {
