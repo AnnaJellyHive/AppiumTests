@@ -815,6 +815,8 @@ public class TimerSteps {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(screenshot, "image/png", "Screenshot on failure");
         }
+        // Ge swiftshader-renderaren tid att städa GPU-buffrar mellan scenarion
+        try { Thread.sleep(2000); } catch (InterruptedException ignored) {}
     }
 
     @AfterAll
