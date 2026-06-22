@@ -398,7 +398,7 @@ public class TimerSteps {
             driver.executeScript("mobile: scroll",
                     Map.of("direction", "down", "name", "saveTemplateButton"));
         }
-        waitForElementToBeVisible(taskInputPage.getSaveTemplateButton()).click();
+        waitForElementToBeVisible(taskInputPage.getSaveTemplateButton(), 15).click();
         try {
             if ("ios".equalsIgnoreCase(PLATFORM)) {
                 new WebDriverWait(driver, Duration.ofSeconds(5))
