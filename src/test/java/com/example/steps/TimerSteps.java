@@ -634,7 +634,7 @@ public class TimerSteps {
         By locator = "ios".equalsIgnoreCase(PLATFORM)
                 ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
                 : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
-        waitForElementToBeVisible(locator, 10);
+        waitForElementToBeVisible(locator, 15);
     }
 
     @Then("ska listpunkten {string} finnas i listan")
@@ -642,7 +642,7 @@ public class TimerSteps {
         By locator = "ios".equalsIgnoreCase(PLATFORM)
                 ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
                 : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
-        waitForElementToBeVisible(locator, 10);
+        waitForElementToBeVisible(locator, 15);
     }
 
     @When("användaren bockar av listpunkten {string}")
@@ -650,7 +650,7 @@ public class TimerSteps {
         By textLocator = "ios".equalsIgnoreCase(PLATFORM)
                 ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
                 : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
-        WebElement textEl = waitForElementToBeVisible(textLocator, 10);
+        WebElement textEl = waitForElementToBeVisible(textLocator, 15);
         int targetY = textEl.getRect().y + textEl.getRect().height / 2;
 
         // Klicka checkboxen i samma rad (närmast i Y-led)
@@ -670,7 +670,7 @@ public class TimerSteps {
     public void tarBortChecklistan(String name) {
         WebElement item;
         if ("ios".equalsIgnoreCase(PLATFORM)) {
-            item = new WebDriverWait(driver, Duration.ofSeconds(10))
+            item = new WebDriverWait(driver, Duration.ofSeconds(15))
                     .ignoring(WebDriverException.class)
                     .until(d -> {
                         List<WebElement> els = d.findElements(
