@@ -80,11 +80,14 @@ jobs:
         run: npm ci
 
       - name: Install CocoaPods dependencies
-        if: steps.pods-cache.outputs.cache-hit != 'true'
         working-directory: TimerApp
         run: |
           bundle install
-          bundle exec pod install --project-directory=ios
+          if [ "${{ steps.pods-cache.outputs.cache-hit }}" == 'true' ]; then
+            bundle exec pod install --project-directory=ios --no-repo-update
+          else
+            bundle exec pod install --project-directory=ios
+          fi
 
       - name: Generate React Native codegen artifacts
         working-directory: TimerApp
