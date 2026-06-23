@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>22 Jun 2026, 14:10</td>
+      <td>23 Jun 2026, 06:19</td>
     </tr>
   </tbody>
 </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">Timer-app underuppgiftssekvens</td>
-          <td      class="passed"    >43</td>
-          <td >0</td>
-          <td >0</td>
+          <td      class="passed"    >34</td>
+          <td      class="failed"    >1</td>
+          <td     class="skipped"   >8</td>
           <td >0</td>
           <td >0</td>
           <td class="total">43</td>
 
-          <td  class="passed"    >9</td>
-          <td >0</td>
+          <td  class="passed"    >7</td>
+          <td  class="failed"    >2</td>
           <td class="total">9</td>
 
-          <td class="duration" data-value="60349173000">1:0.349</td>
-          <td class="passed">Passed</td>
+          <td class="duration" data-value="67414087000">1:7.414</td>
+          <td class="failed">Failed</td>
         </tr>
         </tbody>
 
@@ -173,7 +173,7 @@ $(document).ready(function() {
 </div>
 
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Feature</span>
   <span class="name">Timer-app underuppgiftssekvens</span>
 
@@ -193,12 +193,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">29.200</span>
+  <span class="lead-duration duration">0.001</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Det g&aring;r inte att spara en uppgift med ett redan anv&auml;nt namn</span>
 
@@ -209,13 +209,13 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details ">
+  <div id="element-1" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
+    <div data-toggle="collapse" class=" collapsable-control" data-target="#before-2">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Hooks</span>
   <span class="name"></span>
 
@@ -225,17 +225,52 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-2" class="inner-level collapse collapsable-details ">
+    <div id="before-2" class="inner-level collapse collapsable-details  in ">
         <div class="hook">
-          <div class="brief passed">
+          <div class="brief failed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">2:6.756</span>
+  <span class="lead-duration duration">4:33.506</span>
 
           </div>
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-3">
+          <a>Error message</a>
+      </div>
+      <div id="msg-3" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: Unable to start WebDriverAgent session. Original error: Could not proxy command to the remote server. Original error: connect ECONNREFUSED 127.0.0.1:8100 
+Host info: host: 'sat12-bq152-c54634e0-fdc9-450f-a781-d16018f68c6a-466E55DB5B80.local', ip: 'fe80:0:0:0:4cc:a789:604c:1525%en0'
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.7', java.version: '17.0.19'
+Driver info: io.appium.java_client.ios.IOSDriver
+Command: [null, newSession {capabilities=[{appium:noReset=true, appium:udid=021C494B-1999-439A-AB4E-7032197C164D, appium:wdaLaunchTimeout=300000, appium:bundleId=com.annamarkstrom.zonat, platformName=IOS, appium:automationName=XCuiTest, appium:wdaConnectionTimeout=300000}], desiredCapabilities=Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 021C494B-1999-439A-AB4E-703..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}}]
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:noReset: true, appium:udid: 021C494B-1999-439A-AB4E-703..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, platformName: IOS}
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:140)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:133)
+	at io.appium.java_client.remote.AppiumProtocolHandshake.createSession(AppiumProtocolHandshake.java:102)
+	at io.appium.java_client.remote.AppiumCommandExecutor.createSession(AppiumCommandExecutor.java:182)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:274)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:163)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:89)
+	at io.appium.java_client.AppiumDriver.&lt;init&gt;(AppiumDriver.java:101)
+	at io.appium.java_client.ios.IOSDriver.&lt;init&gt;(IOSDriver.java:104)
+	at com.example.steps.TimerSteps.setUpIos(TimerSteps.java:133)
+	at com.example.steps.TimerSteps.setUp(TimerSteps.java:68)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -248,9 +283,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-4">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -260,11 +295,11 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-4" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
-<div class="brief step-name-Given passed">
+<div class="brief step-name-Given skipped">
   <span class="keyword indention">Given</span>
   <span class="name">appen &auml;r startad</span>
 
@@ -291,11 +326,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-When passed">
+<div class="brief step-name-When skipped">
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">5.032</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -318,11 +353,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
 
-  <span class="lead-duration duration">2.772</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -345,11 +380,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">4.904</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -372,11 +407,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">2.475</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -399,11 +434,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then skipped">
   <span class="keyword indention">Then</span>
   <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
 
-  <span class="lead-duration duration">2.928</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -426,11 +461,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">10.047</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -453,11 +488,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And passed">
+<div class="brief step-name-And skipped">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
-  <span class="lead-duration duration">1.040</span>
+  <span class="lead-duration duration">0.000</span>
 
 </div>
 
@@ -484,7 +519,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -496,13 +531,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
+    <div id="after-5" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.149</span>
+  <span class="lead-duration duration">2.036</span>
 
           </div>
 
@@ -529,10 +564,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.982</span>
+  <span class="lead-duration duration">2.460</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-6">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -545,11 +580,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-5" class="collapse collapsable-details ">
+  <div id="element-6" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-6">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-7">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -561,13 +596,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-6" class="inner-level collapse collapsable-details ">
+    <div id="before-7" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.750</span>
+  <span class="lead-duration duration">43.633</span>
 
           </div>
 
@@ -584,7 +619,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-7">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-8">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -596,7 +631,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-7" class="inner-level collapse collapsable-details ">
+  <div id="steps-8" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -631,7 +666,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Plugg&quot;</span></span>
 
-  <span class="lead-duration duration">1.853</span>
+  <span class="lead-duration duration">2.303</span>
 
 </div>
 
@@ -658,7 +693,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Plugg&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.129</span>
+  <span class="lead-duration duration">0.157</span>
 
 </div>
 
@@ -685,7 +720,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-8">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-9">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -697,13 +732,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-8" class="inner-level collapse collapsable-details ">
+    <div id="after-9" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.091</span>
+  <span class="lead-duration duration">2.146</span>
 
           </div>
 
@@ -730,10 +765,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.929</span>
+  <span class="lead-duration duration">2.046</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-9">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-10">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -746,11 +781,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-9" class="collapse collapsable-details ">
+  <div id="element-10" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-10">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-11">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -762,13 +797,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-10" class="inner-level collapse collapsable-details ">
+    <div id="before-11" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.357</span>
+  <span class="lead-duration duration">3.907</span>
 
           </div>
 
@@ -785,7 +820,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-11">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-12">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -797,7 +832,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-11" class="inner-level collapse collapsable-details ">
+  <div id="steps-12" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -832,7 +867,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span></span>
 
-  <span class="lead-duration duration">1.802</span>
+  <span class="lead-duration duration">1.900</span>
 
 </div>
 
@@ -859,7 +894,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Tr&auml;ning&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.126</span>
+  <span class="lead-duration duration">0.146</span>
 
 </div>
 
@@ -886,7 +921,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-12">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-13">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -898,13 +933,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-12" class="inner-level collapse collapsable-details ">
+    <div id="after-13" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.144</span>
+  <span class="lead-duration duration">2.020</span>
 
           </div>
 
@@ -931,10 +966,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.930</span>
+  <span class="lead-duration duration">2.025</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-13">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-14">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -947,11 +982,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-13" class="collapse collapsable-details ">
+  <div id="element-14" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-14">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-15">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -963,13 +998,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-14" class="inner-level collapse collapsable-details ">
+    <div id="before-15" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.386</span>
+  <span class="lead-duration duration">3.888</span>
 
           </div>
 
@@ -986,7 +1021,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-15">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-16">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -998,7 +1033,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-15" class="inner-level collapse collapsable-details ">
+  <div id="steps-16" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1033,7 +1068,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Hem&quot;</span></span>
 
-  <span class="lead-duration duration">1.812</span>
+  <span class="lead-duration duration">1.876</span>
 
 </div>
 
@@ -1060,7 +1095,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Hem&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.117</span>
+  <span class="lead-duration duration">0.148</span>
 
 </div>
 
@@ -1087,7 +1122,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-16">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-17">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1099,13 +1134,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-16" class="inner-level collapse collapsable-details ">
+    <div id="after-17" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.149</span>
+  <span class="lead-duration duration">2.143</span>
 
           </div>
 
@@ -1132,10 +1167,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.909</span>
+  <span class="lead-duration duration">2.069</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-17">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-18">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1148,11 +1183,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-17" class="collapse collapsable-details ">
+  <div id="element-18" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-18">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-19">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1164,13 +1199,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-18" class="inner-level collapse collapsable-details ">
+    <div id="before-19" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.278</span>
+  <span class="lead-duration duration">3.845</span>
 
           </div>
 
@@ -1187,7 +1222,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-19">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-20">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1199,7 +1234,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-19" class="inner-level collapse collapsable-details ">
+  <div id="steps-20" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1234,7 +1269,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Socialt&quot;</span></span>
 
-  <span class="lead-duration duration">1.792</span>
+  <span class="lead-duration duration">1.928</span>
 
 </div>
 
@@ -1261,7 +1296,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Socialt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.116</span>
+  <span class="lead-duration duration">0.140</span>
 
 </div>
 
@@ -1288,7 +1323,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-20">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-21">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1300,13 +1335,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-20" class="inner-level collapse collapsable-details ">
+    <div id="after-21" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.133</span>
+  <span class="lead-duration duration">2.140</span>
 
           </div>
 
@@ -1333,10 +1368,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.888</span>
+  <span class="lead-duration duration">2.042</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-21">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-22">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1349,11 +1384,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-21" class="collapse collapsable-details ">
+  <div id="element-22" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-22">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-23">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1365,13 +1400,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-22" class="inner-level collapse collapsable-details ">
+    <div id="before-23" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.313</span>
+  <span class="lead-duration duration">3.702</span>
 
           </div>
 
@@ -1388,7 +1423,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-23">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-24">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1400,7 +1435,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-23" class="inner-level collapse collapsable-details ">
+  <div id="steps-24" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1435,7 +1470,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span></span>
 
-  <span class="lead-duration duration">1.770</span>
+  <span class="lead-duration duration">1.906</span>
 
 </div>
 
@@ -1462,7 +1497,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;Mental h&auml;lsa&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.117</span>
+  <span class="lead-duration duration">0.135</span>
 
 </div>
 
@@ -1489,7 +1524,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-24">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-25">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1501,13 +1536,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-24" class="inner-level collapse collapsable-details ">
+    <div id="after-25" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.142</span>
+  <span class="lead-duration duration">2.147</span>
 
           </div>
 
@@ -1534,10 +1569,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">1.988</span>
+  <span class="lead-duration duration">2.029</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-25">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-26">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -1550,11 +1585,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-25" class="collapse collapsable-details ">
+  <div id="element-26" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-26">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-27">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1566,13 +1601,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-26" class="inner-level collapse collapsable-details ">
+    <div id="before-27" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.410</span>
+  <span class="lead-duration duration">13.436</span>
 
           </div>
 
@@ -1589,7 +1624,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-27">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-28">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -1601,7 +1636,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-27" class="inner-level collapse collapsable-details ">
+  <div id="steps-28" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -1636,7 +1671,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren v&auml;ljer kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span></span>
 
-  <span class="lead-duration duration">1.873</span>
+  <span class="lead-duration duration">1.875</span>
 
 </div>
 
@@ -1663,7 +1698,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska kategorin <span class="argument">&quot;&Ouml;vrigt&quot;</span> vara vald</span>
 
-  <span class="lead-duration duration">0.114</span>
+  <span class="lead-duration duration">0.153</span>
 
 </div>
 
@@ -1690,7 +1725,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-28">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-29">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1702,13 +1737,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-28" class="inner-level collapse collapsable-details ">
+    <div id="after-29" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.144</span>
+  <span class="lead-duration duration">2.022</span>
 
           </div>
 
@@ -1735,12 +1770,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">10.138</span>
+  <span class="lead-duration duration">44.384</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-29">
+  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-30">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Skapa lista, l&auml;gg till punkter och bocka av alla</span>
 
@@ -1751,11 +1786,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-29" class="collapse collapsable-details ">
+  <div id="element-30" class="collapse collapsable-details  in ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-30">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-31">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -1767,13 +1802,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-30" class="inner-level collapse collapsable-details ">
+    <div id="before-31" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.444</span>
+  <span class="lead-duration duration">4.929</span>
 
           </div>
 
@@ -1790,9 +1825,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-31">
+  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-32">
 
-<div class="brief passed">
+<div class="brief failed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -1802,7 +1837,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-31" class="inner-level collapse collapsable-details ">
+  <div id="steps-32" class="inner-level collapse collapsable-details  in ">
       <div class="step">
 
 
@@ -1837,7 +1872,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">0.906</span>
+  <span class="lead-duration duration">0.929</span>
 
 </div>
 
@@ -1864,7 +1899,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;Ink&ouml;pslista&quot;</span></span>
 
-  <span class="lead-duration duration">3.312</span>
+  <span class="lead-duration duration">4.835</span>
 
 </div>
 
@@ -1891,7 +1926,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska detaljvyn f&ouml;r <span class="argument">&quot;Ink&ouml;pslista&quot;</span> visas</span>
 
-  <span class="lead-duration duration">0.087</span>
+  <span class="lead-duration duration">0.365</span>
 
 </div>
 
@@ -1918,7 +1953,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren l&auml;gger till listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span></span>
 
-  <span class="lead-duration duration">1.917</span>
+  <span class="lead-duration duration">2.807</span>
 
 </div>
 
@@ -1945,7 +1980,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span></span>
 
-  <span class="lead-duration duration">1.379</span>
+  <span class="lead-duration duration">2.281</span>
 
 </div>
 
@@ -1972,7 +2007,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span> finnas i listan</span>
 
-  <span class="lead-duration duration">0.156</span>
+  <span class="lead-duration duration">0.215</span>
 
 </div>
 
@@ -1999,7 +2034,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">ska listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span> finnas i listan</span>
 
-  <span class="lead-duration duration">0.171</span>
+  <span class="lead-duration duration">0.218</span>
 
 </div>
 
@@ -2026,7 +2061,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren bockar av listpunkten <span class="argument">&quot;Mj&ouml;lk&quot;</span></span>
 
-  <span class="lead-duration duration">1.312</span>
+  <span class="lead-duration duration">1.525</span>
 
 </div>
 
@@ -2053,7 +2088,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren bockar av listpunkten <span class="argument">&quot;Br&ouml;d&quot;</span></span>
 
-  <span class="lead-duration duration">0.801</span>
+  <span class="lead-duration duration">0.918</span>
 
 </div>
 
@@ -2076,11 +2111,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then passed">
+<div class="brief step-name-Then failed">
   <span class="keyword indention">Then</span>
   <span class="name">ska historiken visa listan <span class="argument">&quot;Ink&ouml;pslista&quot;</span></span>
 
-  <span class="lead-duration duration">0.092</span>
+  <span class="lead-duration duration">30.287</span>
 
 </div>
 
@@ -2088,6 +2123,28 @@ $(document).ready(function() {
 
 
 
+
+  <div class="inner-level">
+    <div class="message indention">
+      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-33">
+          <a>org.openqa.selenium.TimeoutException:</a>
+      </div>
+      <div id="msg-33" class="collapse collapsable-details  in ">
+        <pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for com.example.steps.TimerSteps$$Lambda$950/0x0000000601a54688@eb2ce99 (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '15.7.7', java.version: '17.0.19'
+Driver info: io.appium.java_client.ios.IOSDriver
+Capabilities {appium:automationName: XCuiTest, appium:bundleId: com.annamarkstrom.zonat, appium:databaseEnabled: false, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: false, appium:noReset: true, appium:platformVersion: 18.5, appium:takesScreenshot: true, appium:udid: 021C494B-1999-439A-AB4E-703..., appium:wdaConnectionTimeout: 300000, appium:wdaLaunchTimeout: 300000, appium:webStorageEnabled: false, platformName: IOS}
+Session ID: 2329ba65-5e6e-460c-a812-01ce95561d6f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.example.steps.TimerSteps.skaHistorikenVisaMinst(TimerSteps.java:332)
+	at com.example.steps.TimerSteps.skaHistorikenVisaListan(TimerSteps.java:666)
+	at ✽.ska historiken visa listan &quot;Ink&ouml;pslista&quot;(classpath:features/timer_sekvens.feature:150)
+</pre>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -2107,7 +2164,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-32">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-34">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2119,13 +2176,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-32" class="inner-level collapse collapsable-details ">
+    <div id="after-34" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.013</span>
+  <span class="lead-duration duration">3.275</span>
 
           </div>
 
@@ -2134,6 +2191,21 @@ $(document).ready(function() {
 
 
 
+  <div class="embeddings inner-level">
+  <div class="embedding indention">
+    <div data-toggle="collapse" data-target="#embedding-35" class="collapsable-control">
+      <a>Screenshot on failure</a>
+      <a href="embeddings/embedding_-835682916.png" download target="_blank">
+        <span class="download-button glyphicon glyphicon-download-alt"></span>
+      </a>
+    </div>
+    <div id="embedding-35" class="collapse collapsable-details ">
+      <div class="embedding-content">
+        <img src="embeddings/embedding_-835682916.png">
+      </div>
+    </div>
+  </div>
+  </div>
 
         </div>
     </div>
@@ -2152,10 +2224,10 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">9.381</span>
+  <span class="lead-duration duration">10.354</span>
 
 
-  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-33">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-36">
 
 <div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
@@ -2168,11 +2240,11 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-33" class="collapse collapsable-details ">
+  <div id="element-36" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-34">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-37">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2184,13 +2256,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="before-34" class="inner-level collapse collapsable-details ">
+    <div id="before-37" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">3.492</span>
+  <span class="lead-duration duration">4.473</span>
 
           </div>
 
@@ -2207,7 +2279,7 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-35">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-38">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -2219,7 +2291,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-35" class="inner-level collapse collapsable-details ">
+  <div id="steps-38" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -2254,7 +2326,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren navigerar till Listor</span>
 
-  <span class="lead-duration duration">0.887</span>
+  <span class="lead-duration duration">0.937</span>
 
 </div>
 
@@ -2281,7 +2353,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren skapar en ny lista <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">2.936</span>
+  <span class="lead-duration duration">3.573</span>
 
 </div>
 
@@ -2308,7 +2380,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren klickar p&aring; <span class="argument">&quot;checklistBackButton&quot;</span></span>
 
-  <span class="lead-duration duration">1.151</span>
+  <span class="lead-duration duration">1.202</span>
 
 </div>
 
@@ -2335,7 +2407,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort checklistan <span class="argument">&quot;TaBortListan&quot;</span></span>
 
-  <span class="lead-duration duration">4.365</span>
+  <span class="lead-duration duration">4.610</span>
 
 </div>
 
@@ -2362,7 +2434,7 @@ $(document).ready(function() {
   <span class="keyword indention">Then</span>
   <span class="name">ska checklistan <span class="argument">&quot;TaBortListan&quot;</span> inte l&auml;ngre finnas i Listor</span>
 
-  <span class="lead-duration duration">0.040</span>
+  <span class="lead-duration duration">0.029</span>
 
 </div>
 
@@ -2389,7 +2461,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-36">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-39">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -2401,13 +2473,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-36" class="inner-level collapse collapsable-details ">
+    <div id="after-39" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.062</span>
+  <span class="lead-duration duration">2.000</span>
 
           </div>
 
