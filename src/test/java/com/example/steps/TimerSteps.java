@@ -18,6 +18,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import io.cucumber.java.en.Given;
@@ -628,11 +629,17 @@ public class TimerSteps {
 
     @When("användaren lägger till listpunkten {string}")
     public void läggerTillListpunkten(String text) {
-        waitForElementToBeVisible(checklistDetailPage.getAddItemInput()).sendKeys(text);
-        checklistDetailPage.getAddItemButton().click();
-        // Vänta tills punkten är synlig
+        WebElement input = waitForElementToBeVisible(checklistDetailPage.getAddItemInput());
+        input.sendKeys(text);
+        if ("ios".equalsIgnoreCase(PLATFORM)) {
+            // Tryck Return (onSubmitEditing) istället för att klicka +‑knappen —
+            // knappen kan vara mitt i KeyboardAvoidingView‑animation och missa klicket
+            input.sendKeys(Keys.RETURN);
+        } else {
+            checklistDetailPage.getAddItemButton().click();
+        }
         By locator = "ios".equalsIgnoreCase(PLATFORM)
-                ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
+                ? AppiumBy.iOSNsPredicateString("label CONTAINS '" + text + "'")
                 : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
         waitForElementToBeVisible(locator, 15);
     }
@@ -640,7 +647,7 @@ public class TimerSteps {
     @Then("ska listpunkten {string} finnas i listan")
     public void skaListpunktenFinnasIListan(String text) {
         By locator = "ios".equalsIgnoreCase(PLATFORM)
-                ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
+                ? AppiumBy.iOSNsPredicateString("label CONTAINS '" + text + "'")
                 : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
         waitForElementToBeVisible(locator, 15);
     }
@@ -648,7 +655,7 @@ public class TimerSteps {
     @When("användaren bockar av listpunkten {string}")
     public void bockarAvListpunkten(String text) {
         By textLocator = "ios".equalsIgnoreCase(PLATFORM)
-                ? By.xpath("//XCUIElementTypeStaticText[contains(@label, '" + text + "')]")
+                ? AppiumBy.iOSNsPredicateString("label CONTAINS '" + text + "'")
                 : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
         WebElement textEl = waitForElementToBeVisible(textLocator, 15);
         int targetY = textEl.getRect().y + textEl.getRect().height / 2;
