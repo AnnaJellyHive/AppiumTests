@@ -137,7 +137,7 @@ jobs:
       - name: Install Appium + XCUITest
         run: |
           npm install -g appium
-          appium driver list --installed | grep -q xcuitest || appium driver install xcuitest
+          appium driver list --installed 2>&1 | grep -q xcuitest || appium driver install xcuitest
 
       - name: Check port 8100
         run: lsof -i :8100 || echo "Port 8100 is free"
