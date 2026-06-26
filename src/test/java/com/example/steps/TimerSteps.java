@@ -632,12 +632,10 @@ public class TimerSteps {
         WebElement input = waitForElementToBeVisible(checklistDetailPage.getAddItemInput());
         input.sendKeys(text);
         if ("ios".equalsIgnoreCase(PLATFORM)) {
-            // Tryck Return (onSubmitEditing) istället för att klicka +‑knappen —
-            // knappen kan vara mitt i KeyboardAvoidingView‑animation och missa klicket
-            input.sendKeys(Keys.RETURN);
-        } else {
-            checklistDetailPage.getAddItemButton().click();
+            // Vänta på att KeyboardAvoidingView-animationen slutar (~250ms) innan klick
+            try { Thread.sleep(500); } catch (InterruptedException ignored) {}
         }
+        waitForElementToBeVisible(checklistDetailPage.getAddItemButton(), 5).click();
         By locator = "ios".equalsIgnoreCase(PLATFORM)
                 ? AppiumBy.iOSNsPredicateString("label CONTAINS '" + text + "'")
                 : AppiumBy.androidUIAutomator("new UiSelector().textContains(\"" + text + "\")");
