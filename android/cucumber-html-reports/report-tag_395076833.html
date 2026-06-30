@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>AppiumTests</td>
         <td>1</td>
-      <td>26 Jun 2026, 12:11</td>
+      <td>30 Jun 2026, 05:40</td>
     </tr>
   </tbody>
 </table>
@@ -129,19 +129,19 @@ $(document).ready(function() {
         <tbody>
         <tr>
           <td class="tagname">@duplikat</td>
-          <td      class="passed"    >5</td>
-          <td      class="failed"    >1</td>
-          <td     class="skipped"   >2</td>
+          <td      class="passed"    >8</td>
+          <td >0</td>
+          <td >0</td>
           <td >0</td>
           <td >0</td>
           <td class="total">8</td>
 
+          <td  class="passed"    >1</td>
           <td >0</td>
-          <td  class="failed"    >1</td>
           <td class="total">1</td>
 
-          <td class="duration" data-value="4018138660">4.018</td>
-          <td class="failed">Failed</td>
+          <td class="duration" data-value="10448008333">10.448</td>
+          <td class="passed">Passed</td>
         </tr>
         </tbody>
 
@@ -183,12 +183,12 @@ $(document).ready(function() {
 </div>
 
 
-  <span class="lead-duration duration">4.018</span>
+  <span class="lead-duration duration">10.448</span>
 
 
-  <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Scenario Outline</span>
   <span class="name">Det g&aring;r inte att spara en uppgift med ett redan anv&auml;nt namn</span>
 
@@ -199,7 +199,7 @@ $(document).ready(function() {
   </span>
   <div class="description indention"></div>
 
-  <div id="element-1" class="collapse collapsable-details  in ">
+  <div id="element-1" class="collapse collapsable-details ">
 
 
   <div class="inner-level hooks-element-before">
@@ -221,7 +221,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">com.example.steps.TimerSteps.setUp()</span>
 
-  <span class="lead-duration duration">10.666</span>
+  <span class="lead-duration duration">11.207</span>
 
           </div>
 
@@ -238,9 +238,9 @@ $(document).ready(function() {
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
 
-<div class="brief failed">
+<div class="brief passed">
   <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
@@ -250,7 +250,7 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details  in ">
+  <div id="steps-3" class="inner-level collapse collapsable-details ">
       <div class="step">
 
 
@@ -285,7 +285,7 @@ $(document).ready(function() {
   <span class="keyword indention">When</span>
   <span class="name">anv&auml;ndaren fyller i uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">0.109</span>
+  <span class="lead-duration duration">0.133</span>
 
 </div>
 
@@ -312,7 +312,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren l&auml;gger till underuppgift <span class="argument">&quot;En underuppgift&quot;</span></span>
 
-  <span class="lead-duration duration">0.602</span>
+  <span class="lead-duration duration">0.779</span>
 
 </div>
 
@@ -339,7 +339,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">1.640</span>
+  <span class="lead-duration duration">1.811</span>
 
 </div>
 
@@ -366,7 +366,7 @@ $(document).ready(function() {
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren sparar uppgiften</span>
 
-  <span class="lead-duration duration">1.182</span>
+  <span class="lead-duration duration">1.086</span>
 
 </div>
 
@@ -389,11 +389,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Then failed">
+<div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
   <span class="name">ska bara en sparad uppgift med namnet <span class="argument">&quot;DuplikatTest&quot;</span> finnas</span>
 
-  <span class="lead-duration duration">0.480</span>
+  <span class="lead-duration duration">0.945</span>
 
 </div>
 
@@ -401,25 +401,6 @@ $(document).ready(function() {
 
 
 
-
-  <div class="inner-level">
-    <div class="message indention">
-      <div data-toggle="collapse" class=" collapsable-control" data-target="#msg-4">
-          <a>org.opentest4j.AssertionFailedError:</a>
-      </div>
-      <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>org.opentest4j.AssertionFailedError: F&ouml;rv&auml;ntade exakt 1 sparad uppgift med namnet 'DuplikatTest' men hittade 0 ==&gt; expected: &lt;1&gt; but was: &lt;0&gt;
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:559)
-	at com.example.steps.TimerSteps.skaBaraEnSparadUppgiftMedNamnet(TimerSteps.java:539)
-	at ✽.ska bara en sparad uppgift med namnet &quot;DuplikatTest&quot; finnas(classpath:features/timer_sekvens.feature:115)
-</pre>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -435,11 +416,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren tar bort den sparade uppgiften <span class="argument">&quot;DuplikatTest&quot;</span></span>
 
-  <span class="lead-duration duration">0.003</span>
+  <span class="lead-duration duration">5.206</span>
 
 </div>
 
@@ -462,11 +443,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And skipped">
+<div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
   <span class="name">anv&auml;ndaren st&auml;nger dialogen</span>
 
-  <span class="lead-duration duration">0.000</span>
+  <span class="lead-duration duration">0.484</span>
 
 </div>
 
@@ -493,7 +474,7 @@ $(document).ready(function() {
 
 
   <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-5">
+    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
 
 <div class="brief passed">
   <span class="keyword indention">Hooks</span>
@@ -505,13 +486,13 @@ $(document).ready(function() {
 
     </div>
 
-    <div id="after-5" class="inner-level collapse collapsable-details ">
+    <div id="after-4" class="inner-level collapse collapsable-details ">
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
               <span class="location name">com.example.steps.TimerSteps.tearDown(io.cucumber.java.Scenario)</span>
 
-  <span class="lead-duration duration">2.515</span>
+  <span class="lead-duration duration">2.003</span>
 
           </div>
 
@@ -520,21 +501,6 @@ $(document).ready(function() {
 
 
 
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-6" class="collapsable-control">
-      <a>Screenshot on failure</a>
-      <a href="embeddings/embedding_1407682225.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-6" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_1407682225.png">
-      </div>
-    </div>
-  </div>
-  </div>
 
         </div>
     </div>
