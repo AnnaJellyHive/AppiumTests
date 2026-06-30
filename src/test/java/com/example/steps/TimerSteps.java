@@ -522,6 +522,8 @@ public class TimerSteps {
     @Then("ska bara en sparad uppgift med namnet {string} finnas")
     public void skaBaraEnSparadUppgiftMedNamnet(String name) {
         waitForElementToBeVisible(taskInputPage.getChooseTemplateButton()).click();
+        // Vänta tills template-dialogen faktiskt är öppen innan vi söker efter items
+        waitForElementToBeVisible(taskInputPage.getTemplateDialogClose(), 15);
         int count;
         if ("ios".equalsIgnoreCase(PLATFORM)) {
             new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
@@ -530,11 +532,15 @@ public class TimerSteps {
                     .filter(e -> { try { return name.equals(e.getText()); } catch (Exception ex) { return false; } })
                     .count();
         } else {
-            new WebDriverWait(driver, Duration.ofSeconds(20)).until(d ->
-                    !d.findElements(AppiumBy.androidUIAutomator(
-                            "new UiSelector().text(\"" + name + "\")")).isEmpty());
-            count = driver.findElements(AppiumBy.androidUIAutomator(
-                    "new UiSelector().text(\"" + name + "\")")).size();
+            // Android API 33: textinnehållet i Text-komponenter ligger i @content-desc, inte @text.
+            // UiSelector().text() hittar TextInput-fältet (vars @text = "DuplikatTest") men inte
+            // template-items. Använd descriptionContains som matchar @content-desc på template-items.
+            List<WebElement> found = new WebDriverWait(driver, Duration.ofSeconds(20)).until(d -> {
+                List<WebElement> els = d.findElements(AppiumBy.androidUIAutomator(
+                        "new UiSelector().descriptionContains(\"" + name + "\")"));
+                return els.isEmpty() ? null : els;
+            });
+            count = found.size();
         }
         assertEquals(1, count,
                 "Förväntade exakt 1 sparad uppgift med namnet '" + name + "' men hittade " + count);
@@ -675,7 +681,9 @@ public class TimerSteps {
     public void tarBortChecklistan(String name) {
         WebElement item;
         if ("ios".equalsIgnoreCase(PLATFORM)) {
-            item = new WebDriverWait(driver, Duration.ofSeconds(15))
+            // Vänta på att listöversikten laddats — useFocusEffect är asynkront efter back-navigering
+            waitForElementToBeVisible(checklistsPage.getCreateListButton(), 15);
+            item = new WebDriverWait(driver, Duration.ofSeconds(25))
                     .ignoring(WebDriverException.class)
                     .until(d -> {
                         List<WebElement> els = d.findElements(
